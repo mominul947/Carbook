@@ -37,9 +37,7 @@
         .pac-container {
             z-index: 999999 !important;
         }
-    </style>
 
-    <style>
         /* ---------- Reset & base ---------- */
         * {
             box-sizing: border-box;
@@ -87,7 +85,6 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* Mobile specific full-width fix */
         @media (max-width: 600px) {
             html, body {
                 background: var(--white);
@@ -142,9 +139,7 @@
             display: none; opacity: 0; transition: opacity 0.3s;
         }
         
-        .sidebar-overlay.active { 
-            display: block; opacity: 1; 
-        }
+        .sidebar-overlay.active { display: block; opacity: 1; }
         
         .sidebar {
             position: absolute; top: 0; left: 0; bottom: 0; width: 260px;
@@ -154,9 +149,7 @@
             box-shadow: 2px 0 15px rgba(0,0,0,0.15);
         }
         
-        .sidebar.active { 
-            transform: translateX(0); 
-        }
+        .sidebar.active { transform: translateX(0); }
         
         .sidebar-header {
             padding: 40px 20px 30px; background: var(--blue); color: #fff;
@@ -169,13 +162,8 @@
             background: var(--blue-light); border: 2px solid #fff;
         }
 
-        .sidebar-header .user-info {
-            font-size: 18px; font-weight: 800; line-height: 1.2;
-        }
-        
-        .sidebar-nav { 
-            flex: 1; padding: 20px 0; overflow-y: auto; 
-        }
+        .sidebar-header .user-info { font-size: 18px; font-weight: 800; line-height: 1.2; }
+        .sidebar-nav { flex: 1; padding: 20px 0; overflow-y: auto; }
         
         .sidebar-item {
             padding: 16px 24px; display: flex; align-items: center; gap: 16px;
@@ -188,13 +176,8 @@
             border-right: 4px solid var(--blue);
         }
         
-        .sidebar-item i { 
-            font-size: 20px; width: 24px; text-align: center; color: var(--gray-text); 
-        }
-        
-        .sidebar-item.active i { 
-            color: var(--blue); 
-        }
+        .sidebar-item i { font-size: 20px; width: 24px; text-align: center; color: var(--gray-text); }
+        .sidebar-item.active i { color: var(--blue); }
 
         .menu-btn {
             background: transparent; border: none; color: inherit;
@@ -205,877 +188,196 @@
 
         /* ---------- Top app header ---------- */
         .topbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 18px;
-            flex-shrink: 0;
-            background: #ffffff; /* White Header */
-            border-bottom: 1px solid #f0f3f8;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-            position: relative;
-            z-index: 20;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 18px; flex-shrink: 0; background: #ffffff;
+            border-bottom: 1px solid #f0f3f8; box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            position: relative; z-index: 20;
         }
 
         .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--dark-text);
-            letter-spacing: -0.5px;
+            display: flex; align-items: center; gap: 10px;
+            font-size: 20px; font-weight: 800; color: var(--dark-text); letter-spacing: -0.5px;
         }
 
-        .topbar-right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .topbar-right { display: flex; align-items: center; gap: 12px; }
 
         .bell-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: var(--blue-pale); 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blue);
-            font-size: 18px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
+            width: 42px; height: 42px; border-radius: 50%; background: var(--blue-pale); 
+            display: flex; align-items: center; justify-content: center; color: var(--blue);
+            font-size: 18px; cursor: pointer; transition: all 0.2s ease; position: relative;
         }
 
         .login-now-btn {
-            background: var(--blue);
-            color: var(--white);
-            font-weight: 800;
-            font-size: 13px;
-            padding: 8px 16px;
-            border-radius: 999px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(26,86,255,0.2);
-            transition: transform 0.2s;
+            background: var(--blue); color: var(--white); font-weight: 800; font-size: 13px;
+            padding: 8px 16px; border-radius: 999px; cursor: pointer;
+            box-shadow: 0 4px 10px rgba(26,86,255,0.2); transition: transform 0.2s;
         }
-        .login-now-btn:active {
-            transform: scale(0.95);
-        }
+        .login-now-btn:active { transform: scale(0.95); }
         
         .header-profile-avatar {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #dbe3f0;
-            border: 2px solid #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            color: #9aa6bd;
-            overflow: hidden;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 42px; height: 42px; border-radius: 50%; background: #dbe3f0;
+            border: 2px solid #fff; display: flex; align-items: center; justify-content: center;
+            font-size: 16px; color: #9aa6bd; overflow: hidden; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .header-profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
         /* ---------- Back header ---------- */
         .back-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 14px 18px 10px;
-            flex-shrink: 0;
-            background: #fff;
+            display: flex; align-items: center; gap: 14px; padding: 14px 18px 10px; flex-shrink: 0; background: #fff;
         }
-
         .back-header .back-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark-text);
-            font-size: 18px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
+            width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--dark-text); font-size: 18px; background: transparent; border: none; cursor: pointer;
         }
-
-        .back-header h1 {
-            font-size: 20px;
-            font-weight: 700;
-        }
+        .back-header h1 { font-size: 20px; font-weight: 700; }
 
         /* ---------- Buttons ---------- */
         .btn-primary {
-            background: var(--blue);
-            color: #fff;
-            font-weight: 700;
-            font-size: 16px;
-            border: none;
-            border-radius: 999px;
-            padding: 15px 20px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(26, 86, 255, 0.25);
-            text-decoration: none;
+            background: var(--blue); color: #fff; font-weight: 700; font-size: 16px; border: none;
+            border-radius: 999px; padding: 15px 20px; width: 100%; display: flex; align-items: center;
+            justify-content: center; gap: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(26, 86, 255, 0.25); text-decoration: none;
         }
 
         .btn-outline {
-            background: transparent;
-            color: var(--blue);
-            font-weight: 700;
-            font-size: 14.5px;
-            border: 1.5px solid var(--blue);
-            border-radius: 999px;
-            padding: 15px 20px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            cursor: pointer;
+            background: transparent; color: var(--blue); font-weight: 700; font-size: 14.5px;
+            border: 1.5px solid var(--blue); border-radius: 999px; padding: 15px 20px; width: 100%;
+            display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;
         }
 
-        .ripple {
-            position: relative;
-            overflow: hidden;
-            transform: translate3d(0, 0, 0);
-        }
-        
+        .ripple { position: relative; overflow: hidden; transform: translate3d(0, 0, 0); }
         .ripple::after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
-            background-repeat: no-repeat;
-            background-position: 50%;
-            transform: scale(10, 10);
-            opacity: 0;
-            transition: transform .5s, opacity 1s;
+            content: ""; display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+            pointer-events: none; background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat; background-position: 50%; transform: scale(10, 10);
+            opacity: 0; transition: transform .5s, opacity 1s;
         }
+        .ripple:active::after { transform: scale(0, 0); opacity: .3; transition: 0s; }
+
+        /* Login & OTP */
+        .login-screen { flex: 1; display: flex; flex-direction: column; padding: 0 26px; background: #fff; }
+        .login-screen-centered { justify-content: center; }
+        .login-center-block { display: flex; flex-direction: column; align-items: center; gap: 14px; width: 100%; }
+        .login-form { width: 100%; }
+        .login-logo { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 24px; font-weight: 900; color: var(--dark-text); margin-bottom: 4px; }
+        .login-logo-img { width: 180px; height: 130px; object-fit: contain; border-radius: 0; box-shadow: none; margin-bottom: -5px; }
+        .login-tagline { color: var(--gray-text); font-size: 14.5px; text-align: center; margin-bottom: 6px; }
         
-        .ripple:active::after {
-            transform: scale(0, 0);
-            opacity: .3;
-            transition: 0s;
-        }
+        .phone-input-row { display: flex; align-items: center; gap: 10px; border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 18px; }
+        .phone-input-row .cc { font-weight: 700; color: var(--dark-text); border-right: 1.5px solid var(--border); padding-right: 10px; }
+        .phone-input-row input, .phone-input-row select { border: none; flex: 1; font-size: 15.5px; outline: none; background: transparent; font-family: inherit; }
 
-        /* Login & OTP Screen Styles */
-        .login-screen {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 0 26px;
-            background: #fff;
-        }
-
-        .login-screen-centered {
-            justify-content: center;
-        }
-
-        .login-center-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-            width: 100%;
-        }
-
-        .login-form {
-            width: 100%;
-        }
-
-        .login-logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            font-size: 24px;
-            font-weight: 900;
-            color: var(--dark-text);
-            margin-bottom: 4px;
-        }
-
-        .login-logo-img {
-            width: 180px;
-            height: 130px;
-            object-fit: contain;
-            border-radius: 0;
-            box-shadow: none;
-            margin-bottom: -5px;
-        }
-
-        .login-tagline {
-            color: var(--gray-text);
-            font-size: 14.5px;
-            text-align: center;
-            margin-bottom: 6px;
-        }
-
-        .phone-input-row {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border: 1.5px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 14px 16px;
-            margin-bottom: 18px;
-        }
-
-        .phone-input-row .cc {
-            font-weight: 700;
-            color: var(--dark-text);
-            border-right: 1.5px solid var(--border);
-            padding-right: 10px;
-        }
-
-        .phone-input-row input, .phone-input-row select {
-            border: none;
-            flex: 1;
-            font-size: 15.5px;
-            outline: none;
-            background: transparent;
-            font-family: inherit;
-        }
-
-        .otp-boxes {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            width: 100%;
-        }
-
-        .otp-boxes input {
-            width: 48px;
-            height: 54px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: 700;
-            border: 1.5px solid var(--border);
-            border-radius: var(--radius-sm);
-            outline: none;
-        }
-
-        .otp-boxes input:focus {
-            border-color: var(--blue);
-            box-shadow: 0 0 0 3px rgba(26, 86, 255, 0.15);
-        }
-
-        .resend-line {
-            text-align: center;
-            font-size: 13.5px;
-            color: var(--gray-text);
-            margin-bottom: 22px;
-        }
-
-        .resend-line span {
-            color: var(--blue);
-            font-weight: 700;
-            cursor: pointer;
-        }
+        .otp-boxes { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; width: 100%; }
+        .otp-boxes input { width: 48px; height: 54px; text-align: center; font-size: 20px; font-weight: 700; border: 1.5px solid var(--border); border-radius: var(--radius-sm); outline: none; }
+        .otp-boxes input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26, 86, 255, 0.15); }
+        .resend-line { text-align: center; font-size: 13.5px; color: var(--gray-text); margin-bottom: 22px; }
+        .resend-line span { color: var(--blue); font-weight: 700; cursor: pointer; }
 
         /* Dashboard Styles */
         .hero-banner {
             height: 240px; 
             background-image: url('https://cdn.phototourl.com/member/2026-09-02-340113c0-0419-430e-9464-136540ab64c7.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            position: relative;
+            background-size: cover; background-position: center; position: relative;
         }
 
-        .overlap-container {
-            margin-top: -70px; 
-            position: relative; 
-            z-index: 10;
-        }
-
-        .section-label {
-            font-size: 15px;
-            font-weight: 800;
-            color: #1b1f2a;
-            margin: 0 18px 10px;
-        }
-
-        .trip-type-pill-row {
-            display: flex;
-            margin: 0 18px 18px;
-            background: #ffffff;
-            border-radius: 999px;
-            padding: 6px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            border: 1px solid #f0f3f8;
-        }
-
-        .trip-pill {
-            flex: 1;
-            padding: 12px 4px;
-            border-radius: 999px;
-            background: transparent;
-            color: #1b1f2a;
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s ease;
-        }
-
-        .trip-pill.active {
-            background: var(--blue);
-            color: #ffffff;
-            font-weight: 700;
-            box-shadow: 0 2px 8px rgba(26, 86, 255, 0.2);
-        }
-
-        /* Premium Look Locations Card */
-        .locations-card {
-            background: #ffffff;
-            margin: 0 18px 15px;
-            border-radius: 16px;
-            padding: 18px;
-            display: flex;
-            gap: 16px;
-            border: 1px solid #f0f3f8;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-        }
-
-        .loc-pins-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 6px;
-            padding-bottom: 6px;
-        }
-
-        .pin-dot-yellow {
-            width: 14px;
-            height: 14px;
-            background: #f7b500;
-            border-radius: 50%;
-            border: 2.5px solid #fff;
-            box-shadow: 0 0 0 1.5px #f7b500;
-        }
-
-        .pin-line-dashed {
-            flex: 1;
-            width: 2px;
-            border-left: 2px dashed #9cb1d6;
-            margin: 4px 0;
-            min-height: 24px;
-        }
-
-        .pin-blue-icon {
-            color: #1a56ff;
-            font-size: 16px;
-        }
-
-        .loc-inputs-col {
-            flex: 1;
-        }
-
-        .loc-field-block {
-            padding: 2px 0;
-            position: relative;
-        }
-
-        .loc-field-block label {
-            display: block;
-            font-size: 13px;
-            font-weight: 800;
-            color: #1b1f2a;
-            margin-bottom: 2px;
-        }
-
-        .loc-field-block input {
-            width: 100%;
-            border: none;
-            background: transparent;
-            font-size: 14.5px;
-            font-weight: 600;
-            color: #1b1f2a;
-            outline: none;
-            font-family: inherit;
-        }
-
-        .loc-field-block input::placeholder {
-            color: #a4b3cf;
-            font-weight: 500;
-        }
-
-        .loc-divider {
-            height: 1px;
-            background: #e1ebfa;
-            margin: 10px 0;
-        }
-
-        .add-stops-btn-wrap {
-            display: flex;
-            justify-content: flex-end;
-            margin: 0 18px 18px;
-        }
-
-        .add-stops-text-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            font-weight: 700;
-            color: #1b1f2a;
-            cursor: pointer;
-        }
-
-        .add-stops-text-btn i {
-            color: #1a56ff;
-            font-size: 16px;
-        }
-
-        .datetime-row {
-            display: flex;
-            gap: 12px;
-            margin: 0 18px 18px;
-        }
-
-        .datetime-box {
-            flex: 1;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 14px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border: 1px solid #f0f3f8;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            position: relative;
-            cursor: pointer;
-        }
-
-        .datetime-box input {
-            border: none;
-            background: transparent;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1b1f2a;
-            outline: none;
-            width: 100%;
-            font-family: inherit;
-            cursor: pointer;
-        }
-
-        .return-datetime-wrap {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            margin: 0 18px 0;
-            transition: all 0.4s ease;
-            gap: 12px;
-            display: flex;
-        }
-
-        .return-datetime-wrap.show {
-            max-height: 100px;
-            opacity: 1;
-            margin-bottom: 18px;
-        }
-
-        .note-box {
-            margin: 0 18px 18px;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 14px 16px;
-            border: 1px solid #f0f3f8;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-
-        .note-box textarea {
-            width: 100%;
-            border: none;
-            background: transparent;
-            font-size: 14px;
-            font-family: inherit;
-            font-weight: 600;
-            outline: none;
-            resize: none;
-            min-height: 20px;
-            height: 20px;
-            color: #1b1f2a;
-            overflow: hidden;
-        }
-
-        .car-list-container {
-            margin: 0 18px 20px;
-        }
-
-        .car-list-item {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 12px 16px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            transition: all 0.2s ease;
-        }
-
-        .car-list-item.active {
-            border-color: var(--blue);
-            box-shadow: 0 4px 15px rgba(26, 86, 255, 0.1);
-        }
-
-        .car-list-item img {
-            width: 80px;
-            height: 50px;
-            object-fit: contain;
-        }
-
-        .car-list-item .car-info {
-            flex: 1;
-            text-align: center;
-            padding-right: 80px;
-        }
-
-        .car-list-item h4 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1b1f2a;
-        }
-
-        .car-list-item p {
-            font-size: 13px;
-            color: #7b88a8;
-            font-weight: 600;
-            margin-top: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        /* Footer Styles */
-        .app-footer {
-            background: #ffffff; 
-            padding: 30px 20px; 
-            border-top: 1px solid #f0f3f8; 
-            margin-top: 20px; 
-            text-align: center;
-        }
+        .overlap-container { margin-top: -70px; position: relative; z-index: 10; }
         
-        .footer-link-row {
-            padding: 15px 0; 
-            border-bottom: 1px solid #f0f3f8; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            font-weight: 600; 
-            color: #1b1f2a;
-            cursor: pointer;
-            font-size: 15px;
+        .trip-type-pill-row {
+            display: flex; margin: 0 18px 18px; background: #ffffff; border-radius: 999px;
+            padding: 6px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); border: 1px solid #f0f3f8;
         }
+        .trip-pill {
+            flex: 1; padding: 12px 4px; border-radius: 999px; background: transparent; color: #1b1f2a;
+            font-weight: 600; font-size: 14px; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; border: none; transition: all 0.2s ease;
+        }
+        .trip-pill.active { background: var(--blue); color: #ffffff; font-weight: 700; box-shadow: 0 2px 8px rgba(26, 86, 255, 0.2); }
 
-        .footer-lang-btn {
-            width: 100%; 
-            padding: 14px; 
-            background: transparent; 
-            border: 1px solid #1a56ff; 
-            color: #1a56ff; 
-            border-radius: 8px; 
-            font-weight: 700; 
-            margin: 20px 0; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 8px;
-            cursor: pointer;
+        .locations-card {
+            background: #ffffff; margin: 0 18px 15px; border-radius: 16px; padding: 18px;
+            display: flex; gap: 16px; border: 1px solid #f0f3f8; box-shadow: 0 8px 24px rgba(0,0,0,0.06);
         }
+        .loc-pins-col { display: flex; flex-direction: column; align-items: center; padding-top: 6px; padding-bottom: 6px; }
+        .pin-dot-yellow { width: 14px; height: 14px; background: #f7b500; border-radius: 50%; border: 2.5px solid #fff; box-shadow: 0 0 0 1.5px #f7b500; }
+        .pin-line-dashed { flex: 1; width: 2px; border-left: 2px dashed #9cb1d6; margin: 4px 0; min-height: 24px; }
+        .pin-blue-icon { color: #1a56ff; font-size: 16px; }
 
-        /* Help Center CSS Update (App Look) */
-        .help-hero {
-            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-            padding: 40px 20px;
-            color: white;
-            text-align: center;
-            border-radius: 0 0 24px 24px;
-            margin-bottom: 20px;
+        .loc-inputs-col { flex: 1; }
+        .loc-field-block { padding: 2px 0; position: relative; }
+        .loc-field-block label { display: block; font-size: 13px; font-weight: 800; color: #1b1f2a; margin-bottom: 2px; }
+        .loc-field-block input { width: 100%; border: none; background: transparent; font-size: 14.5px; font-weight: 600; color: #1b1f2a; outline: none; font-family: inherit; }
+        .loc-field-block input::placeholder { color: #a4b3cf; font-weight: 500; }
+        .loc-divider { height: 1px; background: #e1ebfa; margin: 10px 0; }
+
+        .add-stops-btn-wrap { display: flex; justify-content: flex-end; margin: 0 18px 18px; }
+        .add-stops-text-btn { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: #1b1f2a; cursor: pointer; }
+        .add-stops-text-btn i { color: #1a56ff; font-size: 16px; }
+
+        .datetime-row { display: flex; gap: 12px; margin: 0 18px 18px; }
+        .datetime-box {
+            flex: 1; background: #ffffff; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center;
+            justify-content: space-between; border: 1px solid #f0f3f8; box-shadow: 0 4px 12px rgba(0,0,0,0.03); position: relative; cursor: pointer;
         }
-        .help-hero i {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        .help-hero h2 {
-            font-size: 24px;
-            font-weight: 800;
-            line-height: 1.3;
-        }
-        .help-list-item {
-            background: white;
-            margin: 0 18px 12px;
-            padding: 16px 20px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            cursor: pointer;
-            border: 1px solid var(--border);
-            font-weight: 600;
-            color: var(--dark-text);
-            transition: transform 0.2s;
-        }
+        .datetime-box input { border: none; background: transparent; font-size: 14px; font-weight: 600; color: #1b1f2a; outline: none; width: 100%; font-family: inherit; cursor: pointer; }
+
+        .return-datetime-wrap { max-height: 0; opacity: 0; overflow: hidden; margin: 0 18px 0; transition: all 0.4s ease; gap: 12px; display: flex; }
+        .return-datetime-wrap.show { max-height: 100px; opacity: 1; margin-bottom: 18px; }
+
+        .note-box { margin: 0 18px 18px; background: #ffffff; border-radius: 12px; padding: 14px 16px; border: 1px solid #f0f3f8; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .note-box textarea { width: 100%; border: none; background: transparent; font-size: 14px; font-family: inherit; font-weight: 600; outline: none; resize: none; min-height: 20px; height: 20px; color: #1b1f2a; overflow: hidden; }
+
+        .car-list-container { margin: 0 18px 20px; }
+        .car-list-item { background: #ffffff; border-radius: 16px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; cursor: pointer; border: 2px solid transparent; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: all 0.2s ease; }
+        .car-list-item.active { border-color: var(--blue); box-shadow: 0 4px 15px rgba(26, 86, 255, 0.1); }
+        .car-list-item img { width: 80px; height: 50px; object-fit: contain; }
+        .car-list-item .car-info { flex: 1; text-align: center; padding-right: 80px; }
+        .car-list-item h4 { font-size: 16px; font-weight: 700; color: #1b1f2a; }
+        .car-list-item p { font-size: 13px; color: #7b88a8; font-weight: 600; margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+        .app-footer { background: #ffffff; padding: 30px 20px; border-top: 1px solid #f0f3f8; margin-top: 20px; text-align: center; }
+        .footer-link-row { padding: 15px 0; border-bottom: 1px solid #f0f3f8; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #1b1f2a; cursor: pointer; font-size: 15px; }
+        .footer-lang-btn { width: 100%; padding: 14px; background: transparent; border: 1px solid #1a56ff; color: #1a56ff; border-radius: 8px; font-weight: 700; margin: 20px 0; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; }
+
+        .help-hero { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); padding: 40px 20px; color: white; text-align: center; border-radius: 0 0 24px 24px; margin-bottom: 20px; }
+        .help-hero i { font-size: 48px; margin-bottom: 15px; }
+        .help-hero h2 { font-size: 24px; font-weight: 800; line-height: 1.3; }
+        .help-list-item { background: white; margin: 0 18px 12px; padding: 16px 20px; border-radius: 16px; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); cursor: pointer; border: 1px solid var(--border); font-weight: 600; color: var(--dark-text); transition: transform 0.2s; }
         .help-list-item:active { transform: scale(0.98); }
-        .help-list-item .icon-wrap {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: var(--blue-pale); color: var(--blue);
-            display: flex; align-items: center; justify-content: center; font-size: 18px;
-        }
+        .help-list-item .icon-wrap { width: 40px; height: 40px; border-radius: 50%; background: var(--blue-pale); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 18px; }
         .help-list-item .trailing { margin-left: auto; color: var(--gray-text); }
 
+        .saved-locations-popup { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); z-index: 500; max-height: 220px; overflow-y: auto; display: none; margin-top: 6px; }
+        .saved-location-item { padding: 10px 14px; border-bottom: 1px solid #f0f3f8; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 13.5px; }
+        .saved-location-item:hover { background: var(--blue-light); }
+        .saved-location-item i { color: var(--blue); font-size: 15px; }
+        .saved-location-item .loc-text { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-        /* Map Picker & Saved Places */
-        .saved-locations-popup {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            z-index: 500;
-            max-height: 220px;
-            overflow-y: auto;
-            display: none;
-            margin-top: 6px;
-        }
+        .profile-cover { height: 140px; background: var(--blue); background-size: cover; background-position: bottom center; border-radius: 0 0 26px 26px; position: relative; }
+        .profile-avatar-wrap { display: flex; flex-direction: column; align-items: center; margin-top: -46px; margin-bottom: 10px; }
+        .profile-avatar { width: 92px; height: 92px; border-radius: 50%; background: #dbe3f0; border: 4px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #9aa6bd; position: relative; overflow: hidden; }
+        .profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-star { position: absolute; bottom: -6px; background: var(--yellow); border-radius: 999px; padding: 3px 9px; font-size: 12px; font-weight: 800; display: flex; align-items: center; gap: 4px; }
+        .profile-name { text-align: center; font-size: 18px; font-weight: 700; margin-top: 14px; color: var(--dark-text); }
+        .profile-sub { text-align: center; color: var(--blue); font-size: 13.5px; font-weight: 600; text-decoration: underline; margin-top: 4px; cursor: pointer; }
 
-        .saved-location-item {
-            padding: 10px 14px;
-            border-bottom: 1px solid #f0f3f8;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13.5px;
-        }
+        .list-label { font-size: 13px; font-weight: 800; letter-spacing: .05em; color: var(--dark-text); margin: 10px 18px 10px; }
+        .list-panel { margin: 0 18px 20px; background: var(--blue-pale); border-radius: var(--radius-lg); overflow: hidden; padding: 4px; }
+        .list-row { display: flex; align-items: center; gap: 14px; padding: 16px 14px; background: #fff; border-radius: 12px; margin: 4px; font-size: 15px; font-weight: 600; cursor: pointer; }
+        .list-row i.leading { color: var(--blue); width: 20px; text-align: center; font-size: 18px; }
+        .list-row .trailing { margin-left: auto; color: var(--gray-text); display: flex; align-items: center; }
 
-        .saved-location-item:hover {
-            background: var(--blue-light);
-        }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1000; }
+        .modal-overlay.active { display: flex; align-items: flex-end; }
+        .modal-content { background: white; width: 100%; max-height: 90vh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; display: flex; flex-direction: column; }
+        .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--border); }
+        .modal-close-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--blue-light); border: none; color: var(--blue); cursor: pointer; }
+        .modal-body { padding: 20px 18px 30px; overflow-y: auto; font-size: 14.5px; line-height: 1.6; color: var(--dark-text); }
 
-        .saved-location-item i {
-            color: var(--blue);
-            font-size: 15px;
-        }
-
-        .saved-location-item .loc-text {
-            flex: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        /* Profile Updates */
-        .profile-cover {
-            height: 140px;
-            background: var(--blue);
-            background-size: cover;
-            background-position: bottom center;
-            border-radius: 0 0 26px 26px;
-            position: relative;
-        }
-
-        .profile-avatar-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: -46px;
-            margin-bottom: 10px;
-        }
-
-        .profile-avatar {
-            width: 92px;
-            height: 92px;
-            border-radius: 50%;
-            background: #dbe3f0;
-            border: 4px solid #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: #9aa6bd;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-star {
-            position: absolute;
-            bottom: -6px;
-            background: var(--yellow);
-            border-radius: 999px;
-            padding: 3px 9px;
-            font-size: 12px;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .profile-name {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 700;
-            margin-top: 14px;
-            color: var(--dark-text);
-        }
-
-        .profile-sub {
-            text-align: center;
-            color: var(--blue);
-            font-size: 13.5px;
-            font-weight: 600;
-            text-decoration: underline;
-            margin-top: 4px;
-            cursor: pointer;
-        }
-
-        .list-label {
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .05em;
-            color: var(--dark-text);
-            margin: 10px 18px 10px;
-        }
-
-        .list-panel {
-            margin: 0 18px 20px;
-            background: var(--blue-pale);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            padding: 4px;
-        }
-
-        .list-row {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 16px 14px;
-            background: #fff;
-            border-radius: 12px;
-            margin: 4px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .list-row i.leading {
-            color: var(--blue);
-            width: 20px;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .list-row .trailing {
-            margin-left: auto;
-            color: var(--gray-text);
-            display: flex;
-            align-items: center;
-        }
-
-        /* General Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .modal-content {
-            background: white;
-            width: 100%;
-            max-height: 90vh;
-            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 18px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .modal-close-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--blue-light);
-            border: none;
-            color: var(--blue);
-            cursor: pointer;
-        }
-
-        .modal-body {
-            padding: 20px 18px 30px;
-            overflow-y: auto;
-            font-size: 14.5px;
-            line-height: 1.6;
-            color: var(--dark-text);
-        }
-
-        /* Toast */
         .toast {
-            position: fixed;
-            left: 50%;
-            bottom: 100px;
-            transform: translateX(-50%);
-            background: #1b1f2a;
-            color: #fff;
-            padding: 10px 18px;
-            border-radius: 999px;
-            font-size: 13.5px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity .2s ease;
-            z-index: 999999;
-            white-space: nowrap;
+            position: fixed; left: 50%; bottom: 100px; transform: translateX(-50%); background: #1b1f2a;
+            color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 13.5px; opacity: 0;
+            pointer-events: none; transition: opacity .2s ease; z-index: 999999; white-space: nowrap;
         }
-
-        .toast.show {
-            opacity: 1;
-        }
+        .toast.show { opacity: 1; }
     </style>
 </head>
 
@@ -1095,7 +397,7 @@
                 </div>
             </div>
             <div class="sidebar-nav" id="sidebar-nav-container">
-                </div>
+            </div>
         </div>
 
         <div class="app-body">
@@ -1107,23 +409,19 @@
                 <div class="login-screen login-screen-centered">
                     <div class="login-center-block">
                         <div class="login-logo">
-                            <img src="https://cdn.phototourl.com/free/2026-08-29-a4216c1b-3015-40ec-b85e-bc2e3375440d.png"
-                                alt="Carbook" class="login-logo-img">
+                            <img src="https://cdn.phototourl.com/free/2026-08-29-a4216c1b-3015-40ec-b85e-bc2e3375440d.png" alt="Carbook" class="login-logo-img">
                         </div>
                         <p class="login-tagline" data-lang="login_tagline">Your trusted Carbooking companion<br>for city and outstation travel</p>
                         <form class="login-form" id="form-login">
-                            <label for="phone"
-                                style="font-weight: 700; font-size: 14.5px; display: block; margin-bottom: 10px; color: var(--blue);" data-lang="login_label">Log in with Mobile Number</label>
+                            <label for="phone" style="font-weight: 700; font-size: 14.5px; display: block; margin-bottom: 10px; color: var(--blue);" data-lang="login_label">Log in with Mobile Number</label>
                             <div class="phone-input-row" style="border-color: var(--blue);">
                                 <span class="cc" style="color: var(--blue); border-right-color: var(--blue);">+88</span>
-                                <input type="tel" id="phone" placeholder="01XXXXXXXXX" maxlength="11"
-                                    inputmode="numeric" required>
+                                <input type="tel" id="phone" placeholder="01XXXXXXXXX" maxlength="11" inputmode="numeric" required>
                             </div>
                             <div class="terms-checkbox-group" style="margin-bottom:20px; display:flex; gap:10px;">
                                 <input id="terms-checkbox" type="checkbox">
                                 <div class="terms-text" style="font-size:14px; color:var(--dark-text);">
-                                    <span data-lang="agree_terms">I agree to the</span> <a onclick="openInfoModal('Terms & Conditions', 'terms')"
-                                        style="color:var(--blue); font-weight:600; text-decoration:none; cursor:pointer;" data-lang="terms_conditions">Terms & Conditions</a>
+                                    <span data-lang="agree_terms">I agree to the</span> <a onclick="openInfoModal('Terms & Conditions', 'terms')" style="color:var(--blue); font-weight:600; text-decoration:none; cursor:pointer;" data-lang="terms_conditions">Terms & Conditions</a>
                                 </div>
                             </div>
                             <button type="submit" class="btn-primary ripple" id="continue-btn" disabled><span data-lang="continue">Continue</span> <i class="fa-solid fa-arrow-right"></i></button>
@@ -1143,8 +441,7 @@
                         </div>
                         <h2 style="font-size: 22px; font-weight: 800; color: var(--dark-text); margin-top: 4px; margin-bottom: 4px;" data-lang="enter_otp">Enter OTP</h2>
                         <p class="login-tagline" style="margin-bottom: 24px;">
-                            <span data-lang="otp_sent_to">Enter the 4-digit OTP sent to</span> <span id="otp-phone-echo"
-                                style="color: var(--dark-text); font-weight: 600;">01929756982</span>
+                            <span data-lang="otp_sent_to">Enter the 4-digit OTP sent to</span> <span id="otp-phone-echo" style="color: var(--dark-text); font-weight: 600;">01929756982</span>
                         </p>
                         <form class="login-form" id="form-otp" style="padding-bottom: 0;">
                             <div class="otp-boxes">
@@ -1156,8 +453,7 @@
                             <p class="resend-line"><span data-lang="didnt_receive">Didn't receive the OTP?</span> <span id="resend-span">30sec</span></p>
                             <button type="submit" class="btn-primary ripple" style="margin-bottom: 18px;" data-lang="confirm">Confirm</button>
                             <p style="text-align: center; font-size: 13.5px; color: var(--gray-text);">
-                                <span data-lang="wrong_number">Entered the wrong number?</span> <span onclick="showScreen('screen-login')" data-back="screen-login"
-                                    style="color: var(--blue); font-weight: 700; cursor: pointer;" data-lang="change_it">Change it</span>
+                                <span data-lang="wrong_number">Entered the wrong number?</span> <span onclick="showScreen('screen-login')" data-back="screen-login" style="color: var(--blue); font-weight: 700; cursor: pointer;" data-lang="change_it">Change it</span>
                             </p>
                         </form>
                     </div>
@@ -1201,7 +497,6 @@
                 </div>
             </section>
 
-            <!-- ================= HOME SCREEN ================= -->
             <section class="screen active" id="screen-home">
                 <div class="scroll">
 
@@ -1209,8 +504,7 @@
                         <div style="display: flex; align-items: center; gap: 14px;">
                             <button class="menu-btn" style="color: #1b1f2a;" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></button>
                             <div class="brand" style="flex-direction: column; align-items: flex-start; gap: 0;">
-                                <span style="font-size: 11px; font-weight: 700; color: #8a93a6; letter-spacing: 1px; text-transform: uppercase;" data-lang="welcome">Welcome</span>
-                                <span style="font-size: 22px; font-weight: 900; color: #1a56ff;" id="home-username-header">Carbook</span>
+                                <span style="font-size: 22px; font-weight: 900; color: #000000;" id="home-username-header">Carbook</span>
                             </div>
                         </div>
                         <div class="topbar-right" id="topbar-right-container">
@@ -1218,7 +512,9 @@
                         </div>
                     </div>
 
-                    <div class="hero-banner"></div>
+                    <div class="hero-banner" style="display: flex; justify-content: center; align-items: flex-start; padding-top: 30px;">
+                        <h2 style="color: #000000; font-weight: 900; font-size: 24px; text-align: center; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">Easy Book Anytime Any Where</h2>
+                    </div>
 
                     <div class="overlap-container">
                         
@@ -1346,9 +642,24 @@
                                 Confirm Details
                             </button>
                         </div>
+
+                        <div style="margin: 10px 18px 20px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <h2 style="font-size: 18px; font-weight: 800; color: var(--dark-text);">Exclusive Deals</h2>
+                                <span style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer;">See All <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                            <div style="background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
+                                <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" style="width: 100%; height: auto; display: block;" alt="Deal">
+                                <div style="padding: 16px;">
+                                    <h3 style="font-size: 16px; font-weight: 800; color: var(--dark-text); margin-bottom: 8px; line-height: 1.4;">আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়।</h3>
+                                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                                        <span onclick="showScreen('screen-offer-details')" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer;">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- ======= NEW FOOTER ======= -->
                     <div class="app-footer">
                         <div style="margin-bottom: 25px;">
                             <h3 style="color: var(--blue); font-weight: 800; font-size: 18px; margin-bottom: 12px;" data-lang="download_app">Download the new Carbook App!</h3>
@@ -1374,7 +685,6 @@
                             <i class="fa-solid fa-globe"></i> <span id="footer-lang-toggle-text">বাংলা</span>
                         </button>
 
-                        <!-- UPDATED SOCIAL LINKS -->
                         <div style="display: flex; justify-content: center; gap: 20px; font-size: 26px; color: #1a56ff; margin-bottom: 25px;">
                             <a href="https://www.facebook.com/carbookofficial" target="_blank" style="color: inherit;"><i class="fa-brands fa-facebook"></i></a>
                             <a href="https://x.com/CarBookBd" target="_blank" style="color: inherit;"><i class="fa-brands fa-x-twitter"></i></a>
@@ -1390,7 +700,30 @@
                             &copy; carbookbd.com 2026 All rights reserved.
                         </div>
                     </div>
-                    <!-- ======= END FOOTER ======= -->
+                </div>
+            </section>
+
+            <section class="screen" id="screen-offer-details">
+                <div class="back-header">
+                    <button class="back-btn" onclick="showScreen('screen-home')"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h1>Offer Details</h1>
+                </div>
+                <div class="scroll" style="padding: 20px 18px; line-height: 1.6; font-size: 15px; color: #1b1f2a;">
+                    <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" style="width: 100%; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <p style="margin-bottom: 15px; font-size: 16px;">ভ্রমণ এখন আরও সাশ্রয়ী! Carbook-এর মাধ্যমে আপনার আসা-যাওয়ার প্রতিটি ট্রিপে পেয়ে যান <strong style="font-weight: 800; color: var(--blue);">৩০% পর্যন্ত নিশ্চিত টাকা ছাড়</strong>।</p>
+                    
+                    <ul style="padding-left: 20px; margin-bottom: 20px; color: var(--dark-text); font-weight: 600;">
+                        <li style="margin-bottom: 8px;">খরচ কমান</li>
+                        <li style="margin-bottom: 8px;">আরামদায়ক গাড়ি বেছে নিন</li>
+                        <li style="margin-bottom: 8px;">সহজেই ট্রিপ বুক করুন</li>
+                        <li style="margin-bottom: 8px;">প্রতিটি ট্রিপে উপভোগ করুন বিশেষ সাশ্রয়</li>
+                    </ul>
+                    
+                    <p style="margin-bottom: 15px; font-weight: 600;">আপনার যাত্রা হোক নিরাপদ, আরামদায়ক ও বাজেট-ফ্রেন্ডলি।</p>
+                    
+                    <div style="background: var(--blue-pale); padding: 16px; border-radius: 12px; border-left: 4px solid var(--blue);">
+                        <p style="font-weight: 800; color: var(--blue); margin: 0;">**আজই Carbook-এ বুক করুন এবং ৩০% পর্যন্ত ছাড় উপভোগ করুন!</p>
+                    </div>
                 </div>
             </section>
 
@@ -1539,7 +872,6 @@
                 </div>
             </section>
 
-            <!-- App-like Beautiful Help Center Screen -->
             <section class="screen" id="screen-help">
                 <div class="back-header" style="background: transparent; position: absolute; z-index: 10;">
                     <button class="back-btn" data-back="screen-profile" onclick="showScreen('screen-profile')" style="color: #fff;"><i class="fa-solid fa-arrow-left"></i></button>
@@ -1723,7 +1055,6 @@
                 </div>
             </div>
 
-            <!-- New BD Map Modal for Footer link -->
             <div id="bd-map-modal" class="modal-overlay">
                 <div class="modal-content" style="height: 100vh; border-radius: 0;">
                     <div class="modal-header">
@@ -1973,7 +1304,29 @@
             if (['screen-home', 'screen-mytrip', 'screen-offers', 'screen-profile'].includes(id)) {
                 highlightSidebarNav(id);
             }
+
+            // Update URL to simulate separate pages (History API)
+            const pageName = id.replace('screen-', '');
+            if(window.history.pushState) {
+                history.pushState({ screenId: id }, '', `?page=${pageName}`);
+            }
         }
+
+        // Handle Browser Back Button for URL Routing
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.screenId) {
+                const id = e.state.screenId;
+                $$('.screen').forEach(s => { s.classList.remove('active'); });
+                const target = document.getElementById(id);
+                if (target) target.classList.add('active');
+                if (['screen-home', 'screen-mytrip', 'screen-offers', 'screen-profile'].includes(id)) {
+                    highlightSidebarNav(id);
+                }
+            } else {
+                $$('.screen').forEach(s => { s.classList.remove('active'); });
+                document.getElementById('screen-home').classList.add('active');
+            }
+        });
 
         function goBack() {
             showScreen('screen-mytrip');
@@ -2000,7 +1353,7 @@
                     `;
                 }
                 const fullName = state.firstName || 'User';
-                if ($('#home-username-header')) $('#home-username-header').textContent = fullName;
+                // Keeping header text always 'Carbook' as requested, only change sidebar
                 if ($('#sidebar-username')) $('#sidebar-username').textContent = fullName;
                 if ($('#sidebar-phone')) $('#sidebar-phone').textContent = state.phone;
                 if ($('#sidebar-avatar')) $('#sidebar-avatar').src = state.photoURL || 'https://cdn.phototourl.com/free/2026-08-29-a4216c1b-3015-40ec-b85e-bc2e3375440d.png';
@@ -2008,7 +1361,6 @@
                 if(container) {
                     container.innerHTML = `<div class="login-now-btn" onclick="showScreen('screen-login')">Login Now</div>`;
                 }
-                if ($('#home-username-header')) $('#home-username-header').textContent = 'Carbook';
                 if ($('#sidebar-username')) $('#sidebar-username').textContent = 'Guest User';
                 if ($('#sidebar-phone')) $('#sidebar-phone').textContent = 'Please Login';
             }
@@ -2131,7 +1483,7 @@
                 if(type === 'terms') field = 'userTerms';
                 else if(type === 'trip_terms') field = 'tripTerms';
                 else if(type === 'privacy') field = 'userPrivacy';
-                else if(type === 'faq') field = 'userTerms'; // fallback for faq
+                else if(type === 'faq') field = 'userTerms'; 
                 
                 const snap = await db.collection('settings').doc('legalPages').get();
                 if(snap.exists) {
@@ -2340,74 +1692,6 @@
             },
             friendlyError(err) { return (err && err.message) ? err.message : 'Something went wrong'; }
         };
-
-        function showCustomConfirm(message) {
-            return new Promise((resolve) => {
-                const overlay = document.createElement('div');
-                overlay.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:9999999;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s ease;";
-                
-                const modal = document.createElement('div');
-                modal.style.cssText = "background:white;padding:24px;border-radius:12px;width:85%;max-width:340px;box-shadow:0 10px 25px rgba(0,0,0,0.2);transform:scale(0.95);transition:transform 0.2s ease;";
-                
-                const text = document.createElement('div');
-                text.style.cssText = "margin-bottom:24px;font-size:16px;color:#333;line-height:1.5;white-space:pre-wrap;";
-                text.innerText = message;
-                
-                const btnContainer = document.createElement('div');
-                btnContainer.style.cssText = "display:flex;justify-content:flex-end;gap:8px;";
-                
-                const cancelText = (typeof currentLang !== 'undefined' && currentLang === 'bn') ? 'বাতিল' : 'CANCEL';
-                const okText = (typeof currentLang !== 'undefined' && currentLang === 'bn') ? 'ঠিক আছে' : 'OK';
-
-                const cancelBtn = document.createElement('button');
-                cancelBtn.innerText = cancelText;
-                cancelBtn.style.cssText = "padding:8px 16px;border:none;background:transparent;color:#1a56ff;font-size:14px;font-weight:600;cursor:pointer;border-radius:4px;";
-                cancelBtn.onclick = () => closeModal(false);
-                
-                const okBtn = document.createElement('button');
-                okBtn.innerText = okText;
-                okBtn.style.cssText = "padding:8px 16px;border:none;background:transparent;color:#ef4444;font-size:14px;font-weight:600;cursor:pointer;border-radius:4px;";
-                okBtn.onclick = () => closeModal(true);
-                
-                function closeModal(result) {
-                    overlay.style.opacity = '0';
-                    modal.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        document.body.removeChild(overlay);
-                        resolve(result);
-                    }, 200);
-                }
-
-                btnContainer.appendChild(cancelBtn);
-                btnContainer.appendChild(okBtn);
-                modal.appendChild(text);
-                modal.appendChild(btnContainer);
-                overlay.appendChild(modal);
-                document.body.appendChild(overlay);
-                
-                requestAnimationFrame(() => {
-                    overlay.style.opacity = '1';
-                    modal.style.transform = 'scale(1)';
-                });
-            });
-        }
-
-        async function deleteUserAccount() {
-            const msg = currentLang === 'en' ? "Delete your account?\n\nThis action cannot be undone." : "আপনার একাউন্ট ডিলিট করবেন?\n\nএই কাজটি বাতিল করা যাবে গঠন না।";
-            const confirmed = await showCustomConfirm(msg);
-            if(confirmed) {
-                try {
-                    await db.collection('users').doc(state.phone).delete();
-                    if (fbAuth.currentUser) {
-                        await fbAuth.currentUser.delete().catch(e => console.warn(e));
-                    }
-                    await CarBookAuth.logout();
-                    location.reload();
-                } catch(err) {
-                    toast(CarBookAuth.friendlyError(err));
-                }
-            }
-        }
 
         let tempBase64Photo = '';
         function previewProfileImage(event) {
@@ -2692,7 +1976,15 @@
         /* ==================== INITIALIZATION & ATTACHMENTS ==================== */
         document.addEventListener('DOMContentLoaded', () => {
             applyLanguage(currentLang);
-            highlightSidebarNav('screen-home'); 
+            
+            // Checking URL param to load appropriate screen
+            const urlParams = new URLSearchParams(window.location.search);
+            const page = urlParams.get('page');
+            if (page) {
+                showScreen('screen-' + page);
+            } else {
+                highlightSidebarNav('screen-home');
+            } 
 
             const now = new Date();
             const todayStr = now.toISOString().split('T')[0];
