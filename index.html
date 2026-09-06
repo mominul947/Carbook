@@ -302,6 +302,18 @@
             justify-content: center; 
             align-items: center;
         }
+        
+        .hero-banner-text {
+            color: #ffffff; 
+            font-size: 34px; 
+            font-weight: 900; 
+            line-height: 1.2; 
+            text-align: center; 
+            margin-top: -60px;
+            /* সাদা কালার তবে সাইট দিয়ে ব্ল্যাক লাইন */
+            -webkit-text-stroke: 1.5px #1b1f2a;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
 
         .overlap-container { margin-top: -70px; position: relative; z-index: 10; }
 
@@ -365,44 +377,6 @@
         .car-list-item h4 { font-size: 16px; font-weight: 700; color: #1b1f2a; }
         .car-list-item p { font-size: 13px; color: #7b88a8; font-weight: 600; margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 6px; }
 
-        /* ---------- Main Banner Slider CSS ---------- */
-        .main-slider-container {
-            margin: 0 18px 20px;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .main-slider-track {
-            display: flex;
-            transition: transform 0.4s ease-in-out;
-            width: 200%;
-        }
-        .main-slide {
-            width: 50%;
-            flex-shrink: 0;
-            position: relative;
-        }
-        .main-slide img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            display: block;
-        }
-        .main-slider-dots {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 6px;
-        }
-        .ms-dot {
-            width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); transition: 0.3s;
-        }
-        .ms-dot.active { width: 20px; border-radius: 4px; background: #fff; }
-
-
         /* ---------- Exclusive Deals Slider CSS ---------- */
         .exclusive-deals-section { margin: 0 18px 25px; }
         .deals-slider-track {
@@ -426,7 +400,14 @@
             flex-direction: column;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
-        .deal-slide img { width: 100%; height: 160px; object-fit: cover; }
+        /* ডেস্কটপে যেন না কাটে তার জন্য aspect-ratio ব্যবহার করা হয়েছে */
+        .deal-slide img { 
+            width: 100%; 
+            height: auto; 
+            aspect-ratio: 16 / 9; 
+            object-fit: cover; 
+            display: block; 
+        }
 
         /* ---------- #HereWithYou Section CSS (5-Image Grid) ---------- */
         .here-with-you-section {
@@ -465,11 +446,10 @@
             object-fit: cover;
             display: block;
         }
-        /* Grid Structure */
-        .hwy-item-top { grid-column: span 1; height: 140px; }
-        .hwy-item-mid { grid-column: span 2; height: 180px; }
-        .hwy-item-bottom { grid-column: span 1; height: 140px; }
-
+        /* Grid Structure with aspect-ratio to prevent desktop squashing */
+        .hwy-item-top { grid-column: span 1; aspect-ratio: 4 / 3; height: auto; }
+        .hwy-item-mid { grid-column: span 2; aspect-ratio: 21 / 9; height: auto; }
+        .hwy-item-bottom { grid-column: span 1; aspect-ratio: 4 / 3; height: auto; }
 
         /* Footer Styles */
         .app-footer { background: #ffffff; padding: 30px 20px; border-top: 1px solid #f0f3f8; margin-top: 20px; text-align: center; }
@@ -664,7 +644,7 @@
 
                     <!-- Hero Banner -->
                     <div class="hero-banner">
-                        <div style="color: #000; font-size: 32px; font-weight: 900; line-height: 1.2; text-align: center; margin-top: -60px;">
+                        <div class="hero-banner-text">
                             Easy Book<br>Anytime Any Where
                         </div>
                     </div>
@@ -797,23 +777,6 @@
                         </div>
                     </div>
 
-                    <!-- ======= NEW MAIN SLIDER ======= -->
-                    <div class="main-slider-container">
-                        <div class="main-slider-track" id="main-slider-track">
-                            <div class="main-slide">
-                                <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" alt="Slide 1">
-                            </div>
-                            <div class="main-slide">
-                                <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" alt="Slide 2">
-                            </div>
-                        </div>
-                        <div class="main-slider-dots">
-                            <div class="ms-dot active" id="ms-dot-0"></div>
-                            <div class="ms-dot" id="ms-dot-1"></div>
-                        </div>
-                    </div>
-                    <!-- ======= END MAIN SLIDER ======= -->
-
                     <!-- ======= Exclusive Deals SECTION (Scrollable Cards) ======= -->
                     <div class="exclusive-deals-section">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -924,7 +887,7 @@
                     <h1>Deal Details</h1>
                 </div>
                 <div class="scroll" style="padding: 20px; background: #fff;">
-                    <img id="deal-detail-img" src="" style="width: 100%; border-radius: 16px; margin-bottom: 20px; object-fit: cover; height: 220px;">
+                    <img id="deal-detail-img" src="" style="width: 100%; border-radius: 16px; margin-bottom: 20px; object-fit: cover; aspect-ratio: 16 / 9; height: auto;">
                     <h2 id="deal-detail-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; line-height: 1.4; color: #1b1f2a;"></h2>
                     <div style="font-size: 15px; line-height: 1.6; color: #333;">
                         <p style="margin-bottom: 15px;">ভ্রমণ এখন আরও সাশ্রয়ী! Carbook-এর মাধ্যমে আপনার আসা-যাওয়ার প্রতিটি ট্রিপে পেয়ে যান <strong style="font-weight:900;">৩০% পর্যন্ত নিশ্চিত টাকা ছাড়</strong>।</p>
@@ -947,14 +910,14 @@
                 </div>
                 <div class="scroll" style="padding: 20px; background: #fcfcfc;">
                     <div class="deal-card" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #fff; margin-bottom: 20px;">
-                        <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" style="width: 100%; height: 160px; object-fit: cover;">
+                        <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" style="width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover;">
                         <div style="padding: 15px;">
                             <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; color: #1b1f2a;">আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়।</h4>
                             <div onclick="openDealDetails(1)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; text-align: right; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                         </div>
                     </div>
                     <div class="deal-card" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #fff; margin-bottom: 20px;">
-                        <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" style="width: 100%; height: 160px; object-fit: cover;">
+                        <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" style="width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover;">
                         <div style="padding: 15px;">
                             <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; color: #1b1f2a;">কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে</h4>
                             <div onclick="openDealDetails(2)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; text-align: right; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
@@ -1677,55 +1640,7 @@
             applyLanguage(currentLang);
         }
 
-        /* ==================== MAIN SLIDER LOGIC ==================== */
-        let currentMainSlide = 0;
-        let mainSliderTrack;
-        let mainSliderDots;
-
-        function initMainSlider() {
-            mainSliderTrack = document.getElementById('main-slider-track');
-            mainSliderDots = document.querySelectorAll('.ms-dot');
-            if(!mainSliderTrack) return;
-
-            setInterval(() => {
-                currentMainSlide = (currentMainSlide + 1) % 2;
-                updateMainSlider();
-            }, 3000);
-
-            let startX = 0;
-            let isDragging = false;
-
-            mainSliderTrack.addEventListener('touchstart', e => {
-                startX = e.touches[0].clientX;
-                isDragging = true;
-            });
-            mainSliderTrack.addEventListener('touchmove', e => {
-                if(!isDragging) return;
-                let currentX = e.touches[0].clientX;
-                let diff = startX - currentX;
-                if(diff > 50) { 
-                    currentMainSlide = 1;
-                    updateMainSlider();
-                    isDragging = false;
-                } else if(diff < -50) { 
-                    currentMainSlide = 0;
-                    updateMainSlider();
-                    isDragging = false;
-                }
-            });
-            mainSliderTrack.addEventListener('touchend', () => isDragging = false);
-        }
-
-        function updateMainSlider() {
-            if(!mainSliderTrack) return;
-            mainSliderTrack.style.transform = `translateX(-${currentMainSlide * 50}%)`;
-            mainSliderDots.forEach((dot, idx) => {
-                if(idx === currentMainSlide) dot.classList.add('active');
-                else dot.classList.remove('active');
-            });
-        }
-
-        /* ==================== DEALS LOGIC ==================== */
+        /* ==================== DEALS SLIDER LOGIC ==================== */
         function openDealDetails(dealId) {
             const title = dealId === 1 ? 'আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়।' : 'কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে';
             const imgUrl = dealId === 1 ? 'https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png' : 'https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg';
@@ -2259,7 +2174,6 @@
         /* ==================== INITIALIZATION & ATTACHMENTS ==================== */
         document.addEventListener('DOMContentLoaded', () => {
             applyLanguage(currentLang);
-            initMainSlider();
 
             const hash = location.hash.replace('#', '');
             if (hash && document.getElementById('screen-' + hash)) {
