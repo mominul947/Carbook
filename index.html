@@ -169,13 +169,6 @@
             background: var(--blue-pale); display: flex; align-items: center; justify-content: center;
             color: var(--blue); font-size: 16px; cursor: pointer; transition: all 0.2s ease;
         }
-
-        .login-now-btn {
-            background: var(--blue); color: var(--white); font-weight: 800; font-size: 12px;
-            padding: 8px 14px; border-radius: 8px; cursor: pointer;
-            box-shadow: 0 4px 10px rgba(26,86,255,0.2); transition: transform 0.2s;
-        }
-        .login-now-btn:active { transform: scale(0.95); }
         
         .header-profile-avatar {
             width: 36px; height: 36px; border-radius: 50%; background: #dbe3f0;
@@ -304,17 +297,6 @@
             display: flex; 
             justify-content: center; 
             align-items: center;
-        }
-        
-        .hero-banner-text {
-            color: #ffffff; 
-            font-size: 34px; 
-            font-weight: 900; 
-            line-height: 1.2; 
-            text-align: center; 
-            margin-top: -60px;
-            -webkit-text-stroke: 1.5px #1b1f2a;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
         }
 
         .overlap-container { margin-top: -70px; position: relative; z-index: 10; }
@@ -623,7 +605,7 @@
                         </div>
                         <div class="topbar-right">
                             <div id="topbar-auth-container" style="display: flex; align-items: center; gap: 8px;">
-                                <div class="login-now-btn" onclick="showScreen('screen-login')" style="padding: 6px 12px; font-size: 12px;">Login Now</div>
+                                <!-- Login Now removed from header -->
                             </div>
                             <div class="header-dl-btn" onclick="handleDownloadAppClick()">
                                 <i class="fa-solid fa-mobile-screen"></i> <span data-lang="download_app_btn">App Download</span>
@@ -633,6 +615,11 @@
                         
                         <!-- ================= NEW DROPDOWN MENU ================= -->
                         <div class="header-dropdown" id="header-dropdown">
+                            <!-- Highlighted Login Button in dropdown -->
+                            <div class="dropdown-item" id="dropdown-login-btn" onclick="showScreen('screen-login')" style="background: var(--blue); color: #fff; border-radius: 12px; margin: 12px 22px; justify-content: center; box-shadow: 0 4px 12px rgba(26,86,255,0.25);">
+                                <span data-lang="login_now" style="font-weight: 800;">Login Now</span>
+                            </div>
+
                             <div class="dropdown-item" onclick="showScreen('screen-about')">
                                 <span data-lang="about_us">About Us</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
                             </div>
@@ -654,12 +641,8 @@
                         </div>
                     </div>
 
-                    <!-- Hero Banner -->
-                    <div class="hero-banner">
-                        <div class="hero-banner-text">
-                            Easy Book<br>Anytime Any Where
-                        </div>
-                    </div>
+                    <!-- Hero Banner (Text removed as requested) -->
+                    <div class="hero-banner"></div>
 
                     <div class="overlap-container">
                         
@@ -838,11 +821,56 @@
                     </div>
                     <!-- ======= END #HereWithYou SECTION ======= -->
                     
+                    <!-- ======= NEW SAFETY & FEATURE CARDS (SCREENSHOT STYLE) ======= -->
+                    <div class="safety-features-section" style="margin: 0 18px 10px;">
+                        <div style="display: flex; justify-content: center; margin-bottom: 24px;">
+                            <div style="display: inline-flex; align-items: center; border: 1.5px solid #10b981; border-radius: 999px; padding: 4px 14px; gap: 8px; background: #f0fdf4;">
+                                <span style="font-size: 11px; font-weight: 900; color: #065f46; letter-spacing: 0.5px;">CARBOOK</span>
+                                <i class="fa-solid fa-shield-halved" style="color: #10b981; font-size: 13px;"></i>
+                                <span style="font-size: 11px; font-weight: 900; color: #065f46; letter-spacing: 0.5px;">SAFETY</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 1 -->
+                        <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                            <h3 style="font-size: 17px; font-weight: 800; color: #1b1f2a; margin-bottom: 10px; line-height: 1.4;">
+                                নিরাপত্তা আমাদের কাছে খুবই গুরুত্বপূর্ণ
+                            </h3>
+                            <p style="font-size: 14px; color: #64748b; opacity: 0.85; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                নিরাপত্তা আমাদের কাছে শুধু একটি দায়িত্ব নয়, এটি আমাদের অঙ্গীকার। সতর্কতা, শৃঙ্খলা ও পেশাদারিত্বের মাধ্যমে আপনার নিরাপত্তা নিশ্চিত করাই আমাদের প্রধান লক্ষ্য।
+                            </p>
+                            <div onclick="openInfoDetails(1)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                                আরও দেখুন <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                            <h3 style="font-size: 17px; font-weight: 800; color: #1b1f2a; margin-bottom: 10px; line-height: 1.4;">
+                                ০% কমিশনে আমরা রেন্টাল সার্ভিস দিয়ে থাকি
+                            </h3>
+                            <p style="font-size: 14px; color: #64748b; opacity: 0.85; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                আপনার যাত্রা হোক আরও সহজ, সাশ্রয়ী ও নির্ভরযোগ্য। Carbook দিচ্ছে মাত্র ০% কমিশনে রেন্টাল সার্ভিস।
+                            </p>
+                            <div onclick="openInfoDetails(2)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                                আরও দেখুন <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ======= END NEW SAFETY & FEATURE CARDS ======= -->
+
                     <!-- ======= FEATURED NEWS SECTION ======= -->
                     <div class="news-featured-section" style="margin: 0 18px 30px;">
-                        <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a; margin-bottom: 15px; text-align: center;">We Featured by Top news Platforms</h3>
+                        <!-- Highlighted Headline with proper gap -->
+                        <div style="text-align: center; margin-top: 45px; margin-bottom: 24px;">
+                            <h3 style="font-size: 22px; font-weight: 900; color: #1b1f2a; letter-spacing: -0.3px; display: inline-block; position: relative;">
+                                We Featured by news Platforms
+                                <span style="display: block; width: 45px; height: 3px; background: var(--blue); margin: 8px auto 0; border-radius: 2px;"></span>
+                            </h3>
+                        </div>
+
                         <a href="https://www.rupalibangladesh.com/economy-business-news/corporate/164111/amp" target="_blank" style="text-decoration: none; display: block; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
-                            <img src="https://cdn.phototourl.com/member/2026-09-07-842a92a3-015e-4a72-89ab-f912473af878.jpg" alt="Featured News" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-07-842a92a3-015e-4a72-89ab-f912473af878.jpg" alt="Featured News" style="width: 100%; height: auto; object-fit: cover; display: block;">
                             <div style="padding: 15px;">
                                 <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 6px;">December 05, 2024</div>
                                 <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক: বাংলাদেশের ইন্টারসিটি ভ্রমণে স্বাধীনতার নতুন পথচলা</h4>
@@ -850,6 +878,33 @@
                         </a>
                     </div>
                     <!-- ======= END FEATURED NEWS SECTION ======= -->
+
+                    <!-- ======= BLOG SECTION ======= -->
+                    <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a; margin-bottom: 20px; text-align: center;" data-lang="blog">Blog</h3>
+                        
+                        <div class="blog-card" onclick="openBlogDetails(1)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg" style="width: 100%; height: auto; display: block;">
+                            <div style="padding: 15px;">
+                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী</h4>
+                            </div>
+                        </div>
+
+                        <div class="blog-card" onclick="openBlogDetails(2)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg" style="width: 100%; height: auto; display: block;">
+                            <div style="padding: 15px;">
+                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">Carbook – Your Trusted Car Rental Partner in Bangladesh</h4>
+                            </div>
+                        </div>
+
+                        <div class="blog-card" onclick="openBlogDetails(3)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png" style="width: 100%; height: auto; display: block;">
+                            <div style="padding: 15px;">
+                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ======= END BLOG SECTION ======= -->
 
                     <!-- ======= NEW FOOTER ======= -->
                     <div class="app-footer">
@@ -896,7 +951,7 @@
                 </div>
             </section>
 
-            <!-- ======= NEW DEDICATED SCREENS (ABOUT, SERVICES, BLOG, LEGAL) ======= -->
+            <!-- ======= NEW DEDICATED SCREENS (ABOUT, SERVICES, BLOG, LEGAL, INFO-DETAILS) ======= -->
             <section class="screen" id="screen-about">
                 <div class="back-header">
                     <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
@@ -946,10 +1001,51 @@
                     <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
                     <h1 data-lang="blog">Blog</h1>
                 </div>
-                <div class="scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f7fc; padding: 40px 20px;">
-                    <i class="fa-solid fa-newspaper" style="font-size: 56px; color: #dbe3f0; margin-bottom: 18px;"></i>
-                    <h3 style="font-weight: 900; font-size: 22px; color: #1b1f2a;">Coming Soon</h3>
-                    <p style="color: var(--gray-text); font-size: 14.5px; text-align: center; margin-top: 10px;">We are preparing awesome content and travel tips for you.</p>
+                <div class="scroll" style="padding: 20px; background: #f4f7fc;" id="blog-screen-list">
+                    <div class="blog-card" onclick="openBlogDetails(1)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                        <img src="https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg" style="width: 100%; height: auto; display: block;">
+                        <div style="padding: 15px;">
+                            <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী</h4>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" onclick="openBlogDetails(2)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                        <img src="https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg" style="width: 100%; height: auto; display: block;">
+                        <div style="padding: 15px;">
+                            <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">Carbook – Your Trusted Car Rental Partner in Bangladesh</h4>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" onclick="openBlogDetails(3)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                        <img src="https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png" style="width: 100%; height: auto; display: block;">
+                        <div style="padding: 15px;">
+                            <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="screen" id="screen-blog-details">
+                <div class="back-header">
+                    <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h1 data-lang="blog">Blog</h1>
+                </div>
+                <div class="scroll" style="padding: 20px; background: #fff;">
+                    <img id="blog-detail-img" src="" style="width: 100%; height: auto; border-radius: 16px; margin-bottom: 20px; display: block;">
+                    <h2 id="blog-detail-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; line-height: 1.4; color: #1b1f2a;"></h2>
+                    <div id="blog-detail-content" style="font-size: 15px; line-height: 1.7; color: #333;"></div>
+                </div>
+            </section>
+
+            <!-- ======= DEDICATED SAFETY/FEATURE INFO DETAILS SCREEN ======= -->
+            <section class="screen" id="screen-info-details">
+                <div class="back-header">
+                    <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h1 id="info-detail-header-title">বিস্তারিত তথ্য</h1>
+                </div>
+                <div class="scroll" style="padding: 24px 20px; background: #fff;">
+                    <h2 id="info-detail-title" style="font-size: 20px; font-weight: 900; color: #1b1f2a; margin-bottom: 18px; line-height: 1.4;"></h2>
+                    <div id="info-detail-body" style="font-size: 15px; line-height: 1.8; color: #374151;"></div>
                 </div>
             </section>
 
@@ -1343,6 +1439,7 @@
                 welcome: "Welcome",
                 home: "Home",
                 profile: "Profile",
+                login_now: "Login Now",
                 login_tagline: "Your trusted Carbooking companion<br>for city and outstation travel",
                 login_label: "Log in with Mobile Number",
                 agree_terms: "I agree to the",
@@ -1417,6 +1514,7 @@
                 welcome: "স্বাগতম",
                 home: "হোম",
                 profile: "প্রোফাইল",
+                login_now: "লগইন করুন",
                 login_tagline: "শহর এবং দূরপাল্লার যাতায়াতের বিশ্বস্ত সঙ্গী",
                 login_label: "মোবাইল নম্বর দিয়ে লগইন করুন",
                 agree_terms: "আমি সম্মত হচ্ছি",
@@ -1596,6 +1694,7 @@
 
         function updateHeaderAuth(isLoggedIn) {
             const container = document.getElementById('topbar-auth-container');
+            const dpLoginBtn = document.getElementById('dropdown-login-btn');
             
             if (isLoggedIn) {
                 if(container) {
@@ -1605,10 +1704,12 @@
                         <div class="header-profile-avatar" onclick="showScreen('screen-profile')" style="width: 32px; height: 32px; font-size: 14px;">${avatarHtml}</div>
                     `;
                 }
+                if(dpLoginBtn) dpLoginBtn.style.display = 'none';
             } else {
                 if(container) {
-                    container.innerHTML = `<div class="login-now-btn" onclick="showScreen('screen-login')" style="padding: 6px 12px; font-size: 11px;">Login Now</div>`;
+                    container.innerHTML = ``;
                 }
+                if(dpLoginBtn) dpLoginBtn.style.display = 'flex';
             }
         }
 
@@ -1647,7 +1748,6 @@
             if(dp) dp.classList.remove('active');
         }
 
-        // Close dropdown when clicked outside
         document.addEventListener('click', function(event) {
             const dropdown = document.getElementById('header-dropdown');
             const menuBtn = document.querySelector('.menu-btn');
@@ -1675,6 +1775,74 @@
             document.getElementById('deal-detail-img').src = imgUrl;
             
             showScreen('screen-deal-details');
+        }
+        
+        /* ==================== BLOG DETAILS LOGIC ==================== */
+        const blogData = {
+            1: {
+                title: 'কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী',
+                img: 'https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg',
+                content: `<p>বাংলাদেশে নিরাপদ, আরামদায়ক ও সহজে গাড়ি ভাড়া করার জন্য Carbook হতে পারে আপনার নির্ভরযোগ্য সঙ্গী। পরিবার নিয়ে ভ্রমণ, অফিসের কাজে যাতায়াত, বিমানবন্দর ট্রান্সফার কিংবা দেশের এক শহর থেকে অন্য শহরে যাওয়া—প্রতিটি যাত্রার জন্য Carbook-এর মাধ্যমে পছন্দের গাড়ি বেছে নেওয়া যায়।</p><p><strong>কেন Carbook?</strong></p><p>Carbook-এর লক্ষ্য হলো গাড়ি ভাড়ার অভিজ্ঞতাকে আরও সহজ ও ঝামেলামুক্ত করা। বিভিন্ন ধরনের গাড়ির পাশাপাশি গ্রাহকের প্রয়োজন অনুযায়ী উপযুক্ত গাড়ি বেছে নেওয়ার সুযোগ রয়েছে।</p><p><strong>Carbook-এর সুবিধা</strong></p><ul style="padding-left: 20px; margin-bottom: 15px;"><li>বিভিন্ন মডেলের গাড়ি ভাড়ার সুবিধা</li><li>ঢাকা ও দেশের বিভিন্ন রুটে সার্ভিস</li><li>পরিবার ও কর্পোরেট ভ্রমণের জন্য গাড়ি</li><li>অভিজ্ঞ ড্রাইভারসহ গাড়ি ভাড়ার সুবিধা</li><li>সহজ বুকিং প্রক্রিয়া</li><li>ভ্রমণ অনুযায়ী গাড়ি বেছে নেওয়ার সুযোগ</li></ul><h3 style="font-size: 18px; font-weight: 800; margin-bottom: 10px;">আপনার পরবর্তী যাত্রা হোক আরও সহজ</h3><p>ভ্রমণের আগে সঠিক গাড়ি নির্বাচন আপনার পুরো যাত্রাকে আরও আরামদায়ক করে তুলতে পারে। তাই আপনার প্রয়োজন অনুযায়ী গাড়ি বেছে নিয়ে Carbook-এর সঙ্গে শুরু করুন নিরাপদ ও স্বাচ্ছন্দ্যময় যাত্রা।</p>`
+            },
+            2: {
+                title: 'Carbook – Your Trusted Car Rental Partner in Bangladesh',
+                img: 'https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg',
+                content: `<p>Finding a reliable and comfortable car rental service in Bangladesh should be simple. Carbook is here to make your journey easier, safer, and more convenient.</p><p>Whether you are planning a business trip, a family tour, an airport transfer, or an intercity journey, Carbook provides convenient car rental solutions to meet your travel needs.</p><h3 style="font-size: 18px; font-weight: 800; margin-top: 15px; margin-bottom: 10px;">Comfortable Cars for Every Journey</h3><p>At Carbook, customers can choose from a variety of vehicles suitable for different types of travel. From comfortable sedans for individuals and small families to spacious vehicles for groups, we aim to provide the right car for every journey.</p><h3 style="font-size: 18px; font-weight: 800; margin-top: 15px; margin-bottom: 10px;">Travel Across Bangladesh</h3><p>Planning to travel from Dhaka to Chattogram, Sylhet, Cox’s Bazar, Rajshahi, Khulna, or another destination? Carbook makes intercity travel more convenient by connecting customers with suitable rental cars for their journeys.</p><h3 style="font-size: 18px; font-weight: 800; margin-top: 15px; margin-bottom: 10px;">Simple and Convenient Booking</h3><p>Car rental should not be complicated. Carbook focuses on making the booking process easy and convenient, allowing customers to arrange their transportation without unnecessary hassle.</p><p><strong>Why Choose Carbook?</strong></p><ul style="padding-left: 20px; margin-bottom: 15px;"><li>Reliable car rental service</li><li>Comfortable and well-maintained vehicles</li><li>Intercity travel solutions</li><li>Convenient booking process</li><li>Suitable options for families, businesses, and individuals</li><li>Travel solutions across Bangladesh</li></ul><p><strong>Your Journey, Our Responsibility</strong></p><p>Every journey is different, and Carbook understands that. Our goal is to provide a dependable transportation experience so you can focus on your destination rather than worrying about transportation.</p>`
+            },
+            3: {
+                title: 'কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে',
+                img: 'https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png',
+                content: `<p>আপনার প্রয়োজন অনুযায়ী এখন সহজেই বুক করুন পছন্দের গাড়ি।</p><p>🏙️ ঢাকা থেকে দেশের যেকোনো প্রান্তে<br>🚘 Intercity Car Rental<br>👨‍👩‍👧‍👦 Family Trip | Business Trip | Tour<br>📞 দ্রুত বুকিং ও নির্ভরযোগ্য সার্ভিস</p><p><strong>Carbook-এর সাথে যাত্রা হোক আরও সহজ, নিরাপদ ও স্বাচ্ছন্দ্যময়।</strong></p><p>✨ <strong>0% Commission</strong><br>📲 আজই বুকিং করুন!</p><p style="color: var(--blue); font-weight: 700;">#Carbook #CarRental #CarBooking #IntercityTravel #Bangladesh</p>`
+            }
+        };
+
+        function openBlogDetails(id) {
+            const data = blogData[id];
+            if(!data) return;
+            document.getElementById('blog-detail-title').innerText = data.title;
+            document.getElementById('blog-detail-img').src = data.img;
+            document.getElementById('blog-detail-content').innerHTML = data.content;
+            showScreen('screen-blog-details');
+        }
+
+        /* ==================== SAFETY / FEATURE DETAILS LOGIC ==================== */
+        const safetyInfoData = {
+            1: {
+                title: 'নিরাপত্তা আমাদের কাছে খুবই গুরুত্বপূর্ণ',
+                content: `
+                    <p style="margin-bottom: 16px;">নিরাপত্তা আমাদের কাছে শুধু একটি দায়িত্ব নয়, এটি আমাদের অঙ্গীকার।</p>
+                    <p style="margin-bottom: 16px;">সতর্কতা, শৃঙ্খলা ও পেশাদারিত্বের মাধ্যমে আপনার নিরাপত্তা নিশ্চিত করাই আমাদের প্রধান লক্ষ্য।</p>
+                    <p style="margin-bottom: 16px;">বিশ্বাস ও নিরাপত্তার সাথে আমরা সবসময় আপনার পাশে আছি।</p>
+                    <p style="margin-bottom: 20px; font-weight: 700; color: var(--blue);"><i class="fa-solid fa-circle-check"></i> আমাদের সকল ড্রাইভার ভেরিফাইড</p>
+                    <div style="height: 1px; background: #eef2f6; margin: 20px 0;"></div>
+                    <p style="font-weight: 800; color: #1b1f2a;">কার বুকের সাথে থাকার জন্য ধন্যবাদ।</p>
+                `
+            },
+            2: {
+                title: '০% কমিশনে আমরা রেন্টাল সার্ভিস দিয়ে থাকি',
+                content: `
+                    <p style="margin-bottom: 14px;">আপনার যাত্রা হোক আরও সহজ, সাশ্রয়ী ও নির্ভরযোগ্য।</p>
+                    <p style="margin-bottom: 18px;"><strong style="color: var(--blue);">Carbook</strong> দিচ্ছে মাত্র <strong style="color: var(--blue);">০% কমিশনে রেন্টাল সার্ভিস</strong>।</p>
+                    <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 20px;">
+                        <p style="margin-bottom: 10px; font-weight: 600;">✅ কোনো কমিশন নেই</p>
+                        <p style="margin-bottom: 10px; font-weight: 600;">✅ দ্রুত বুকিং প্রসেস</p>
+                        <p style="margin-bottom: 10px; font-weight: 600;">✅ বিভিন্ন ধরনের গাড়ির সুবিধা</p>
+                        <p style="margin-bottom: 10px; font-weight: 600;">✅ আন্তঃজেলা ও বিভিন্ন রুটে রেন্টাল সার্ভিস</p>
+                        <p style="margin-bottom: 0; font-weight: 600;">✅ সহজ ও নির্ভরযোগ্য বুকিং</p>
+                    </div>
+                    <p style="font-weight: 800; font-size: 16px; margin-bottom: 16px; color: #1b1f2a;">গাড়ি ভাড়া এখন আরও সহজ — Carbook-এর সাথে। 🚘</p>
+                    <p style="margin-bottom: 12px; font-weight: 700; color: #10b981;">📞 আজই বুকিং করুন!</p>
+                    <p style="font-weight: 900; color: var(--blue); font-size: 16px;">Carbook — Your Journey, Our Responsibility</p>
+                `
+            }
+        };
+
+        function openInfoDetails(id) {
+            const data = safetyInfoData[id];
+            if(!data) return;
+            document.getElementById('info-detail-title').innerText = data.title;
+            document.getElementById('info-detail-body').innerHTML = data.content;
+            showScreen('screen-info-details');
         }
 
         /* ==================== NOTIFICATIONS & MODALS ==================== */
