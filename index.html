@@ -60,7 +60,6 @@
             font-size: 16px;
         }
 
-        /* ডেস্কটপে যেন কালো না থাকে এবং সুন্দর লাগে */
         html, body {
             height: 100%;
             background: #f4f7fc; 
@@ -69,10 +68,10 @@
             overflow: hidden;
         }
 
-        /* ---------- Phone frame (Responsive & PC friendly) ---------- */
+        /* ---------- Phone frame ---------- */
         .phone {
             width: 100%;
-            max-width: 800px; /* ডেস্কটপের জন্য মানানসই সাইজ */
+            max-width: 800px;
             margin: 0 auto;
             height: 100vh;
             height: 100dvh;
@@ -84,15 +83,9 @@
             box-shadow: 0 0 30px rgba(0,0,0,0.06);
         }
 
-        /* Mobile specific full-width fix */
         @media (max-width: 800px) {
-            html, body {
-                background: var(--white);
-            }
-            .phone {
-                max-width: 100%;
-                box-shadow: none;
-            }
+            html, body { background: var(--white); }
+            .phone { max-width: 100%; box-shadow: none; }
         }
 
         .app-body {
@@ -128,76 +121,20 @@
             background: #fcfcfc;
         }
 
-        .scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* ---------- Sidebar Styles ---------- */
-        .sidebar-overlay {
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.5); z-index: 2000;
-            display: none; opacity: 0; transition: opacity 0.3s;
-        }
-        
-        .sidebar-overlay.active { display: block; opacity: 1; }
-        
-        .sidebar {
-            position: absolute; top: 0; left: 0; bottom: 0; width: 260px;
-            background: #fff; z-index: 2001;
-            transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            display: flex; flex-direction: column;
-            box-shadow: 2px 0 15px rgba(0,0,0,0.15);
-        }
-        
-        .sidebar.active { transform: translateX(0); }
-        
-        .sidebar-header {
-            padding: 40px 20px 30px; background: var(--blue); color: #fff;
-            display: flex; flex-direction: column; gap: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .sidebar-header img {
-            width: 60px; height: 60px; border-radius: 50%; object-fit: cover;
-            background: var(--blue-light); border: 2px solid #fff;
-        }
-
-        .sidebar-header .user-info { font-size: 18px; font-weight: 800; line-height: 1.2; }
-        .sidebar-nav { flex: 1; padding: 20px 0; overflow-y: auto; }
-        
-        .sidebar-item {
-            padding: 16px 24px; display: flex; align-items: center; gap: 16px;
-            font-size: 15.5px; font-weight: 700; color: var(--dark-text);
-            cursor: pointer; transition: background 0.2s;
-        }
-        
-        .sidebar-item:hover, .sidebar-item.active {
-            background: var(--blue-pale); color: var(--blue);
-            border-right: 4px solid var(--blue);
-        }
-        
-        .sidebar-item i { font-size: 20px; width: 24px; text-align: center; color: var(--gray-text); }
-        .sidebar-item.active i { color: var(--blue); }
-
-        .menu-btn {
-            background: transparent; border: none; color: inherit;
-            font-size: 26px; cursor: pointer; display: flex; align-items: center; justify-content: center;
-            transition: opacity 0.2s; padding: 0;
-        }
-        .menu-btn:active { opacity: 0.7; }
+        .scroll::-webkit-scrollbar { display: none; }
 
         /* ---------- Top app header ---------- */
         .topbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 18px;
+            padding: 14px 18px;
             flex-shrink: 0;
             background: #ffffff;
             border-bottom: 1px solid #f0f3f8;
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
             position: relative;
-            z-index: 20;
+            z-index: 50;
         }
 
         .brand {
@@ -209,33 +146,99 @@
             color: #000;
         }
 
-        .topbar-right { display: flex; align-items: center; gap: 12px; }
+        .topbar-right { display: flex; align-items: center; gap: 10px; }
+
+        .header-dl-btn {
+            background: #f4f7fc;
+            color: var(--blue);
+            font-weight: 800;
+            font-size: 12px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid #e1e8f5;
+            transition: all 0.2s ease;
+        }
+        .header-dl-btn:active { transform: scale(0.95); }
 
         .bell-btn {
-            width: 42px; height: 42px; border-radius: 50%;
+            width: 36px; height: 36px; border-radius: 50%;
             background: var(--blue-pale); display: flex; align-items: center; justify-content: center;
-            color: var(--blue); font-size: 18px; cursor: pointer; transition: all 0.2s ease;
+            color: var(--blue); font-size: 16px; cursor: pointer; transition: all 0.2s ease;
         }
 
         .login-now-btn {
-            background: var(--blue); color: var(--white); font-weight: 800; font-size: 13px;
-            padding: 8px 16px; border-radius: 999px; cursor: pointer;
+            background: var(--blue); color: var(--white); font-weight: 800; font-size: 12px;
+            padding: 8px 14px; border-radius: 8px; cursor: pointer;
             box-shadow: 0 4px 10px rgba(26,86,255,0.2); transition: transform 0.2s;
         }
         .login-now-btn:active { transform: scale(0.95); }
         
         .header-profile-avatar {
-            width: 42px; height: 42px; border-radius: 50%; background: #dbe3f0;
+            width: 36px; height: 36px; border-radius: 50%; background: #dbe3f0;
             border: 2px solid #fff; display: flex; align-items: center; justify-content: center;
-            font-size: 16px; color: #9aa6bd; overflow: hidden; cursor: pointer;
+            font-size: 14px; color: #9aa6bd; overflow: hidden; cursor: pointer;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .header-profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+        .menu-btn {
+            background: transparent; border: none; color: inherit;
+            font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            transition: opacity 0.2s; padding: 4px; margin-left: 2px;
+        }
+        .menu-btn:active { opacity: 0.7; }
+
+        /* ---------- Header Dropdown Menu ---------- */
+        .header-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
+            opacity: 0;
+            z-index: 1000;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+        .header-dropdown.active {
+            max-height: 500px;
+            opacity: 1;
+            border-top: 1px solid #f0f3f8;
+        }
+        .dropdown-item {
+            padding: 16px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1b1f2a;
+            border-bottom: 1px solid #f4f6fa;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        .dropdown-item:active {
+            background: #f4f7fc;
+        }
 
         /* ---------- Back header ---------- */
         .back-header {
             display: flex; align-items: center; gap: 14px;
             padding: 14px 18px 10px; flex-shrink: 0; background: #fff;
+            border-bottom: 1px solid #f0f3f8;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            z-index: 10;
         }
 
         .back-header .back-btn {
@@ -243,7 +246,7 @@
             justify-content: center; color: var(--dark-text); font-size: 18px;
             background: transparent; border: none; cursor: pointer;
         }
-        .back-header h1 { font-size: 20px; font-weight: 700; }
+        .back-header h1 { font-size: 18px; font-weight: 800; }
 
         /* ---------- Buttons ---------- */
         .btn-primary {
@@ -310,7 +313,6 @@
             line-height: 1.2; 
             text-align: center; 
             margin-top: -60px;
-            /* সাদা কালার তবে সাইট দিয়ে ব্ল্যাক লাইন */
             -webkit-text-stroke: 1.5px #1b1f2a;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
         }
@@ -400,7 +402,6 @@
             flex-direction: column;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
-        /* ডেস্কটপে যেন না কাটে তার জন্য aspect-ratio ব্যবহার করা হয়েছে */
         .deal-slide img { 
             width: 100%; 
             height: auto; 
@@ -409,7 +410,7 @@
             display: block; 
         }
 
-        /* ---------- #HereWithYou Section CSS (5-Image Grid) ---------- */
+        /* ---------- #HereWithYou Section CSS ---------- */
         .here-with-you-section {
             margin: 0 18px 30px;
             text-align: center;
@@ -446,7 +447,6 @@
             object-fit: cover;
             display: block;
         }
-        /* Grid Structure with aspect-ratio to prevent desktop squashing */
         .hwy-item-top { grid-column: span 1; aspect-ratio: 4 / 3; height: auto; }
         .hwy-item-mid { grid-column: span 2; aspect-ratio: 21 / 9; height: auto; }
         .hwy-item-bottom { grid-column: span 1; aspect-ratio: 4 / 3; height: auto; }
@@ -508,21 +508,6 @@
 
     <div class="phone" id="phone-frame">
 
-        <div id="sidebar-overlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
-        <div id="sidebar" class="sidebar">
-            <div class="sidebar-header">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <img id="sidebar-avatar" src="https://cdn.phototourl.com/free/2026-08-29-a4216c1b-3015-40ec-b85e-bc2e3375440d.png" style="background:#fff; object-fit: contain; border-radius: 8px;">
-                    <div class="user-info">
-                        <div id="sidebar-username">Guest User</div>
-                        <div style="font-size: 12px; font-weight: 500; opacity: 0.8; margin-top: 2px;" id="sidebar-phone">Please Login</div>
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar-nav" id="sidebar-nav-container">
-            </div>
-        </div>
-
         <div class="app-body">
 
             <section class="screen" id="screen-login">
@@ -547,7 +532,7 @@
                             <div class="terms-checkbox-group" style="margin-bottom:20px; display:flex; gap:10px;">
                                 <input id="terms-checkbox" type="checkbox">
                                 <div class="terms-text" style="font-size:14px; color:var(--dark-text);">
-                                    <span data-lang="agree_terms">I agree to the</span> <a onclick="openInfoModal('Terms & Conditions', 'terms')"
+                                    <span data-lang="agree_terms">I agree to the</span> <a onclick="openLegalScreen('Terms & Conditions', 'terms')"
                                         style="color:var(--blue); font-weight:600; text-decoration:none; cursor:pointer;" data-lang="terms_conditions">Terms & Conditions</a>
                                 </div>
                             </div>
@@ -632,13 +617,40 @@
 
                     <div class="topbar">
                         <div style="display: flex; align-items: center; gap: 14px;">
-                            <button class="menu-btn" style="color: #1b1f2a;" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></button>
                             <div class="brand" style="flex-direction: column; align-items: flex-start; gap: 0;">
                                 <span style="font-size: 22px; font-weight: 900; color: #000;" id="home-username-header">Carbook</span>
                             </div>
                         </div>
-                        <div class="topbar-right" id="topbar-right-container">
-                            <div class="login-now-btn" onclick="showScreen('screen-login')">Login Now</div>
+                        <div class="topbar-right">
+                            <div id="topbar-auth-container" style="display: flex; align-items: center; gap: 8px;">
+                                <div class="login-now-btn" onclick="showScreen('screen-login')" style="padding: 6px 12px; font-size: 12px;">Login Now</div>
+                            </div>
+                            <div class="header-dl-btn" onclick="handleDownloadAppClick()">
+                                <i class="fa-solid fa-mobile-screen"></i> <span data-lang="download_app_btn">App Download</span>
+                            </div>
+                            <button class="menu-btn" style="color: #1b1f2a;" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
+                        </div>
+                        
+                        <!-- ================= NEW DROPDOWN MENU ================= -->
+                        <div class="header-dropdown" id="header-dropdown">
+                            <div class="dropdown-item" onclick="showScreen('screen-about')">
+                                <span data-lang="about_us">About Us</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
+                            </div>
+                            <div class="dropdown-item" onclick="showScreen('screen-services')">
+                                <span data-lang="services">Services</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
+                            </div>
+                            <div class="dropdown-item" onclick="showScreen('screen-blog')">
+                                <span data-lang="blog">Blog</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
+                            </div>
+                            <div class="dropdown-item" onclick="showScreen('screen-help')">
+                                <span data-lang="contacts">Contact Us</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
+                            </div>
+                            <div class="dropdown-item" onclick="openLegalScreen('Terms & Conditions', 'terms')">
+                                <span data-lang="terms_conditions">Terms & Conditions</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
+                            </div>
+                            <div class="dropdown-item" onclick="openLegalScreen('Privacy Policy', 'privacy')">
+                                <span data-lang="privacy_policy">Privacy Policy</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
+                            </div>
                         </div>
                     </div>
 
@@ -777,14 +789,13 @@
                         </div>
                     </div>
 
-                    <!-- ======= Exclusive Deals SECTION (Scrollable Cards) ======= -->
+                    <!-- ======= Exclusive Deals SECTION ======= -->
                     <div class="exclusive-deals-section">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                             <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a;">Exclusive Deals</h3>
                             <span onclick="showScreen('screen-all-deals')" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer;">See All <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                         <div class="deals-slider-track" id="deals-slider-track">
-                            
                             <div class="deal-slide">
                                 <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" alt="Deal 1">
                                 <div style="padding: 15px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
@@ -792,7 +803,6 @@
                                     <div onclick="openDealDetails(1)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                                 </div>
                             </div>
-
                             <div class="deal-slide">
                                 <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" alt="Deal 2">
                                 <div style="padding: 15px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
@@ -800,7 +810,6 @@
                                     <div onclick="openDealDetails(2)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <!-- ======= END Exclusive Deals SECTION ======= -->
@@ -809,44 +818,51 @@
                     <div class="here-with-you-section">
                         <h2>আপনার দৈনন্দিন পথ চলায়</h2>
                         <h1>#HereWithYou!</h1>
-                        
                         <div class="hwy-grid">
-                            <!-- Top Left -->
                             <div class="hwy-item hwy-item-top">
                                 <img src="https://cdn.phototourl.com/member/2026-09-06-a1fa25a7-8485-4ae2-be15-474ba23b22eb.png" alt="Here With You 1">
                             </div>
-                            <!-- Top Right -->
                             <div class="hwy-item hwy-item-top">
                                 <img src="https://cdn.phototourl.com/member/2026-09-06-6ec5ca81-9c3d-4acb-9e77-a3095acf8f54.jpg" alt="Here With You 2">
                             </div>
-                            <!-- Middle Full Width -->
                             <div class="hwy-item hwy-item-mid">
                                 <img src="https://cdn.phototourl.com/member/2026-09-06-1ebe1a8d-a657-4293-99cf-778fe2a4f97f.jpg" alt="Here With You 3">
                             </div>
-                            <!-- Bottom Left -->
                             <div class="hwy-item hwy-item-bottom">
                                 <img src="https://cdn.phototourl.com/member/2026-09-06-444eaa25-4f39-4eba-9972-5b0196c54279.jpg" alt="Here With You 4">
                             </div>
-                            <!-- Bottom Right -->
                             <div class="hwy-item hwy-item-bottom">
                                 <img src="https://cdn.phototourl.com/member/2026-09-06-e5355faf-eb64-4b48-b655-73990cb9f603.jpg" alt="Here With You 5">
                             </div>
                         </div>
                     </div>
                     <!-- ======= END #HereWithYou SECTION ======= -->
+                    
+                    <!-- ======= FEATURED NEWS SECTION ======= -->
+                    <div class="news-featured-section" style="margin: 0 18px 30px;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a; margin-bottom: 15px; text-align: center;">We Featured by Top news Platforms</h3>
+                        <a href="https://www.rupalibangladesh.com/economy-business-news/corporate/164111/amp" target="_blank" style="text-decoration: none; display: block; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                            <img src="https://cdn.phototourl.com/member/2026-09-07-842a92a3-015e-4a72-89ab-f912473af878.jpg" alt="Featured News" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block;">
+                            <div style="padding: 15px;">
+                                <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 6px;">December 05, 2024</div>
+                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক: বাংলাদেশের ইন্টারসিটি ভ্রমণে স্বাধীনতার নতুন পথচলা</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- ======= END FEATURED NEWS SECTION ======= -->
 
                     <!-- ======= NEW FOOTER ======= -->
                     <div class="app-footer">
                         <div style="margin-bottom: 25px;">
                             <h3 style="color: var(--blue); font-weight: 800; font-size: 18px; margin-bottom: 12px;" data-lang="download_app">Download the new Carbook App!</h3>
                             <div style="display: flex; justify-content: center; gap: 10px;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" style="height: 40px; cursor: pointer;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" style="height: 40px; cursor: pointer;">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" style="height: 40px; cursor: pointer;" onclick="handleDownloadAppClick()">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" style="height: 40px; cursor: pointer;" onclick="handleDownloadAppClick()">
                             </div>
                         </div>
 
                         <div style="text-align: left; border-top: 1px solid #f0f3f8; border-bottom: 1px solid #f0f3f8; margin-bottom: 20px;">
-                            <div class="footer-link-row" onclick="openAboutUsModal()">
+                            <div class="footer-link-row" onclick="showScreen('screen-about')">
                                 <span data-lang="about_us">About us</span> <i class="fa-solid fa-chevron-right" style="color: #8a93a6;"></i>
                             </div>
                             <div class="footer-link-row" onclick="showScreen('screen-help')">
@@ -868,9 +884,9 @@
                         </div>
 
                         <div style="font-size: 13px; color: #8a93a6; font-weight: 600; margin-bottom: 12px;">
-                            <span style="cursor: pointer;" onclick="openInfoModal('FAQ', 'faq')" data-lang="faq">FAQ</span> &nbsp;|&nbsp; 
-                            <span style="cursor: pointer;" onclick="openInfoModal('Privacy Policy', 'privacy')" data-lang="privacy_policy">Privacy policy</span> &nbsp;|&nbsp; 
-                            <span style="cursor: pointer;" onclick="openInfoModal('Terms of use', 'terms')" data-lang="terms_of_use">Terms of use</span>
+                            <span style="cursor: pointer;" onclick="openLegalScreen('FAQ', 'faq')" data-lang="faq">FAQ</span> &nbsp;|&nbsp; 
+                            <span style="cursor: pointer;" onclick="openLegalScreen('Privacy Policy', 'privacy')" data-lang="privacy_policy">Privacy policy</span> &nbsp;|&nbsp; 
+                            <span style="cursor: pointer;" onclick="openLegalScreen('Terms of use', 'terms')" data-lang="terms_of_use">Terms of use</span>
                         </div>
                         <div style="font-size: 13px; color: #8a93a6; font-weight: 500;" data-lang="all_rights">
                             &copy; carbookbd.com 2026 All rights reserved.
@@ -880,7 +896,73 @@
                 </div>
             </section>
 
-            <!-- ======= NEW SCREENS FOR DEALS ======= -->
+            <!-- ======= NEW DEDICATED SCREENS (ABOUT, SERVICES, BLOG, LEGAL) ======= -->
+            <section class="screen" id="screen-about">
+                <div class="back-header">
+                    <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h1 data-lang="about_us">About Us</h1>
+                </div>
+                <div class="scroll" style="padding: 24px 20px; font-size: 15px; color: #1b1f2a; line-height: 1.8; background: #fff;">
+                    <h3 style="color: var(--blue); margin-bottom: 14px; font-weight: 800; font-size: 22px;">Welcome to Carbook</h3>
+                    <p style="margin-bottom: 15px;">Carbook is your trusted travel companion for city and outstation journeys. We provide an easy, affordable, and seamless ride-booking experience right from your phone.</p>
+                    <p style="margin-bottom: 18px;">Whether you need a quick one-way drop, a round-trip for a family vacation, or an hourly rental for business meetings, we have a wide range of premium vehicles to suit your needs.</p>
+                    <p style="font-weight: 800; margin-bottom: 10px; font-size: 18px;">Why Choose Us?</p>
+                    <ul style="padding-left: 20px; margin-bottom: 24px; color: #333;">
+                        <li style="margin-bottom: 6px;">Verified and Professional Drivers</li>
+                        <li style="margin-bottom: 6px;">Transparent Pricing (Bidding System)</li>
+                        <li style="margin-bottom: 6px;">Safe and Secure Travel</li>
+                        <li style="margin-bottom: 6px;">24/7 Customer Support</li>
+                    </ul>
+                    <p style="font-weight: 600;">Join thousands of happy travelers who trust Carbook for their daily commute and intercity travels.</p>
+                </div>
+            </section>
+
+            <section class="screen" id="screen-services">
+                <div class="back-header">
+                    <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h1 data-lang="services">Services</h1>
+                </div>
+                <div class="scroll" style="padding: 20px; background: #f4f7fc;">
+                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
+                        <i class="fa-solid fa-arrow-right-long" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
+                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">One Way Trip</h3>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Book a reliable ride for a direct drop to your destination anywhere in the city.</p>
+                    </div>
+                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
+                        <i class="fa-solid fa-arrows-rotate" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
+                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Round Trip</h3>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Planning a day out? Book a return trip and travel stress-free.</p>
+                    </div>
+                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
+                        <i class="fa-solid fa-clock" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
+                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Hourly Rental</h3>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Hire a car and driver by the hour for business meetings or multiple stops.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="screen" id="screen-blog">
+                <div class="back-header">
+                    <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h1 data-lang="blog">Blog</h1>
+                </div>
+                <div class="scroll" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f7fc; padding: 40px 20px;">
+                    <i class="fa-solid fa-newspaper" style="font-size: 56px; color: #dbe3f0; margin-bottom: 18px;"></i>
+                    <h3 style="font-weight: 900; font-size: 22px; color: #1b1f2a;">Coming Soon</h3>
+                    <p style="color: var(--gray-text); font-size: 14.5px; text-align: center; margin-top: 10px;">We are preparing awesome content and travel tips for you.</p>
+                </div>
+            </section>
+
+            <section class="screen" id="screen-legal">
+                <div class="back-header">
+                    <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h1 id="legal-screen-title">Info</h1>
+                </div>
+                <div class="scroll" id="legal-screen-body" style="padding: 24px 20px; background: #fff; font-size: 14.5px; line-height: 1.7; color: var(--dark-text); white-space: pre-wrap; word-wrap: break-word;">
+                </div>
+            </section>
+            <!-- ======= END NEW DEDICATED SCREENS ======= -->
+
             <section class="screen" id="screen-deal-details">
                 <div class="back-header">
                     <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
@@ -925,7 +1007,6 @@
                     </div>
                 </div>
             </section>
-            <!-- ======= END NEW SCREENS ======= -->
 
             <section class="screen" id="screen-summary">
                 <div class="back-header">
@@ -974,7 +1055,7 @@
             <section class="screen" id="screen-mytrip">
                 <div class="scroll" style="display:flex;flex-direction:column;flex:1;">
                     <div style="position: relative; padding-top: 16px; text-align: center;">
-                        <button class="menu-btn" style="position: absolute; left: 18px; top: 16px; color: var(--dark-text);" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></button>
+                        <button class="back-btn" style="position: absolute; left: 18px; top: 16px; color: var(--dark-text); background: transparent; border: none; font-size: 20px; cursor: pointer;" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
                         <div class="offer-title" style="padding-top:0; font-size: 20px; font-weight: 800;" data-lang="my_trip">My Trip</div>
                     </div>
                     <div class="tabs-row" style="display: flex; margin: 16px 18px; background: #fff; border-radius: 12px; padding: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
@@ -996,7 +1077,7 @@
             <section class="screen" id="screen-offers">
                 <div class="scroll" style="display:flex;flex-direction:column;flex:1;">
                     <div style="position: relative; padding-top: 16px; text-align: center;">
-                        <button class="menu-btn" style="position: absolute; left: 18px; top: 16px; color: var(--dark-text);" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></button>
+                        <button class="back-btn" style="position: absolute; left: 18px; top: 16px; color: var(--dark-text); background: transparent; border: none; font-size: 20px; cursor: pointer;" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
                         <div class="offer-title" style="padding-top:0; font-size: 20px; font-weight: 800;" data-lang="offers">Offers</div>
                     </div>
                     <div class="empty-state" id="offers-empty" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center;">
@@ -1011,7 +1092,7 @@
             <section class="screen" id="screen-profile">
                 <div class="scroll">
                     <div class="profile-cover">
-                        <button class="menu-btn" style="position: absolute; left: 18px; top: 22px; color: #fff;" onclick="openSidebar()"><i class="fa-solid fa-bars"></i></button>
+                        <button class="back-btn" style="position: absolute; left: 18px; top: 22px; color: #fff; background: transparent; border: none; font-size: 24px; cursor: pointer;" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
                     </div>
 
                     <div class="profile-avatar-wrap">
@@ -1051,15 +1132,15 @@
                             <i class="fa-regular fa-circle-question leading"></i> <span data-lang="help">Help</span>
                             <span class="trailing"><i class="fa-solid fa-chevron-right"></i></span>
                         </div>
-                        <div class="list-row" onclick="openInfoModal('Terms & Conditions', 'terms')">
+                        <div class="list-row" onclick="openLegalScreen('Terms & Conditions', 'terms')">
                             <i class="fa-solid fa-file-invoice leading"></i> <span data-lang="terms_conditions">Terms & Conditions</span>
                             <span class="trailing"><i class="fa-solid fa-chevron-right"></i></span>
                         </div>
-                        <div class="list-row" onclick="openInfoModal('Trip Terms and Conditions', 'trip_terms')">
+                        <div class="list-row" onclick="openLegalScreen('Trip Terms and Conditions', 'trip_terms')">
                             <i class="fa-solid fa-car-side leading"></i> <span data-lang="trip_terms">Trip Terms and Conditions</span>
                             <span class="trailing"><i class="fa-solid fa-chevron-right"></i></span>
                         </div>
-                        <div class="list-row" onclick="openInfoModal('Privacy Policy', 'privacy')">
+                        <div class="list-row" onclick="openLegalScreen('Privacy Policy', 'privacy')">
                             <i class="fa-solid fa-shield-halved leading"></i> <span data-lang="privacy_policy">Privacy Policy</span>
                             <span class="trailing"><i class="fa-solid fa-chevron-right"></i></span>
                         </div>
@@ -1074,7 +1155,7 @@
 
             <section class="screen" id="screen-help">
                 <div class="back-header" style="background: transparent; position: absolute; z-index: 10;">
-                    <button class="back-btn" data-back="screen-profile" onclick="goBackRouter()" style="color: #fff;"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="back-btn" data-back="screen-home" onclick="goBackRouter()" style="color: #fff;"><i class="fa-solid fa-arrow-left"></i></button>
                 </div>
                 <div class="scroll" style="background: #f4f6fa;">
                     <div class="help-hero">
@@ -1213,38 +1294,6 @@
                 </div>
             </div>
 
-            <div id="info-modal" class="modal-overlay">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 id="info-modal-title">Info</h2>
-                        <button onclick="closeInfoModal()" class="modal-close-btn"><i class="fa-solid fa-times"></i></button>
-                    </div>
-                    <div id="info-modal-body" class="modal-body" style="white-space: pre-wrap; word-wrap: break-word;"></div>
-                </div>
-            </div>
-
-            <div id="about-us-modal" class="modal-overlay">
-                <div class="modal-content" style="height: 80vh;">
-                    <div class="modal-header">
-                        <h2 data-lang="about_us">About Us</h2>
-                        <button onclick="closeAboutUsModal()" class="modal-close-btn"><i class="fa-solid fa-times"></i></button>
-                    </div>
-                    <div class="modal-body" style="padding: 20px 18px; font-size: 15px; color: #1b1f2a; line-height: 1.8;">
-                        <h3 style="color: var(--blue); margin-bottom: 12px; font-weight: 800;">Welcome to Carbook</h3>
-                        <p style="margin-bottom: 15px;">Carbook is your trusted travel companion for city and outstation journeys. We provide an easy, affordable, and seamless ride-booking experience right from your phone.</p>
-                        <p style="margin-bottom: 15px;">Whether you need a quick one-way drop, a round-trip for a family vacation, or an hourly rental for business meetings, we have a wide range of premium vehicles to suit your needs.</p>
-                        <p style="font-weight: 700; margin-bottom: 5px;">Why Choose Us?</p>
-                        <ul style="padding-left: 20px; margin-bottom: 20px;">
-                            <li>Verified and Professional Drivers</li>
-                            <li>Transparent Pricing (Bidding System)</li>
-                            <li>Safe and Secure Travel</li>
-                            <li>24/7 Customer Support</li>
-                        </ul>
-                        <p>Join thousands of happy travelers who trust Carbook for their daily commute and intercity travels.</p>
-                    </div>
-                </div>
-            </div>
-
             <div id="fullscreen-map-modal" class="modal-overlay">
                 <div class="modal-content" style="height: 92vh;">
                     <div class="modal-header">
@@ -1351,8 +1400,11 @@
                 email: "Email",
                 update_profile: "Update Profile",
                 download_app: "Download the new Carbook App!",
+                download_app_btn: "App Download",
                 about_us: "About us",
-                contacts: "Contacts",
+                contacts: "Contact Us",
+                services: "Services",
+                blog: "Blog",
                 carbook_maps: "Carbook maps",
                 faq: "FAQ",
                 terms_of_use: "Terms of use",
@@ -1422,8 +1474,11 @@
                 email: "ইমেইল",
                 update_profile: "প্রোফাইল আপডেট করুন",
                 download_app: "নতুন কারবুক অ্যাপ ডাউনলোড করুন!",
+                download_app_btn: "অ্যাপ ডাউনলোড",
                 about_us: "আমাদের সম্পর্কে",
                 contacts: "যোগাযোগ",
+                services: "সার্ভিসসমূহ",
+                blog: "ব্লগ",
                 carbook_maps: "কারবুক ম্যাপস",
                 faq: "সাধারণ জিজ্ঞাসা",
                 terms_of_use: "ব্যবহারের শর্তাবলী",
@@ -1488,7 +1543,6 @@
             return p;
         }
 
-        // আলাদা আলাদা পেজের জন্য Hash URL Routing
         function showScreen(id, pushToHistory = true) {
             if ((id === 'screen-mytrip' || id === 'screen-profile') && !state.phone) {
                 toast(currentLang === 'bn' ? 'অনুগ্রহ করে লগইন করুন' : 'Please login first');
@@ -1500,11 +1554,7 @@
             const target = document.getElementById(id);
             if (target) target.classList.add('active');
             
-            closeSidebar();
-            
-            if (['screen-home', 'screen-mytrip', 'screen-offers', 'screen-profile'].includes(id)) {
-                highlightSidebarNav(id);
-            }
+            closeDropdown();
 
             if (pushToHistory) {
                 const hashValue = id.replace('screen-', '');
@@ -1545,26 +1595,20 @@
         }
 
         function updateHeaderAuth(isLoggedIn) {
-            const container = document.getElementById('topbar-right-container');
+            const container = document.getElementById('topbar-auth-container');
             
             if (isLoggedIn) {
                 if(container) {
                     let avatarHtml = state.photoURL ? `<img src="${state.photoURL}">` : `<i class="fa-solid fa-user"></i>`;
                     container.innerHTML = `
-                        <div class="bell-btn" onclick="openNotificationsModal()"><i class="fa-regular fa-bell"></i></div>
-                        <div class="header-profile-avatar" onclick="showScreen('screen-profile')">${avatarHtml}</div>
+                        <div class="bell-btn" onclick="openNotificationsModal()" style="width: 32px; height: 32px; font-size: 14px;"><i class="fa-regular fa-bell"></i></div>
+                        <div class="header-profile-avatar" onclick="showScreen('screen-profile')" style="width: 32px; height: 32px; font-size: 14px;">${avatarHtml}</div>
                     `;
                 }
-                const fullName = state.firstName || 'User';
-                if ($('#sidebar-username')) $('#sidebar-username').textContent = fullName;
-                if ($('#sidebar-phone')) $('#sidebar-phone').textContent = state.phone;
-                if ($('#sidebar-avatar')) $('#sidebar-avatar').src = state.photoURL || 'https://cdn.phototourl.com/free/2026-08-29-a4216c1b-3015-40ec-b85e-bc2e3375440d.png';
             } else {
                 if(container) {
-                    container.innerHTML = `<div class="login-now-btn" onclick="showScreen('screen-login')">Login Now</div>`;
+                    container.innerHTML = `<div class="login-now-btn" onclick="showScreen('screen-login')" style="padding: 6px 12px; font-size: 11px;">Login Now</div>`;
                 }
-                if ($('#sidebar-username')) $('#sidebar-username').textContent = 'Guest User';
-                if ($('#sidebar-phone')) $('#sidebar-phone').textContent = 'Please Login';
             }
         }
 
@@ -1593,51 +1637,33 @@
             }
         }
 
-        /* ==================== SIDEBAR LOGIC ==================== */
-        const NAV_ITEMS = [
-            { key: 'home', label: 'Home', icon: 'fa-house', screen: 'screen-home' },
-            { key: 'mytrip', label: 'My Trip', icon: 'fa-car', screen: 'screen-mytrip' },
-            { key: 'offers', label: 'Offers', icon: 'fa-solid fa-percent', screen: 'screen-offers' },
-            { key: 'profile', label: 'Profile', icon: 'fa-regular fa-user', screen: 'screen-profile' }
-        ];
-
-        function openSidebar() {
-            const overlay = document.getElementById('sidebar-overlay');
-            overlay.style.display = 'block';
-            setTimeout(() => { overlay.style.opacity = '1'; }, 10);
-            document.getElementById('sidebar').classList.add('active');
-        }
-        
-        function closeSidebar() {
-            document.getElementById('sidebar').classList.remove('active');
-            const overlay = document.getElementById('sidebar-overlay');
-            overlay.style.opacity = '0';
-            setTimeout(() => { overlay.style.display = 'none'; }, 300);
+        /* ==================== DROPDOWN MENU LOGIC ==================== */
+        function toggleDropdown() {
+            document.getElementById('header-dropdown').classList.toggle('active');
         }
 
-        function highlightSidebarNav(screenId) {
-            const map = { 'screen-home': 'home', 'screen-mytrip': 'mytrip', 'screen-offers': 'offers', 'screen-profile': 'profile' };
-            buildSidebar(map[screenId]);
+        function closeDropdown() {
+            const dp = document.getElementById('header-dropdown');
+            if(dp) dp.classList.remove('active');
         }
 
-        function buildSidebar(activeKey) {
-            const container = document.getElementById('sidebar-nav-container');
-            if (!container) return;
-            container.innerHTML = '';
-            
-            NAV_ITEMS.forEach(item => {
-                const el = document.createElement('div');
-                el.className = 'sidebar-item' + (item.key === activeKey ? ' active' : '');
-                let langKey = item.label.toLowerCase().replace(' ', '_');
-                
-                el.innerHTML = `<i class="fa-solid ${item.icon}"></i><span data-lang="${langKey}">${item.label}</span>`;
-                el.addEventListener('click', () => {
-                    showScreen(item.screen);
-                });
-                container.appendChild(el);
-            });
-            
-            applyLanguage(currentLang);
+        // Close dropdown when clicked outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('header-dropdown');
+            const menuBtn = document.querySelector('.menu-btn');
+            if (dropdown && dropdown.classList.contains('active')) {
+                if (!dropdown.contains(event.target) && !menuBtn.contains(event.target)) {
+                    closeDropdown();
+                }
+            }
+        });
+
+        function handleDownloadAppClick() {
+            closeDropdown();
+            toast(currentLang === 'bn' ? 'অ্যাপ ডাউনলোড করতে রিডাইরেক্ট করা হচ্ছে...' : 'Redirecting to download app...');
+            setTimeout(() => {
+                window.open('https://play.google.com/store', '_blank');
+            }, 800);
         }
 
         /* ==================== DEALS SLIDER LOGIC ==================== */
@@ -1658,12 +1684,6 @@
         }
         function closeNotificationsModal() {
             document.getElementById('notifications-modal').classList.remove('active');
-        }
-        function openAboutUsModal() {
-            document.getElementById('about-us-modal').classList.add('active');
-        }
-        function closeAboutUsModal() {
-            document.getElementById('about-us-modal').classList.remove('active');
         }
 
         let bdOnlyMapInstance = null;
@@ -1686,10 +1706,12 @@
             document.getElementById('bd-map-modal').classList.remove('active');
         }
 
-        async function openInfoModal(title, type) {
-            document.getElementById('info-modal-title').textContent = title;
-            document.getElementById('info-modal-body').innerHTML = '<div style="text-align:center; padding: 20px;"><i class="fa-solid fa-spinner fa-spin" style="font-size: 24px; color: var(--blue);"></i></div>';
-            document.getElementById('info-modal').classList.add('active');
+        async function openLegalScreen(title, type) {
+            closeDropdown();
+            document.getElementById('legal-screen-title').textContent = title;
+            document.getElementById('legal-screen-body').innerHTML = '<div style="text-align:center; padding: 40px;"><i class="fa-solid fa-spinner fa-spin" style="font-size: 32px; color: var(--blue);"></i></div>';
+            
+            showScreen('screen-legal');
 
             try {
                 let field = '';
@@ -1701,18 +1723,14 @@
                 const snap = await db.collection('settings').doc('legalPages').get();
                 if(snap.exists) {
                     const data = snap.data();
-                    document.getElementById('info-modal-body').innerHTML = data[field] || '<p style="padding: 10px;">Content not found.</p>';
+                    document.getElementById('legal-screen-body').innerHTML = data[field] || '<p style="padding: 10px;">Content not found.</p>';
                 } else {
-                    document.getElementById('info-modal-body').innerHTML = '<p style="padding: 10px;">Content not found.</p>';
+                    document.getElementById('legal-screen-body').innerHTML = '<p style="padding: 10px;">Content not found.</p>';
                 }
             } catch(e) {
                 console.error(e);
-                document.getElementById('info-modal-body').innerHTML = '<p style="padding: 10px; color: red;">Error loading content.</p>';
+                document.getElementById('legal-screen-body').innerHTML = '<p style="padding: 10px; color: red;">Error loading content.</p>';
             }
-        }
-
-        function closeInfoModal() {
-            document.getElementById('info-modal').classList.remove('active');
         }
 
         function listenToNotifications() {
