@@ -503,6 +503,20 @@
         .toast { position: fixed; left: 50%; bottom: 100px; transform: translateX(-50%); background: #1b1f2a; color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 13.5px; opacity: 0; pointer-events: none; transition: opacity .2s ease; z-index: 999999; white-space: nowrap; }
         .toast.show { opacity: 1; }
 
+        /* ================== RESPONSIVE GRID CSS ADDITIONS ================== */
+        .blog-grid, .safety-grid, .deals-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .blog-card img, .deal-card img, .news-featured-section img {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+        }
+
         /* ================== RESPONSIVE DESIGN FOR DESKTOP & TABLET ================== */
         @media (min-width: 768px) {
             .car-list-container {
@@ -515,6 +529,13 @@
             .hwy-item-top { grid-column: span 2; }
             .hwy-item-mid { grid-column: span 4; }
             .hwy-item-bottom { grid-column: span 2; }
+            
+            /* Apply Grids for Tablet/Desktop */
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+            .safety-grid { grid-template-columns: repeat(2, 1fr); }
+            .deals-grid { grid-template-columns: repeat(2, 1fr); }
+
+            /* Deals section grid specific fix */
             .deals-slider-track { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; overflow-x: visible; }
             .deal-slide { flex: 1; max-width: 100%; }
         }
@@ -525,6 +546,10 @@
             .hwy-item-top { grid-column: span 1; aspect-ratio: 4/3; }
             .hwy-item-mid { grid-column: span 1; aspect-ratio: 4/3; }
             .hwy-item-bottom { grid-column: span 1; aspect-ratio: 4/3; }
+            
+            /* Enhanced 3-column Blog Grid on Desktop */
+            .blog-grid { grid-template-columns: repeat(3, 1fr); }
+            .news-featured-section a { display: block; max-width: 600px; margin: 0 auto; }
             
             /* Capping Max-Width for Ultra-Wide Desktop Screens */
             .overlap-container, .exclusive-deals-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section {
@@ -694,7 +719,8 @@
                     <div class="topbar">
                         <div style="display: flex; align-items: center; gap: 14px;">
                             <div class="brand" style="flex-direction: column; align-items: flex-start; gap: 0;">
-                                <span style="font-size: 22px; font-weight: 900; color: #000;" id="home-username-header">Carbook</span>
+                                <!-- NEW HEADER IMAGE REPLACING TEXT -->
+                                <img src="https://cdn.phototourl.com/member/2026-09-08-de30d250-4b80-4ad1-b6c1-1a8ee7d24060.png" alt="Carbook" id="home-username-header" style="height: 32px; object-fit: contain;">
                             </div>
                         </div>
                         <div class="topbar-right">
@@ -925,29 +951,32 @@
                             </div>
                         </div>
 
-                        <!-- Card 1 -->
-                        <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
-                            <h3 style="font-size: 17px; font-weight: 800; color: #1b1f2a; margin-bottom: 10px; line-height: 1.4;">
-                                নিরাপত্তা আমাদের কাছে খুবই গুরুত্বপূর্ণ
-                            </h3>
-                            <p style="font-size: 14px; color: #64748b; opacity: 0.85; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                                নিরাপত্তা আমাদের কাছে শুধু একটি দায়িত্ব নয়, এটি আমাদের অঙ্গীকার। সতর্কতা, শৃঙ্খলা ও পেশাদারিত্বের মাধ্যমে আপনার নিরাপত্তা নিশ্চিত করাই আমাদের প্রধান লক্ষ্য।
-                            </p>
-                            <div onclick="openInfoDetails(1)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-                                আরও দেখুন <i class="fa-solid fa-arrow-right"></i>
+                        <!-- Grid wrapper for desktop side-by-side view -->
+                        <div class="safety-grid">
+                            <!-- Card 1 -->
+                            <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                                <h3 style="font-size: 17px; font-weight: 800; color: #1b1f2a; margin-bottom: 10px; line-height: 1.4;">
+                                    নিরাপত্তা আমাদের কাছে খুবই গুরুত্বপূর্ণ
+                                </h3>
+                                <p style="font-size: 14px; color: #64748b; opacity: 0.85; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                    নিরাপত্তা আমাদের কাছে শুধু একটি দায়িত্ব নয়, এটি আমাদের অঙ্গীকার। সতর্কতা, শৃঙ্খলা ও পেশাদারিত্বের মাধ্যমে আপনার নিরাপত্তা নিশ্চিত করাই আমাদের প্রধান লক্ষ্য।
+                                </p>
+                                <div onclick="openInfoDetails(1)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                                    আরও দেখুন <i class="fa-solid fa-arrow-right"></i>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Card 2 -->
-                        <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
-                            <h3 style="font-size: 17px; font-weight: 800; color: #1b1f2a; margin-bottom: 10px; line-height: 1.4;">
-                                ০% কমিশনে আমরা রেন্টাল সার্ভিস দিয়ে থাকি
-                            </h3>
-                            <p style="font-size: 14px; color: #64748b; opacity: 0.85; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                                আপনার যাত্রা হোক আরও সহজ, সাশ্রয়ী ও নির্ভরযোগ্য। Carbook দিচ্ছে মাত্র ০% কমিশনে রেন্টাল সার্ভিস।
-                            </p>
-                            <div onclick="openInfoDetails(2)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-                                আরও দেখুন <i class="fa-solid fa-arrow-right"></i>
+                            <!-- Card 2 -->
+                            <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+                                <h3 style="font-size: 17px; font-weight: 800; color: #1b1f2a; margin-bottom: 10px; line-height: 1.4;">
+                                    ০% কমিশনে আমরা রেন্টাল সার্ভিস দিয়ে থাকি
+                                </h3>
+                                <p style="font-size: 14px; color: #64748b; opacity: 0.85; line-height: 1.6; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                    আপনার যাত্রা হোক আরও সহজ, সাশ্রয়ী ও নির্ভরযোগ্য। Carbook দিচ্ছে মাত্র ০% কমিশনে রেন্টাল সার্ভিস।
+                                </p>
+                                <div onclick="openInfoDetails(2)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                                    আরও দেখুন <i class="fa-solid fa-arrow-right"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -976,24 +1005,27 @@
                     <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
                         <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a; margin-bottom: 20px; text-align: center;" data-lang="blog">Blog</h3>
                         
-                        <div class="blog-card" onclick="openBlogDetails(1)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
-                            <img src="https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg" style="width: 100%; height: auto; display: block;">
-                            <div style="padding: 15px;">
-                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী</h4>
+                        <!-- Grid wrapper for desktop side-by-side view -->
+                        <div class="blog-grid">
+                            <div class="blog-card" onclick="openBlogDetails(1)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                                <img src="https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg" style="width: 100%; height: auto; display: block;">
+                                <div style="padding: 15px;">
+                                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী</h4>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="blog-card" onclick="openBlogDetails(2)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
-                            <img src="https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg" style="width: 100%; height: auto; display: block;">
-                            <div style="padding: 15px;">
-                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">Carbook – Your Trusted Car Rental Partner in Bangladesh</h4>
+                            <div class="blog-card" onclick="openBlogDetails(2)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                                <img src="https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg" style="width: 100%; height: auto; display: block;">
+                                <div style="padding: 15px;">
+                                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">Carbook – Your Trusted Car Rental Partner in Bangladesh</h4>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="blog-card" onclick="openBlogDetails(3)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
-                            <img src="https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png" style="width: 100%; height: auto; display: block;">
-                            <div style="padding: 15px;">
-                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে</h4>
+                            <div class="blog-card" onclick="openBlogDetails(3)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                                <img src="https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png" style="width: 100%; height: auto; display: block;">
+                                <div style="padding: 15px;">
+                                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1110,24 +1142,27 @@
                     <h1 data-lang="blog">Blog</h1>
                 </div>
                 <div class="scroll" style="padding: 20px; background: #f4f7fc;" id="blog-screen-list">
-                    <div class="blog-card" onclick="openBlogDetails(1)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
-                        <img src="https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg" style="width: 100%; height: auto; display: block;">
-                        <div style="padding: 15px;">
-                            <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী</h4>
+                    <!-- Grid wrapper for desktop side-by-side view -->
+                    <div class="blog-grid">
+                        <div class="blog-card" onclick="openBlogDetails(1)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg" style="width: 100%; height: auto; display: block;">
+                            <div style="padding: 15px;">
+                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী</h4>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="blog-card" onclick="openBlogDetails(2)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
-                        <img src="https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg" style="width: 100%; height: auto; display: block;">
-                        <div style="padding: 15px;">
-                            <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">Carbook – Your Trusted Car Rental Partner in Bangladesh</h4>
+                        <div class="blog-card" onclick="openBlogDetails(2)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg" style="width: 100%; height: auto; display: block;">
+                            <div style="padding: 15px;">
+                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">Carbook – Your Trusted Car Rental Partner in Bangladesh</h4>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="blog-card" onclick="openBlogDetails(3)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
-                        <img src="https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png" style="width: 100%; height: auto; display: block;">
-                        <div style="padding: 15px;">
-                            <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে</h4>
+                        <div class="blog-card" onclick="openBlogDetails(3)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 16px; cursor: pointer;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png" style="width: 100%; height: auto; display: block;">
+                            <div style="padding: 15px;">
+                                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0;">কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1195,18 +1230,21 @@
                     <h1>Exclusive Deals</h1>
                 </div>
                 <div class="scroll" style="padding: 20px; background: #fcfcfc;">
-                    <div class="deal-card" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #fff; margin-bottom: 20px;">
-                        <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" style="width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover;">
-                        <div style="padding: 15px;">
-                            <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; color: #1b1f2a;">আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়।</h4>
-                            <div onclick="openDealDetails(1)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; text-align: right; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                    <!-- Grid wrapper for desktop side-by-side view -->
+                    <div class="deals-grid">
+                        <div class="deal-card" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #fff; margin-bottom: 20px;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" style="width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover;">
+                            <div style="padding: 15px;">
+                                <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; color: #1b1f2a;">আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়।</h4>
+                                <div onclick="openDealDetails(1)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; text-align: right; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="deal-card" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #fff; margin-bottom: 20px;">
-                        <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" style="width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover;">
-                        <div style="padding: 15px;">
-                            <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; color: #1b1f2a;">কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে</h4>
-                            <div onclick="openDealDetails(2)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; text-align: right; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="deal-card" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: #fff; margin-bottom: 20px;">
+                            <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" style="width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover;">
+                            <div style="padding: 15px;">
+                                <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; color: #1b1f2a;">কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে</h4>
+                                <div onclick="openDealDetails(2)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; text-align: right; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
                         </div>
                     </div>
                 </div>
