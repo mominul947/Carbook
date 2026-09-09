@@ -901,13 +901,14 @@
                         </div>
                     </div>
                     <!-- ======= Exclusive Deals SECTION ======= -->
+                    <!-- ======= Exclusive Deals SECTION ======= -->
                     <div class="exclusive-deals-section">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                             <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a;">Exclusive Deals</h3>
                             <span onclick="showScreen('screen-all-deals')" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer;">See All <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                         
-                        <!-- স্লাইডার লেআউট (onscroll ইভেন্ট যোগ করা হয়েছে) -->
+                        <!-- স্লাইডার লেআউট -->
                         <div class="deals-slider-track" id="deals-slider-track" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: none; -webkit-overflow-scrolling: touch;" onscroll="updateDealDots()">
                             
                             <!-- Deal 1 -->
@@ -925,9 +926,9 @@
                                 </div>
                             </div>
 
-                            <!-- Deal 2 -->
+                            <!-- Deal 2 (এখানে ২য় নতুন ইমেজ দেওয়া হয়েছে) -->
                             <div class="deal-slide" style="flex: 0 0 100%; max-width: 100% !important; scroll-snap-align: center; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
-                                <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" alt="Deal 2" style="width: 100%; height: auto; aspect-ratio: auto !important; object-fit: contain; display: block; background: #f4f7fc;">
+                                <img src="https://cdn.phototourl.com/member/2026-09-09-aba21acc-6960-4528-b692-a01845fde144.jpg" alt="Deal 2" style="width: 100%; height: auto; aspect-ratio: auto !important; object-fit: contain; display: block; background: #f4f7fc;">
                                 <div style="padding: 16px; display: flex; flex-direction: column; flex-grow: 1;">
                                     <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 8px; line-height: 1.4; color: #1b1f2a;">কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে</h4>
                                     <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0 0 16px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
@@ -948,7 +949,6 @@
                             <div class="deal-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #c7cede; cursor: pointer; transition: 0.3s;" onclick="scrollToDeal(1)"></div>
                         </div>
 
-                        <!-- ডটগুলো কাজ করানোর জন্য জাভাস্ক্রিপ্ট -->
                         <script>
                             function updateDealDots() {
                                 const track = document.getElementById('deals-slider-track');
@@ -1400,7 +1400,9 @@
                     <h1>Deal Details</h1>
                 </div>
                 <div class="scroll" style="padding: 20px; background: #fff;">
-                    <img id="deal-detail-img" src="" style="width: 100%; border-radius: 16px; margin-bottom: 20px; object-fit: cover; aspect-ratio: 16 / 9; height: auto;">
+                    <!-- ইমেজের স্টাইল আপডেট করা হয়েছে যাতে ছবি না কাটে -->
+                    <img id="deal-detail-img" src="" style="width: 100%; height: auto; border-radius: 16px; margin-bottom: 20px; object-fit: contain; display: block; background: #f4f7fc;">
+                    
                     <h2 id="deal-detail-title" style="font-size: 20px; font-weight: 800; margin-bottom: 15px; line-height: 1.4; color: #1b1f2a;"></h2>
                     <div style="font-size: 15px; line-height: 1.6; color: #333;">
                         <p style="margin-bottom: 15px;">ভ্রমণ এখন আরও সাশ্রয়ী! Carbook-এর মাধ্যমে আপনার আসা-যাওয়ার প্রতিটি ট্রিপে পেয়ে যান <strong style="font-weight:900;">৩০% পর্যন্ত নিশ্চিত টাকা ছাড়</strong>।</p>
@@ -1415,6 +1417,7 @@
                     </div>
                 </div>
             </section>
+
 
             <section class="screen" id="screen-all-deals">
                 <div class="back-header">
@@ -2165,13 +2168,16 @@
         /* ==================== DEALS SLIDER LOGIC ==================== */
         function openDealDetails(dealId) {
             const title = dealId === 1 ? 'আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়।' : 'কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে';
-            const imgUrl = dealId === 1 ? 'https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png' : 'https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg';
+            
+            // এখানে ১ ও ২ নম্বর ডিলের জন্য নতুন ছবি দুটি দিয়ে দেওয়া হয়েছে
+            const imgUrl = dealId === 1 ? 'https://cdn.phototourl.com/member/2026-09-09-1cd99169-42b8-46d4-bd3b-8c9b83131cf2.jpg' : 'https://cdn.phototourl.com/member/2026-09-09-aba21acc-6960-4528-b692-a01845fde144.jpg';
             
             document.getElementById('deal-detail-title').innerText = title;
             document.getElementById('deal-detail-img').src = imgUrl;
             
             showScreen('screen-deal-details');
         }
+
         
         /* ==================== BLOG DETAILS LOGIC ==================== */
         const blogData = {
