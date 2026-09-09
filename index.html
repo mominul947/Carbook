@@ -900,29 +900,86 @@
                             </button>
                         </div>
                     </div>
-
                     <!-- ======= Exclusive Deals SECTION ======= -->
                     <div class="exclusive-deals-section">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                             <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a;">Exclusive Deals</h3>
                             <span onclick="showScreen('screen-all-deals')" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer;">See All <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
-                        <div class="deals-slider-track" id="deals-slider-track">
-                            <div class="deal-slide">
-                                <img src="https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png" alt="Deal 1">
-                                <div style="padding: 15px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
-                                    <h4 style="font-size: 15px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; color: #1b1f2a;">আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়।</h4>
-                                    <div onclick="openDealDetails(1)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+                        
+                        <!-- স্লাইডার লেআউট (onscroll ইভেন্ট যোগ করা হয়েছে) -->
+                        <div class="deals-slider-track" id="deals-slider-track" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: none; -webkit-overflow-scrolling: touch;" onscroll="updateDealDots()">
+                            
+                            <!-- Deal 1 -->
+                            <div class="deal-slide" style="flex: 0 0 100%; max-width: 100% !important; scroll-snap-align: center; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+                                <img src="https://cdn.phototourl.com/member/2026-09-09-1cd99169-42b8-46d4-bd3b-8c9b83131cf2.jpg" alt="Deal 1" style="width: 100%; height: auto; aspect-ratio: auto !important; object-fit: contain; display: block; background: #f4f7fc;">
+                                <div style="padding: 16px; display: flex; flex-direction: column; flex-grow: 1;">
+                                    <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 8px; line-height: 1.4; color: #1b1f2a;">আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়</h4>
+                                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0 0 16px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                        Carbook-এর মাধ্যমে আপনার আসা-যাওয়ার প্রতিটি ট্রিপে পেয়ে যান ৩০% পর্যন্ত নিশ্চিত টাকা ছাড়। আপনার যাত্রা হোক নিরাপদ, আরামদায়ক ও বাজেট-ফ্রেন্ডলি।
+                                    </p>
+                                    <div style="flex-grow: 1;"></div>
+                                    <div onclick="openDealDetails(1)" style="color: var(--blue); font-weight: 800; font-size: 14px; cursor: pointer; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">
+                                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="deal-slide">
-                                <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" alt="Deal 2">
-                                <div style="padding: 15px; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
-                                    <h4 style="font-size: 15px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; color: #1b1f2a;">কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে</h4>
-                                    <div onclick="openDealDetails(2)" style="color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+
+                            <!-- Deal 2 -->
+                            <div class="deal-slide" style="flex: 0 0 100%; max-width: 100% !important; scroll-snap-align: center; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: flex; flex-direction: column;">
+                                <img src="https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg" alt="Deal 2" style="width: 100%; height: auto; aspect-ratio: auto !important; object-fit: contain; display: block; background: #f4f7fc;">
+                                <div style="padding: 16px; display: flex; flex-direction: column; flex-grow: 1;">
+                                    <h4 style="font-size: 16px; font-weight: 800; margin-bottom: 8px; line-height: 1.4; color: #1b1f2a;">কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে</h4>
+                                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0 0 16px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                                        নিরাপদ ও আরামদায়ক ভ্রমণের নিশ্চয়তা দিচ্ছে কারবুক। জিরো কমিশনে দেশের যেকোনো প্রান্তে গাড়ি ভাড়া করতে আজই যোগাযোগ করুন।
+                                    </p>
+                                    <div style="flex-grow: 1;"></div>
+                                    <div onclick="openDealDetails(2)" style="color: var(--blue); font-weight: 800; font-size: 14px; cursor: pointer; display: flex; justify-content: flex-end; align-items: center; gap: 6px;">
+                                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+
+                        <!-- ডট ইন্ডিকেটর -->
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 4px;">
+                            <div class="deal-dot" style="width: 24px; height: 6px; border-radius: 4px; background: var(--blue); cursor: pointer; transition: 0.3s;" onclick="scrollToDeal(0)"></div>
+                            <div class="deal-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #c7cede; cursor: pointer; transition: 0.3s;" onclick="scrollToDeal(1)"></div>
+                        </div>
+
+                        <!-- ডটগুলো কাজ করানোর জন্য জাভাস্ক্রিপ্ট -->
+                        <script>
+                            function updateDealDots() {
+                                const track = document.getElementById('deals-slider-track');
+                                const dots = document.querySelectorAll('.deal-dot');
+                                if(!track || dots.length === 0) return;
+                                
+                                const scrollLeft = track.scrollLeft;
+                                const slideWidth = track.clientWidth;
+                                const index = Math.round(scrollLeft / slideWidth);
+                                
+                                dots.forEach((dot, i) => {
+                                    if (i === index) {
+                                        dot.style.width = '24px';
+                                        dot.style.borderRadius = '4px';
+                                        dot.style.background = 'var(--blue)';
+                                    } else {
+                                        dot.style.width = '6px';
+                                        dot.style.borderRadius = '50%';
+                                        dot.style.background = '#c7cede';
+                                    }
+                                });
+                            }
+                            
+                            function scrollToDeal(index) {
+                                const track = document.getElementById('deals-slider-track');
+                                if(track) {
+                                    const slideWidth = track.clientWidth;
+                                    track.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+                                }
+                            }
+                        </script>
                     </div>
                     <!-- ======= END Exclusive Deals SECTION ======= -->
 
@@ -990,8 +1047,7 @@
                         </div>
                     </div>
                     <!-- ======= END NEW SAFETY & FEATURE CARDS ======= -->
-<!-- ======= FEATURED NEWS SECTION ======= -->
-                        <!-- ======= FEATURED NEWS SECTION ======= -->
+                    <!-- ======= FEATURED NEWS SECTION ======= -->
                     <div class="news-featured-section" style="margin: 0 18px 30px;">
                         <div style="text-align: center; margin-top: 45px; margin-bottom: 24px;">
                             <h3 style="font-size: 22px; font-weight: 900; color: #1b1f2a; letter-spacing: -0.3px; display: inline-block; position: relative;">
@@ -1005,11 +1061,11 @@
                             .news-horizontal-slider::-webkit-scrollbar { display: none; }
                         </style>
 
-                        <!-- স্লাইডার লেআউট শুরু -->
-                        <div class="news-horizontal-slider" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding-bottom: 15px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+                        <!-- স্লাইডার লেআউট (onscroll ইভেন্ট এবং আইডি যোগ করা হয়েছে) -->
+                        <div class="news-horizontal-slider" id="news-slider-track" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding-bottom: 15px; scrollbar-width: none; -webkit-overflow-scrolling: touch;" onscroll="updateNewsDots()">
                             
                             <!-- প্রথম নিউজ: ইনকিলাব -->
-                            <a href="https://dailyinqilab.com/bangladesh/news/938238" target="_blank" style="flex: 0 0 85%; max-width: 350px; scroll-snap-align: start; text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                            <a href="https://dailyinqilab.com/bangladesh/news/938238" target="_blank" style="flex: 0 0 100%; max-width: 100% !important; scroll-snap-align: center; text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
                                 <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/free/2026-09-09-70e0679b-ab43-4e63-88f4-8c1c473ed9d3.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
                                 <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
                                     <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 8px;">September 09, 2026</div>
@@ -1021,19 +1077,17 @@
                                     
                                     <div style="flex-grow: 1;"></div>
                                     
-                                    <!-- Read Now এবং ইনকিলাবের আপনার দেওয়া হেডার লোগো -->
                                     <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #f0f3f8;">
                                         <div style="color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;">
                                             Read Now <i class="fa-solid fa-arrow-right"></i>
                                         </div>
-                                        <!-- ইমেজের Height বাড়িয়ে 50px করা হয়েছে -->
                                         <img src="https://cdn.phototourl.com/member/2026-09-09-525faa64-6661-42eb-85eb-c9ece5995c6d.jpg" alt="Daily Inqilab" style="height: 50px; max-width: 150px; width: auto; object-fit: contain;">
                                     </div>
                                 </div>
                             </a>
 
                             <!-- দ্বিতীয় নিউজ: রূপালী বাংলাদেশ -->
-                            <a href="https://www.rupalibangladesh.com/economy-business-news/corporate/164111/amp" target="_blank" style="flex: 0 0 85%; max-width: 350px; scroll-snap-align: start; text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                            <a href="https://www.rupalibangladesh.com/economy-business-news/corporate/164111/amp" target="_blank" style="flex: 0 0 100%; max-width: 100% !important; scroll-snap-align: center; text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
                                 <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-09-67de9b49-18d1-4ab9-9a89-766bbcfc1132.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
                                 <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
                                     <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 8px;">December 05, 2024</div>
@@ -1045,20 +1099,55 @@
                                     
                                     <div style="flex-grow: 1;"></div>
                                     
-                                    <!-- Read Now এবং রূপালী বাংলাদেশ-এর আপনার দেওয়া হেডার লোগো -->
                                     <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #f0f3f8;">
                                         <div style="color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;">
                                             Read Now <i class="fa-solid fa-arrow-right"></i>
                                         </div>
-                                        <!-- ইমেজের Height বাড়িয়ে 50px করা হয়েছে -->
                                         <img src="https://cdn.phototourl.com/member/2026-09-09-734f4814-0728-483a-9a8e-774c0990c234.jpg" alt="Rupali Bangladesh" style="height: 50px; max-width: 150px; width: auto; object-fit: contain;">
                                     </div>
                                 </div>
                             </a>
 
                         </div>
-                        <!-- স্লাইডার লেআউট শেষ -->
+                        
+                        <!-- নিউজ সেকশনের ডট ইন্ডিকেটর -->
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 4px;">
+                            <div class="news-dot" style="width: 24px; height: 6px; border-radius: 4px; background: var(--blue); cursor: pointer; transition: 0.3s;" onclick="scrollToNews(0)"></div>
+                            <div class="news-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #c7cede; cursor: pointer; transition: 0.3s;" onclick="scrollToNews(1)"></div>
+                        </div>
 
+                        <!-- ডটগুলো কাজ করানোর জন্য জাভাস্ক্রিপ্ট -->
+                        <script>
+                            function updateNewsDots() {
+                                const track = document.getElementById('news-slider-track');
+                                const dots = document.querySelectorAll('.news-dot');
+                                if(!track || dots.length === 0) return;
+                                
+                                const scrollLeft = track.scrollLeft;
+                                const slideWidth = track.clientWidth;
+                                const index = Math.round(scrollLeft / slideWidth);
+                                
+                                dots.forEach((dot, i) => {
+                                    if (i === index) {
+                                        dot.style.width = '24px';
+                                        dot.style.borderRadius = '4px';
+                                        dot.style.background = 'var(--blue)';
+                                    } else {
+                                        dot.style.width = '6px';
+                                        dot.style.borderRadius = '50%';
+                                        dot.style.background = '#c7cede';
+                                    }
+                                });
+                            }
+                            
+                            function scrollToNews(index) {
+                                const track = document.getElementById('news-slider-track');
+                                if(track) {
+                                    const slideWidth = track.clientWidth;
+                                    track.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+                                }
+                            }
+                        </script>
                     </div>
                     <!-- ======= END FEATURED NEWS SECTION ======= -->
 
