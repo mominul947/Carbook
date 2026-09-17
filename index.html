@@ -726,7 +726,7 @@
             .hero-banner { height: 320px; }
         }
         @media (min-width: 1024px) {
-            /* Hero Banner Edge-to-Edge */
+            /* Hero Banner Full Width Edge-to-Edge */
             .hero-banner {
                 height: 450px !important; 
                 max-width: 100% !important;
@@ -734,123 +734,145 @@
                 border-radius: 0 !important;
             }
 
-            /* স্ক্রিন জুড়ে কন্টেন্ট ছড়ানোর জন্য Max Width বাড়ানো হলো (1500px বা 95%) */
+            /* কন্টেইনার ফুল স্ক্রিন (96% Width) করার জন্য */
             .overlap-container, .exclusive-deals-section, .our-impact-section, .our-service-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section, .custom-app-banner, .corporate-hero, .corporate-services, .corp-banner {
-                max-width: 1500px !important;
-                width: 95% !important;
+                max-width: 1600px !important;
+                width: 96% !important;
                 margin-left: auto !important;
                 margin-right: auto !important;
             }
 
-            /* ================= ডেস্কটপ ওভারল্যাপ গ্রিড (ফর্ম এবং গাড়ি পাশাপাশি) ================= */
+            /* ================= ডেস্কটপ ফর্ম এক লাইনে (পিকআপ, ড্রপঅফ, ডেট, টাইম) ================= */
             .overlap-container {
-                display: grid !important;
-                grid-template-columns: 2.2fr 1fr; /* বামে ফর্ম বড়, ডানে গাড়ি ছোট */
-                grid-template-rows: auto auto auto;
-                gap: 24px;
-                margin-top: -80px !important;
-            }
-
-            /* One Way / Round Way বাটনগুলো সবার ওপরে পুরোটা জুড়ে থাকবে */
-            .trip-type-pill-row {
-                grid-column: 1 / -1;
-                margin: 0 !important;
-                height: 60px;
-                border-radius: 16px !important;
-            }
-            .trip-pill { font-size: 16px !important; }
-
-            /* ফর্মটি বাম পাশে বসবে */
-            .desktop-form-layout {
-                grid-column: 1; 
-                margin: 0 !important;
                 display: flex !important;
                 flex-direction: column;
                 gap: 20px;
+                margin-top: -60px !important;
+            }
+
+            /* Trip Type (One way, Round way) মাঝে থাকবে */
+            .trip-type-pill-row {
+                width: 50%;
+                margin: 0 auto !important;
+                height: 60px;
+            }
+
+            .desktop-form-layout {
+                display: flex !important;
+                flex-direction: row !important; /* সব ফিল্ড এক লাইনে */
+                align-items: center;
+                gap: 16px;
                 background: #ffffff;
-                padding: 35px 40px;
-                border-radius: 20px;
+                padding: 20px;
+                border-radius: 16px;
                 box-shadow: 0 10px 40px rgba(0,0,0,0.08);
                 border: 1px solid #f0f3f8;
-            }
-
-            /* গাড়ির লিস্ট ডান পাশে বসবে */
-            .car-list-container {
-                grid-column: 2; 
-                display: grid !important;
-                grid-template-columns: 1fr !important; /* একটা একটা করে নিচে নিচে */
-                gap: 16px;
                 margin: 0 !important;
+                width: 100%;
             }
 
-            /* গাড়িগুলোর সাইজ কিছুটা বড় করা হলো */
-            .car-list-item {
-                margin: 0 !important;
-                padding: 16px 20px !important;
-                height: 100%;
-            }
-            .car-list-item img { width: 100px !important; height: 60px !important; }
-            .car-list-item h4 { font-size: 18px !important; }
-
-            /* Confirm Details বাটন নিচে পুরোটা জুড়ে বসবে */
-            .overlap-container > div:last-child {
-                grid-column: 1 / -1;
-                margin: 10px 0 30px !important;
-            }
-            .overlap-container > div:last-child button {
-                height: 65px !important;
-                font-size: 20px !important;
-                border-radius: 20px !important;
-            }
-
-            /* ================= ফর্মের ভেতরের ডিজাইন (বড় ও ছড়ানো) ================= */
-            .desktop-form-layout > .left-col {
-                display: flex; flex-direction: row; align-items: center; gap: 20px; width: 100%;
-            }
+            .desktop-form-layout > .left-col, 
             .desktop-form-layout > .right-col {
-                display: flex; flex-direction: row; align-items: center; gap: 20px; width: 100%; margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                flex: 1;
+                gap: 16px;
+                align-items: center;
+                margin: 0 !important;
             }
 
             .locations-card {
-                flex: 1; margin: 0 !important; padding: 16px 24px !important;
-                box-shadow: none !important; border: 1px solid #e1e8f5 !important; border-radius: 16px !important;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                padding: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
             }
-
-            .loc-pins-col { display: none !important; } /* ডট লাইন হাইড */
+            .loc-pins-col { display: none !important; } /* আইকন ও দাগ হাইড */
+            .loc-divider { display: none !important; }
 
             .loc-inputs-col {
-                display: flex !important; flex-direction: row; width: 100%; align-items: center; gap: 24px;
+                display: flex !important;
+                flex-direction: row;
+                width: 100%;
+                gap: 16px;
             }
-            .loc-field-block { flex: 1; }
-            .loc-field-block label { font-size: 15px !important; margin-bottom: 6px !important; }
-            .loc-field-block input { font-size: 17px !important; } /* ফন্টের সাইজ বড় করা হলো */
+            #dash-dropoff-group { display: flex; flex: 1; }
+            #dash-dynamic-stops { display: flex; flex-direction: row; gap: 16px; }
 
-            #dash-dynamic-stops { display: flex; flex-direction: row; gap: 20px; }
-            #dash-dropoff-group { display: flex; flex: 1; align-items: center; }
+            /* ইনপুট বক্সগুলোর স্টাইল */
+            .loc-field-block, .datetime-box, .note-box {
+                background: #f4f7fc !important;
+                border: 1px solid #e1e8f5 !important;
+                border-radius: 12px !important;
+                padding: 12px 16px !important;
+                box-shadow: none !important;
+                flex: 1;
+                margin: 0 !important;
+            }
 
-            .loc-divider { width: 1px !important; height: 50px !important; background: #dbe3f0 !important; margin: 0 24px 0 0 !important; }
+            .datetime-row, .return-datetime-wrap {
+                display: flex; flex-direction: row; gap: 16px !important; margin: 0 !important; flex: 2;
+            }
+            
+            .add-stops-btn-wrap { margin: 0 !important; }
 
-            .datetime-row { margin: 0 !important; flex: 2; gap: 20px !important; }
-            .return-datetime-wrap { margin: 0 !important; flex: 2; gap: 20px !important; }
-            .datetime-box { padding: 18px 20px !important; border-radius: 16px !important; }
-            .datetime-box input { font-size: 16px !important; }
+            /* ================= গাড়িগুলোর লিস্ট এক লাইনে ================= */
+            .car-list-container {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between;
+                gap: 16px;
+                margin: 0 !important;
+                width: 100%;
+            }
+            .car-list-item { flex: 1; margin: 0 !important; }
 
-            .note-box { margin: 0 !important; flex: 1.5; padding: 18px 20px !important; box-shadow: none !important; border: 1px solid #e1e8f5 !important; border-radius: 16px !important; }
-            .note-box textarea { font-size: 16px !important; }
+            .overlap-container > div:last-child {
+                margin: 10px auto 30px !important;
+                width: 300px;
+            }
 
-            /* ================= অন্যান্য সেকশন বড় করা হলো ================= */
-            .hwy-grid { grid-template-columns: repeat(5, 1fr); gap: 20px; }
-            .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-            .safety-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            /* ================= ফটোগ্যালারি ৫টি ছবি এক লাইনে ================= */
+            .hwy-grid {
+                display: grid !important;
+                grid-template-columns: repeat(5, 1fr) !important;
+                gap: 16px !important;
+            }
+            .hwy-item-top, .hwy-item-mid, .hwy-item-bottom {
+                grid-column: span 1 !important;
+                aspect-ratio: 1 / 1 !important; /* সবগুলো ছবি সমান স্কয়ার হবে */
+                height: auto !important;
+            }
+
+            /* ================= ইমপ্যাক্ট ও সার্ভিস এক লাইনে ================= */
+            .impact-container {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 16px;
+            }
+            .impact-main { flex: 2; margin: 0 !important; }
+            .impact-box { flex: 1; margin: 0 !important; height: auto !important; }
+            .impact-tall { grid-row: auto !important; }
+
+            /* Corporate Services ৪টা এক লাইনে */
+            .corp-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 16px;
+            }
+
+            .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
             
             /* টপবার এবং মেনু ফিক্স */
-            .topbar, .back-header, .header { padding-left: 5% !important; padding-right: 5% !important; }
-            .header-dropdown { width: 350px !important; max-width: 350px !important; left: auto !important; right: 5% !important; transform: none !important; border-radius: 0 0 16px 16px; border: 1px solid #f0f3f8; border-top: none; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+            .topbar, .back-header, .header { padding-left: 2% !important; padding-right: 2% !important; }
+            .header-dropdown { width: 350px !important; max-width: 350px !important; left: auto !important; right: 2% !important; transform: none !important; border-radius: 0 0 16px 16px; border: 1px solid #f0f3f8; border-top: none; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 
             .login-screen { background: #f4f7fc; justify-content: center; align-items: center; }
             .login-center-block { max-width: 450px !important; width: 100%; background: #fff; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); }
             
-            #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll, #screen-corporate .scroll { max-width: 1500px; width: 95%; margin: 0 auto; background: #fff; }
+            #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll, #screen-corporate .scroll { max-width: 1600px; width: 96%; margin: 0 auto; background: #fff; }
         }
 
 
