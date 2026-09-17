@@ -1848,130 +1848,154 @@
                         </div>
                     </div>
                     <!-- ======= END NEW SAFETY & FEATURE CARDS ======= -->
-                               <!-- ======= FEATURED NEWS SECTION ======= -->
-                    <div class="news-featured-section" style="margin: 0 18px 30px;">
-                        <div style="text-align: center; margin-top: 45px; margin-bottom: 24px;">
-                            <h3 style="font-size: 22px; font-weight: 900; color: #1b1f2a; letter-spacing: -0.3px; display: inline-block; position: relative;">
-                                We Featured by news Platforms
-                                <span style="display: block; width: 45px; height: 3px; background: var(--blue); margin: 8px auto 0; border-radius: 2px;"></span>
-                            </h3>
-                        </div>
+<!-- ======= FEATURED NEWS SECTION ======= -->
+<div class="news-featured-section" style="margin: 0 18px 30px;">
+    <div style="text-align: center; margin-top: 45px; margin-bottom: 24px;">
+        <h3 style="font-size: 22px; font-weight: 900; color: #1b1f2a; letter-spacing: -0.3px; display: inline-block; position: relative;">
+            We Featured by news Platforms
+            <span style="display: block; width: 45px; height: 3px; background: var(--blue); margin: 8px auto 0; border-radius: 2px;"></span>
+        </h3>
+    </div>
 
-                        <!-- মোবাইল এবং ডেস্কটপের রেস্পন্সিভ স্টাইল -->
-                        <style>
-                            .news-horizontal-slider::-webkit-scrollbar { display: none; }
-                            .news-slide-card {
-                                flex: 0 0 100%;
-                                max-width: 100%;
-                                scroll-snap-align: center;
-                            }
-                            
-                            /* ডেস্কটপের জন্য পাশাপাশি গ্রিড লেআউট */
-                            @media (min-width: 768px) {
-                                #news-slider-track {
-                                    display: grid !important;
-                                    grid-template-columns: repeat(2, 1fr) !important;
-                                    overflow-x: visible !important;
-                                    gap: 16px;
-                                }
-                                .news-slide-card {
-                                    max-width: 100% !important;
-                                }
-                                .news-dot-wrapper {
-                                    display: none !important; /* ডেস্কটপে ডট হাইড করা হয়েছে */
-                                }
-                            }
-                        </style>
+    <!-- মোবাইল এবং ডেস্কটপের রেস্পন্সিভ স্টাইল -->
+    <style>
+        .news-horizontal-slider::-webkit-scrollbar { display: none; }
+        .news-slide-card {
+            flex: 0 0 100%;
+            max-width: 100%;
+            scroll-snap-align: center;
+        }
+        
+        /* ডেস্কটপের জন্য পাশাপাশি গ্রিড লেআউট (৩টি নিউজ এর জন্য ৩ কলাম) */
+        @media (min-width: 768px) {
+            #news-slider-track {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                overflow-x: visible !important;
+                gap: 16px;
+            }
+            .news-slide-card {
+                max-width: 100% !important;
+            }
+            .news-dot-wrapper {
+                display: none !important; /* ডেস্কটপে ডট হাইড করা হয়েছে */
+            }
+        }
+    </style>
 
-                        <!-- স্লাইডার লেআউট -->
-                        <div class="news-horizontal-slider" id="news-slider-track" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding-bottom: 15px; scrollbar-width: none; -webkit-overflow-scrolling: touch;" onscroll="updateNewsDots()">
-                            
-                            <!-- প্রথম নিউজ: ইনকিলাব -->
-                            <a href="https://dailyinqilab.com/bangladesh/news/938238" target="_blank" class="news-slide-card" style="text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
-                                <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/free/2026-09-09-70e0679b-ab43-4e63-88f4-8c1c473ed9d3.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
-                                <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
-                                    <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 8px;">September 09, 2026</div>
-                                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">প্রযুক্তির ছোঁয়ায় বদলাচ্ছে ইন্টারসিটি ভ্রমণ, সেবা নিয়ে 'কারবুক'</h4>
-                                    
-                                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                                        প্রযুক্তির উৎকর্ষতায় এখন ঘরে বসেই আন্তঃজেলা ভ্রমণের জন্য গাড়ি ভাড়া করা যাচ্ছে। এই সেবাকে আরও সহজ ও সাশ্রয়ী করতে কাজ করছে...
-                                    </p>
-                                    
-                                    <div style="flex-grow: 1;"></div>
-                                    
-                                    <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #f0f3f8;">
-                                        <div style="color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;">
-                                            Read Now <i class="fa-solid fa-arrow-right"></i>
-                                        </div>
-                                        <img src="https://cdn.phototourl.com/member/2026-09-09-525faa64-6661-42eb-85eb-c9ece5995c6d.jpg" alt="Daily Inqilab" style="height: 50px; max-width: 150px; width: auto; object-fit: contain;">
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- দ্বিতীয় নিউজ: রূপালী বাংলাদেশ -->
-                            <a href="https://www.rupalibangladesh.com/economy-business-news/corporate/164111/amp" target="_blank" class="news-slide-card" style="text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
-                                <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-09-67de9b49-18d1-4ab9-9a89-766bbcfc1132.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
-                                <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
-                                    <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 8px;">December 05, 2024</div>
-                                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">কারবুক: বাংলাদেশের ইন্টারসিটি ভ্রমণে স্বাধীনতার নতুন পথচলা</h4>
-                                    
-                                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                                        দেশের ইন্টারসিটি যাতায়াত ব্যবস্থায় এক নতুন দিগন্তের উন্মোচন করেছে কারবুক। যাত্রীদের নিরাপদ ও আরামদায়ক ভ্রমণের অভিজ্ঞতা দিতে...
-                                    </p>
-                                    
-                                    <div style="flex-grow: 1;"></div>
-                                    
-                                    <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #f0f3f8;">
-                                        <div style="color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;">
-                                            Read Now <i class="fa-solid fa-arrow-right"></i>
-                                        </div>
-                                        <img src="https://cdn.phototourl.com/member/2026-09-09-734f4814-0728-483a-9a8e-774c0990c234.jpg" alt="Rupali Bangladesh" style="height: 50px; max-width: 150px; width: auto; object-fit: contain;">
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                        
-                        <!-- নিউজ সেকশনের ডট ইন্ডিকেটর -->
-                        <div class="news-dot-wrapper" style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 4px;">
-                            <div class="news-dot" style="width: 24px; height: 6px; border-radius: 4px; background: var(--blue); cursor: pointer; transition: 0.3s;" onclick="scrollToNews(0)"></div>
-                            <div class="news-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #c7cede; cursor: pointer; transition: 0.3s;" onclick="scrollToNews(1)"></div>
-                        </div>
-
-                        <!-- ডটগুলো কাজ করানোর জন্য জাভাস্ক্রিপ্ট -->
-                        <script>
-                            function updateNewsDots() {
-                                const track = document.getElementById('news-slider-track');
-                                const dots = document.querySelectorAll('.news-dot');
-                                if(!track || dots.length === 0) return;
-                                
-                                const scrollLeft = track.scrollLeft;
-                                const slideWidth = track.clientWidth;
-                                const index = Math.round(scrollLeft / slideWidth);
-                                
-                                dots.forEach((dot, i) => {
-                                    if (i === index) {
-                                        dot.style.width = '24px';
-                                        dot.style.borderRadius = '4px';
-                                        dot.style.background = 'var(--blue)';
-                                    } else {
-                                        dot.style.width = '6px';
-                                        dot.style.borderRadius = '50%';
-                                        dot.style.background = '#c7cede';
-                                    }
-                                });
-                            }
-                            
-                            function scrollToNews(index) {
-                                const track = document.getElementById('news-slider-track');
-                                if(track) {
-                                    const slideWidth = track.clientWidth;
-                                    track.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
-                                }
-                            }
-                        </script>
+    <!-- স্লাইডার লেআউট -->
+    <div class="news-horizontal-slider" id="news-slider-track" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding-bottom: 15px; scrollbar-width: none; -webkit-overflow-scrolling: touch;" onscroll="updateNewsDots()">
+        
+        <!-- প্রথম নিউজ: The Bangladesh Today (নতুন যুক্ত করা হলো) -->
+        <a href="https://thebangladeshtoday.com/?p=37251" target="_blank" class="news-slide-card" style="text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+            <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-17-ef4f6c16-e74d-4d8c-a09f-10cd45a2a920.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
+            <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
+                <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 8px;">September 17, 2026</div>
+                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">Prioritizing Passenger Trust: Carbook’s Initiative for Safer Travel</h4>
+                
+                <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                    In a continuous effort to provide a secure and reliable intercity travel experience, Carbook has introduced new measures prioritizing passenger safety and trust...
+                </p>
+                
+                <div style="flex-grow: 1;"></div>
+                
+                <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #f0f3f8;">
+                    <div style="color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;">
+                        Read Now <i class="fa-solid fa-arrow-right"></i>
                     </div>
-                    <!-- ======= END FEATURED NEWS SECTION ======= -->
+                    <img src="https://cdn.phototourl.com/member/2026-09-17-d7dc9ecd-2df4-47a7-98c2-df3f4af2d7b9.jpg" alt="The Bangladesh Today" style="height: 50px; max-width: 150px; width: auto; object-fit: contain;">
+                </div>
+            </div>
+        </a>
+
+        <!-- দ্বিতীয় নিউজ: ইনকিলাব -->
+        <a href="https://dailyinqilab.com/bangladesh/news/938238" target="_blank" class="news-slide-card" style="text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+            <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/free/2026-09-09-70e0679b-ab43-4e63-88f4-8c1c473ed9d3.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
+            <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
+                <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 8px;">September 09, 2026</div>
+                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">প্রযুক্তির ছোঁয়ায় বদলাচ্ছে ইন্টারসিটি ভ্রমণ, সেবা নিয়ে 'কারবুক'</h4>
+                
+                <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                    প্রযুক্তির উৎকর্ষতায় এখন ঘরে বসেই আন্তঃজেলা ভ্রমণের জন্য গাড়ি ভাড়া করা যাচ্ছে। এই সেবাকে আরও সহজ ও সাশ্রয়ী করতে কাজ করছে...
+                </p>
+                
+                <div style="flex-grow: 1;"></div>
+                
+                <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #f0f3f8;">
+                    <div style="color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;">
+                        Read Now <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <img src="https://cdn.phototourl.com/member/2026-09-09-525faa64-6661-42eb-85eb-c9ece5995c6d.jpg" alt="Daily Inqilab" style="height: 50px; max-width: 150px; width: auto; object-fit: contain;">
+                </div>
+            </div>
+        </a>
+
+        <!-- তৃতীয় নিউজ: রূপালী বাংলাদেশ -->
+        <a href="https://www.rupalibangladesh.com/economy-business-news/corporate/164111/amp" target="_blank" class="news-slide-card" style="text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+            <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-09-67de9b49-18d1-4ab9-9a89-766bbcfc1132.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
+            <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
+                <div style="font-size: 12px; color: var(--gray-text); font-weight: 600; margin-bottom: 8px;">December 05, 2024</div>
+                <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">কারবুক: বাংলাদেশের ইন্টারসিটি ভ্রমণে স্বাধীনতার নতুন পথচলা</h4>
+                
+                <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                    দেশের ইন্টারসিটি যাতায়াত ব্যবস্থায় এক নতুন দিগন্তের উন্মোচন করেছে কারবুক। যাত্রীদের নিরাপদ ও আরামদায়ক ভ্রমণের অভিজ্ঞতা দিতে...
+                </p>
+                
+                <div style="flex-grow: 1;"></div>
+                
+                <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #f0f3f8;">
+                    <div style="color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap;">
+                        Read Now <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <img src="https://cdn.phototourl.com/member/2026-09-09-734f4814-0728-483a-9a8e-774c0990c234.jpg" alt="Rupali Bangladesh" style="height: 50px; max-width: 150px; width: auto; object-fit: contain;">
+                </div>
+            </div>
+        </a>
+
+    </div>
+    
+    <!-- নিউজ সেকশনের ৩টি ডট ইন্ডিকেটর -->
+    <div class="news-dot-wrapper" style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 4px;">
+        <div class="news-dot" style="width: 24px; height: 6px; border-radius: 4px; background: var(--blue); cursor: pointer; transition: 0.3s;" onclick="scrollToNews(0)"></div>
+        <div class="news-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #c7cede; cursor: pointer; transition: 0.3s;" onclick="scrollToNews(1)"></div>
+        <div class="news-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #c7cede; cursor: pointer; transition: 0.3s;" onclick="scrollToNews(2)"></div>
+    </div>
+
+    <!-- ডটগুলো কাজ করানোর জন্য জাভাস্ক্রিপ্ট -->
+    <script>
+        function updateNewsDots() {
+            const track = document.getElementById('news-slider-track');
+            const dots = document.querySelectorAll('.news-dot');
+            if(!track || dots.length === 0) return;
+            
+            const scrollLeft = track.scrollLeft;
+            const slideWidth = track.clientWidth;
+            const index = Math.round(scrollLeft / slideWidth);
+            
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.style.width = '24px';
+                    dot.style.borderRadius = '4px';
+                    dot.style.background = 'var(--blue)';
+                } else {
+                    dot.style.width = '6px';
+                    dot.style.borderRadius = '50%';
+                    dot.style.background = '#c7cede';
+                }
+            });
+        }
+        
+        function scrollToNews(index) {
+            const track = document.getElementById('news-slider-track');
+            if(track) {
+                const slideWidth = track.clientWidth;
+                track.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+            }
+        }
+    </script>
+</div>
+<!-- ======= END FEATURED NEWS SECTION ======= -->
+
 
                     <!-- ======= BLOG SECTION ======= -->
                     <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
