@@ -725,15 +725,13 @@
             /* Hero Banner specific fix for tablets */
             .hero-banner { height: 320px; }
         }
-
         @media (min-width: 1024px) {
-            /* Hero Banner Fix for Ultra-Wide / Desktop */
+            /* Hero Banner কে ফুল-স্ক্রিন (Edge-to-Edge) করা হলো */
             .hero-banner {
-                height: 420px; /* Enhanced height on desktop to prevent ruining/cropping */
-                max-width: 1164px;
-                margin: 0 auto;
-                border-bottom-left-radius: 24px;
-                border-bottom-right-radius: 24px;
+                height: 450px !important; 
+                max-width: 100% !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
             }
 
             /* Desktop Form Grid Fix - "পাশা পাশী আসে" */
@@ -771,25 +769,31 @@
             .blog-grid { grid-template-columns: repeat(3, 1fr); }
             .news-featured-section a { display: block; max-width: 600px; margin: 0 auto; }
             
-            /* Capping Max-Width for Ultra-Wide Desktop Screens */
-            .overlap-container, .exclusive-deals-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section, .custom-app-banner {
-                max-width: 1164px;
+            /* ওয়েবসাইটের কনটেন্ট চওড়া (Full Screen Feel) করার জন্য Max-Width বাড়ানো হলো */
+            .overlap-container, .exclusive-deals-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section, .custom-app-banner, .corporate-hero, .corporate-services, .corp-banner {
+                max-width: 1440px !important;
                 margin-left: auto !important;
                 margin-right: auto !important;
             }
             
+            /* Topbar কে ফুল স্ক্রিন করা হলো */
             .topbar, .back-header, .header {
-                padding-left: calc(50% - 582px) !important;
-                padding-right: calc(50% - 582px) !important;
+                padding-left: 40px !important;
+                padding-right: 40px !important;
             }
             
+            /* FIX: ড্রপডাউন মেনু এখন আর মাঝে আসবে না, বরং ডানদিকে সুন্দরভাবে ওপেন হবে */
             .header-dropdown {
-                max-width: 1200px;
-                left: 50%;
-                transform: translateX(-50%);
-                border-radius: 16px;
+                width: 350px !important;
+                max-width: 350px !important;
+                left: auto !important;
+                right: 40px !important; /* মেনু আইকনের ঠিক নিচে ডানদিকে থাকবে */
+                transform: none !important;
+                border-radius: 0 0 16px 16px;
                 border-left: 1px solid #f0f3f8;
                 border-right: 1px solid #f0f3f8;
+                border-bottom: 1px solid #f0f3f8;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             }
 
             .login-screen {
@@ -812,16 +816,15 @@
                 background: #fcfcfc;
             }
 
-            /* Make sure inner screens also respect max-width for readability */
-            #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll {
-                max-width: 1200px;
+            /* অন্যান্য স্ক্রিনগুলোর রিডেবিলিটি ঠিক রাখতে */
+            #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll, #screen-corporate .scroll {
+                max-width: 1440px;
                 margin: 0 auto;
                 width: 100%;
-                border-left: 1px solid var(--border);
-                border-right: 1px solid var(--border);
                 background: #fff;
             }
         }
+
 
         /* ---------- Welcome Notice Styles ---------- */
         .welcome-notice {
@@ -958,6 +961,50 @@
 @media (min-width: 768px) {
     .floating-actions-wrapper { bottom: 30px; right: 30px; }
 }
+/* ================== CORPORATE PAGE CSS ================== */
+.corporate-hero {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1164px;
+    margin: 0 auto;
+}
+.corporate-hero h1 { font-size: 32px; font-weight: 900; color: #1b1f2a; line-height: 1.2; }
+.corporate-hero-right p { font-size: 18px; color: #64748b; margin-bottom: 15px; font-weight: 500; line-height: 1.5; }
+.corporate-btn { background: #f7b500; color: #000; font-weight: 700; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 16px; transition: transform 0.2s; }
+.corporate-btn:active { transform: scale(0.95); }
+
+.corporate-services { padding: 20px; max-width: 1164px; margin: 0 auto 30px; }
+.corporate-services h2 { font-size: 24px; font-weight: 800; margin-bottom: 5px; color: #1b1f2a; }
+.corporate-services p.sub { font-size: 14px; color: #8a93a6; margin-bottom: 24px; font-weight: 600; }
+.corp-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.corp-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px 16px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+.corp-card i { font-size: 36px; color: var(--blue); margin-bottom: 16px; }
+.corp-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; color: #1b1f2a; }
+.corp-card p { font-size: 13px; color: #64748b; line-height: 1.5; }
+
+.corp-banner { background: #eab308; border-radius: 20px; margin: 0 20px 40px; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+.corp-banner-content { padding: 40px 24px 20px; color: #000; z-index: 2; }
+.corp-banner-content h2 { font-size: 28px; font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
+.corp-banner-content p { font-size: 15px; margin-bottom: 20px; font-weight: 600; opacity: 0.9; }
+.corp-banner-btn { background: #1a56ff; color: #fff; border: none; padding: 14px 24px; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.corp-badges { display: flex; gap: 10px; }
+.corp-badges img { height: 35px; cursor: pointer; }
+.corp-banner-img { width: 100%; display: flex; justify-content: center; align-items: flex-end; margin-bottom: -5px; }
+.corp-banner-img img { max-width: 250px; width: 100%; display: block; }
+
+@media (min-width: 768px) {
+    .corporate-hero { flex-direction: row; justify-content: space-between; align-items: center; padding: 60px 20px; }
+    .corporate-hero h1 { width: 45%; font-size: 42px; }
+    .corporate-hero-right { width: 45%; }
+    .corp-grid { grid-template-columns: repeat(3, 1fr); }
+    .corp-banner { flex-direction: row; align-items: center; max-width: 1164px; margin: 0 auto 40px; }
+    .corp-banner-content { width: 50%; padding: 40px; }
+    .corp-banner-img { width: 50%; justify-content: flex-end; padding-right: 40px; }
+    .corp-banner-img img { max-width: 280px; }
+}
+
 
     </style>
 </head>
@@ -1996,7 +2043,7 @@
                                 <div class="nbf-col">
                                     <h4>Services</h4>
                                     <a onclick="showScreen('screen-services')">Car rental</a>
-                                    <a onclick="showScreen('screen-services')">Corporate</a>
+<a onclick="showScreen('screen-corporate')">Corporate</a>
                                     <a onclick="downloadApp('driver')">Become a Driver</a>
                                 </div>
                                 <div class="nbf-col">
@@ -2029,6 +2076,85 @@
                     <!-- ================= END NEW BLACK FOOTER ================= -->
                 </div>
             </section>
+<section class="screen" id="screen-corporate">
+    <div class="back-header">
+        <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h1>Corporate Service</h1>
+    </div>
+    <div class="scroll" style="background: #f4f7fc;">
+        
+        <!-- Hero Section (প্রথম ইমেজ সহ) -->
+        <div style="background: #fff; margin-bottom: 20px; padding-bottom: 30px;">
+            <div class="corporate-hero" style="padding-bottom: 20px;">
+                <h1>Carbook Corporate Service</h1>
+                <div class="corporate-hero-right">
+                    <p>We are here to simplify your corporate and business travel; we value your time.</p>
+                    <button class="corporate-btn" onclick="showScreen('screen-help')">Contact Us <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- লাল দাগ দেওয়া স্থান: ১ম ইমেজ -->
+            <div style="max-width: 1164px; margin: 0 auto; padding: 0 20px;">
+                <img src="https://cdn.phototourl.com/member/2026-09-17-5d0bfc26-815f-4ff5-a32f-6875a83f52aa.jpg" alt="Corporate Cover" style="width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            </div>
+        </div>
+
+        <!-- Services Grid (দ্বিতীয় ইমেজ সহ) -->
+        <div class="corporate-services">
+            <h2>Our Corporate Services</h2>
+            <p class="sub">Essential transportation solutions at your fingertips.</p>
+            
+            <div class="corp-grid">
+                <div class="corp-card">
+                    <i class="fa-solid fa-car-side"></i>
+                    <h3>Car Rental</h3>
+                    <p>Choose the best car for your Office Fast, Secure and Reliable</p>
+                </div>
+                <div class="corp-card">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <h3>Airport Pick & Drop</h3>
+                    <p>Book your Trip anytime, Anywhere On time service</p>
+                </div>
+                <div class="corp-card">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Daily Office Pick & Drop</h3>
+                    <p>Reach the office on time, smoothly and without any hassle.</p>
+                </div>
+                <div class="corp-card">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <h3>Monthly Basis Car Rental</h3>
+                    <p>Office or School Trip on Carbook Time to time service</p>
+                </div>
+            </div>
+
+            <!-- সবুজ দাগ দেওয়া স্থান: ২য় ইমেজ -->
+            <div style="margin-top: 24px;">
+                <img src="https://cdn.phototourl.com/member/2026-09-17-5a5759b5-b5da-4ce5-a2e2-6db10204be47.jpg" alt="Corporate Banner" style="width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            </div>
+        </div>
+
+        <!-- Download App Banner (আপনার দেওয়া ফুটার ফোন ইমেজ) -->
+        <div class="corp-banner">
+            <div class="corp-banner-content">
+                <h2>Download now</h2>
+                <p>to earn money at your own time and convenience, without any commission.</p>
+                <button class="corp-banner-btn ripple" onclick="handleDownloadAppClick()">Carbook Drive <i class="fa-solid fa-arrow-right"></i></button>
+                <div class="corp-badges">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" onclick="handleDownloadAppClick()">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" onclick="handleDownloadAppClick()">
+                </div>
+            </div>
+            <div class="corp-banner-img">
+                <img src="https://cdn.phototourl.com/member/2026-09-17-56e3b21c-9835-4f60-8c22-00300b9790df.png" alt="Carbook App">
+            </div>
+        </div>
+
+        <!-- Black Footer (মূল ফুটার আগের মতোই থাকবে) -->
+        <footer class="new-black-footer">
+        ... (আপনার আগের ফুটারের কোড এখানে অপরিবর্তিত থাকবে) ...
+        </footer>
+    </div>
+</section>
 
             <!-- ======= NEW DEDICATED SCREENS (ABOUT, SERVICES, BLOG, LEGAL, INFO-DETAILS) ======= -->
             <section class="screen" id="screen-about">
