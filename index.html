@@ -688,58 +688,48 @@
             width: 100%;
             height: auto;
         }
+/* ================== RESPONSIVE DESIGN FOR DESKTOP & TABLET ================== */
+@media (min-width: 768px) {
+    .car-list-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .car-list-item { margin-bottom: 0; }
+    .hwy-grid { grid-template-columns: repeat(4, 1fr); }
+    .hwy-item-top { grid-column: span 2; }
+    .hwy-item-mid { grid-column: span 4; }
+    .hwy-item-bottom { grid-column: span 2; }
+    
+    /* Apply Grids for Tablet/Desktop */
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .safety-grid { grid-template-columns: repeat(2, 1fr); }
+    .deals-grid { grid-template-columns: repeat(2, 1fr); }
 
-        /* ================== RESPONSIVE DESIGN FOR DESKTOP & TABLET ================== */
-        @media (min-width: 768px) {
-            .car-list-container {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-            }
-            .car-list-item { margin-bottom: 0; }
-            .hwy-grid { grid-template-columns: repeat(4, 1fr); }
-            .hwy-item-top { grid-column: span 2; }
-            .hwy-item-mid { grid-column: span 4; }
-            .hwy-item-bottom { grid-column: span 2; }
-            
-            /* Apply Grids for Tablet/Desktop */
-            .blog-grid { grid-template-columns: repeat(2, 1fr); }
-            .safety-grid { grid-template-columns: repeat(2, 1fr); }
-            .deals-grid { grid-template-columns: repeat(2, 1fr); }
+    /* Deals section grid specific fix */
+    .deals-slider-track { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; overflow-x: visible; }
+    .deal-slide { flex: 1; max-width: 100%; }
 
-            /* Deals section grid specific fix */
-            .deals-slider-track { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; overflow-x: visible; }
-            .deal-slide { flex: 1; max-width: 100%; }
+    /* Banner and Footer Desktop adjustments */
+    .custom-app-banner { flex-direction: row; text-align: left; padding: 40px 40px 0 40px; justify-content: space-between; align-items: center; }
+    .cab-content { margin-bottom: 40px; max-width: 50%; }
+    .cab-badges { justify-content: flex-start; }
+    .cab-image { margin-top: 0; max-width: 320px; align-self: flex-end; }
 
-            /* Banner and Footer Desktop adjustments */
-            .custom-app-banner { flex-direction: row; text-align: left; padding: 40px 40px 0 40px; justify-content: space-between; align-items: center; }
-            .cab-content { margin-bottom: 40px; max-width: 50%; }
-            .cab-badges { justify-content: flex-start; }
-            .cab-image { margin-top: 0; max-width: 320px; align-self: flex-end; }
+    .nbf-top { flex-direction: row; justify-content: space-between; padding: 60px 40px; }
+    .nbf-brand-col { max-width: 350px; }
+    .nbf-links-wrap { grid-template-columns: repeat(3, 1fr); gap: 60px; }
+    .nbf-bottom-inner { flex-direction: row; justify-content: space-between; padding: 0 40px; }
 
-            .nbf-top { flex-direction: row; justify-content: space-between; padding: 60px 40px; }
-            .nbf-brand-col { max-width: 350px; }
-            .nbf-links-wrap { grid-template-columns: repeat(3, 1fr); gap: 60px; }
-            .nbf-bottom-inner { flex-direction: row; justify-content: space-between; padding: 0 40px; }
+    /* Hero Banner specific fix for tablets */
+    .hero-banner { height: 320px; }
+}
 
-            /* Hero Banner specific fix for tablets */
-            .hero-banner { height: 320px; }
-        }
 /* মোবাইল ভার্সনে ডেস্কটপ মেনু হাইড থাকবে (এটি @media এর বাইরে থাকবে) */
-/* মোবাইল ভার্সনে ডেস্কটপ মেনু হাইড থাকবে */
 .desktop-nav { display: none; }
 .desktop-login-btn { display: none; }
 
 @media (min-width: 1024px) {
-    /* Hero Banner আগের মতো */
-    .hero-banner {
-        height: 420px !important;
-        max-width: 1164px !important;
-        margin: 0 auto !important;
-        border-bottom-left-radius: 24px !important;
-        border-bottom-right-radius: 24px !important;
-    }
-
     /* ডেস্কটপে মোবাইল মেনু বাটন ও ড্রপডাউন হাইড হবে */
     .menu-btn { display: none !important; }
     .header-dropdown { display: none !important; } 
@@ -780,47 +770,45 @@
     }
     .desktop-login-btn:active { transform: scale(0.95); }
 
-    /* কন্টেইনার অরিজিনাল সাইজ (1164px) */
-    .overlap-container, .exclusive-deals-section, .our-impact-section, .our-service-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section, .custom-app-banner, .corporate-hero, .corporate-services, .corp-banner {
-        max-width: 1164px !important;
-        width: auto !important;
+    /* Hero Banner */
+    .hero-banner {
+        height: 420px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        border-bottom-left-radius: 24px !important;
+        border-bottom-right-radius: 24px !important;
+    }
+
+    /* ================= ডেস্কটপে হুবহু অরিজিনাল (মোবাইল) ফর্ম লেআউট ================= */
+    /* ফর্মটিকে মাঝে রেখে সুন্দর একটি সাইজ দেওয়া হলো যাতে স্ক্রিন জুড়ে না ছড়ায় */
+    .overlap-container {
+        max-width: 800px !important;
+        margin-top: -70px !important;
         margin-left: auto !important;
         margin-right: auto !important;
-    }
-
-    /* ================= ডেস্কটপ ফর্ম আগের মতো (২ কলামে) ================= */
-    .overlap-container {
         display: block !important;
-        margin-top: -70px !important;
-    }
-    .trip-type-pill-row {
-        width: auto !important;
-        margin: 0 18px 18px !important;
     }
 
+    /* ফর্ম এক কলাম (ওপর-নিচ) */
     .desktop-form-layout {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 20px !important;
+        display: block !important;
         padding: 0 !important;
         background: transparent !important;
         box-shadow: none !important;
         border: none !important;
     }
 
-    .desktop-form-layout > .left-col, 
+    .desktop-form-layout > .left-col,
     .desktop-form-layout > .right-col {
         display: block !important;
         margin: 0 !important;
     }
 
     .desktop-form-layout > .right-col {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 16px !important;
+        margin-top: 16px !important;
     }
 
-    /* আইকন এবং ফিল্ডগুলোর ডিজাইন রিস্টোর করা হলো */
+    /* ফর্মের ফিল্ডগুলো অরিজিনাল স্টাইল ধরে রাখবে */
     .locations-card {
         display: flex !important;
         flex-direction: row !important;
@@ -828,166 +816,118 @@
         border: 1px solid #f0f3f8 !important;
         box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
         border-radius: 16px !important;
-    }
-    .loc-pins-col {
-        display: flex !important; /* আইকনগুলো আবার দেখাবে */
-    }
-    .loc-inputs-col {
-        display: block !important;
-        width: 100% !important;
-    }
-    .loc-divider {
-        display: block !important;
-        width: auto !important;
-        height: 1px !important;
-        background: #e1ebfa !important;
-        margin: 10px 0 !important;
+        background: #ffffff !important;
+        margin: 0 !important;
     }
 
-    .locations-card, .datetime-row, .return-datetime-wrap, .note-box, .add-stops-btn-wrap {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+    /* ডট ও লাইনগুলো শো করবে */
+    .loc-pins-col { display: flex !important; flex-direction: column !important; align-items: center !important; }
+    .loc-inputs-col { display: block !important; flex: 1 !important; width: 100% !important; }
+    .loc-divider { display: block !important; width: 100% !important; height: 1px !important; background: #e1ebfa !important; margin: 10px 0 !important; }
+
+    .loc-field-block { background: transparent !important; border: none !important; box-shadow: none !important; padding: 2px 0 !important; }
+
+    .datetime-row, .return-datetime-wrap, .note-box, .add-stops-btn-wrap { margin-left: 0 !important; margin-right: 0 !important; }
+    .datetime-row, .note-box { margin-bottom: 0 !important; }
+
+    /* গাড়ির লিস্ট ২x২ গ্রিড হবে যেহেতু কন্টেইনার ৮০০px */
+    .car-list-container { 
+        display: grid !important; 
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 16px !important; 
+        margin: 0 18px 20px !important; 
     }
-    .datetime-row, .note-box {
-        margin-bottom: 0 !important;
+    /* ============================================================================== */
+
+    /* নিচের অন্যান্য সেকশনগুলো ডেস্কটপে ছড়ানো থাকবে */
+    .exclusive-deals-section, .our-impact-section, .our-service-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section, .custom-app-banner, .corporate-hero, .corporate-services, .corp-banner {
+        max-width: 1200px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
-
-            .locations-card {
-                display: flex;
-                flex-direction: row;
-                width: 100%;
-                padding: 0 !important;
-                border: none !important;
-                box-shadow: none !important;
-            }
-            .loc-pins-col { display: none !important; } /* আইকন ও দাগ হাইড */
-            .loc-divider { display: none !important; }
-
-            .loc-inputs-col {
-                display: flex !important;
-                flex-direction: row;
-                width: 100%;
-                gap: 16px;
-            }
-            #dash-dropoff-group { display: flex; flex: 1; }
-            #dash-dynamic-stops { display: flex; flex-direction: row; gap: 16px; }
-
-            /* ইনপুট বক্সগুলোর স্টাইল */
-            .loc-field-block, .datetime-box, .note-box {
-                background: #f4f7fc !important;
-                border: 1px solid #e1e8f5 !important;
-                border-radius: 12px !important;
-                padding: 12px 16px !important;
-                box-shadow: none !important;
-                flex: 1;
-                margin: 0 !important;
-            }
-
-            .datetime-row, .return-datetime-wrap {
-                display: flex; flex-direction: row; gap: 16px !important; margin: 0 !important; flex: 2;
-            }
+    .hwy-grid { display: grid !important; grid-template-columns: repeat(5, 1fr) !important; gap: 10px !important; }
+    .hwy-item-top { grid-column: span 1 !important; aspect-ratio: 4/3 !important; }
+    .hwy-item-mid { grid-column: span 1 !important; aspect-ratio: 4/3 !important; }
+    .hwy-item-bottom { grid-column: span 1 !important; aspect-ratio: 4/3 !important; }
+    
+    .blog-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important;}
+    .news-featured-section a { display: block; max-width: 600px; margin: 0 auto; }
+    .corp-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 16px !important; }
+    .impact-container { display: grid !important; grid-template-columns: 1.2fr 1fr 1fr !important; grid-template-rows: 1fr 1fr !important; gap: 12px !important; }
             
-            .add-stops-btn-wrap { margin: 0 !important; }
+    .topbar, .back-header, .header {
+        padding-left: calc(50% - 600px) !important;
+        padding-right: calc(50% - 600px) !important;
+    }
+    
+    /* Inner screens */
+    #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll, #screen-corporate .scroll, #screen-news .scroll {
+        max-width: 1200px !important; margin: 0 auto !important; width: 100% !important; border-left: 1px solid var(--border); border-right: 1px solid var(--border); background: #fff;
+    }
+}
 
-            /* ================= গাড়িগুলোর লিস্ট এক লাইনে ================= */
-            .car-list-container {
-                display: flex !important;
-                flex-direction: row !important;
-                justify-content: space-between;
-                gap: 16px;
-                margin: 0 !important;
-                width: 100%;
-            }
-            .car-list-item { flex: 1; margin: 0 !important; }
+/* ---------- Welcome Notice Styles ---------- */
+.welcome-notice {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--blue);
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 999px;
+    box-shadow: 0 8px 25px rgba(26, 86, 255, 0.3);
+    z-index: 999999;
+    font-weight: 600;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: slideUpNotice 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+.welcome-notice:hover { transform: scale(1.02); }
+@keyframes slideUpNotice {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@media (max-width: 768px) {
+    .welcome-notice {
+        left: 50%;
+        right: auto;
+        bottom: 20px;
+        width: max-content;
+        max-width: 90vw;
+        animation: slideUpNoticeMobile 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    }
+    @keyframes slideUpNoticeMobile {
+        from { transform: translate(-50%, 100px); opacity: 0; }
+        to { transform: translate(-50%, 0); opacity: 1; }
+    }
+    .welcome-notice:hover { transform: translate(-50%, 0) scale(1.02); }
+}
 
-            .overlap-container > div:last-child {
-                margin: 10px auto 30px !important;
-                width: 300px;
-            }
+/* ================== FLOATING ACTIONS CSS ================== */
+/* Language Switch Button Style */
+.lang-switch-btn {
+    background: #f4f7fc;
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e1e8f5;
+    transition: all 0.2s ease;
+}
+.lang-switch-btn:active {
+    transform: scale(0.95);
+}
 
-            /* ================= ফটোগ্যালারি ৫টি ছবি এক লাইনে ================= */
-            .hwy-grid {
-                display: grid !important;
-                grid-template-columns: repeat(5, 1fr) !important;
-                gap: 16px !important;
-            }
-            .hwy-item-top, .hwy-item-mid, .hwy-item-bottom {
-                grid-column: span 1 !important;
-                aspect-ratio: 1 / 1 !important; /* সবগুলো ছবি সমান স্কয়ার হবে */
-                height: auto !important;
-            }
-
-            /* ================= ইমপ্যাক্ট ও সার্ভিস এক লাইনে ================= */
-            .impact-container {
-                display: flex !important;
-                flex-direction: row !important;
-                gap: 16px;
-            }
-            .impact-main { flex: 2; margin: 0 !important; }
-            .impact-box { flex: 1; margin: 0 !important; height: auto !important; }
-            .impact-tall { grid-row: auto !important; }
-
-            /* Corporate Services ৪টা এক লাইনে */
-            .corp-grid {
-                display: grid !important;
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 16px;
-            }
-
-            .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-            
-            /* টপবার এবং মেনু ফিক্স */
-            .topbar, .back-header, .header { padding-left: 2% !important; padding-right: 2% !important; }
-            .header-dropdown { width: 350px !important; max-width: 350px !important; left: auto !important; right: 2% !important; transform: none !important; border-radius: 0 0 16px 16px; border: 1px solid #f0f3f8; border-top: none; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-
-            .login-screen { background: #f4f7fc; justify-content: center; align-items: center; }
-            .login-center-block { max-width: 450px !important; width: 100%; background: #fff; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); }
-            
-            #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll, #screen-corporate .scroll { max-width: 1600px; width: 96%; margin: 0 auto; background: #fff; }
-        }
-
-
-        /* ---------- Welcome Notice Styles ---------- */
-        .welcome-notice {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: var(--blue);
-            color: #ffffff;
-            padding: 14px 20px;
-            border-radius: 999px;
-            box-shadow: 0 8px 25px rgba(26, 86, 255, 0.3);
-            z-index: 999999;
-            font-weight: 600;
-            font-size: 14.5px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            animation: slideUpNotice 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-        }
-        .welcome-notice:hover { transform: scale(1.02); }
-        @keyframes slideUpNotice {
-            from { transform: translateY(100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        @media (max-width: 768px) {
-            .welcome-notice {
-                left: 50%;
-                right: auto;
-                bottom: 20px;
-                width: max-content;
-                max-width: 90vw;
-                animation: slideUpNoticeMobile 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-            }
-            @keyframes slideUpNoticeMobile {
-                from { transform: translate(-50%, 100px); opacity: 0; }
-                to { transform: translate(-50%, 0); opacity: 1; }
-            }
-            .welcome-notice:hover { transform: translate(-50%, 0) scale(1.02); }
-        }/* ================== FLOATING ACTIONS CSS ================== */
 .floating-actions-wrapper {
     position: fixed;
     bottom: 20px;
@@ -1463,6 +1403,11 @@
     
     <!-- NEW DESKTOP NAV -->
     <nav class="desktop-nav">
+<!-- ভাষার সুইচিং বাটন -->
+<button onclick="toggleLanguage()" class="lang-switch-btn" title="Change Language">
+    <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
+</button>
+
         <a onclick="showScreen('screen-about')" data-lang="about_us">About Us</a>
         <a onclick="showScreen('screen-services')" data-lang="services">Services</a>
         <a onclick="showScreen('screen-corporate')">Corporate</a>
@@ -1484,6 +1429,11 @@
     
     <!-- MOBILE DROPDOWN MENU -->
     <div class="header-dropdown" id="header-dropdown">
+<!-- ভাষার সুইচিং বাটন -->
+<button onclick="toggleLanguage()" class="lang-switch-btn" title="Change Language">
+    <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
+</button>
+
         <div class="dropdown-item" id="dropdown-login-btn" onclick="showScreen('screen-login')" style="background: var(--blue); color: #fff; border-radius: 12px; margin: 12px 22px; justify-content: center; box-shadow: 0 4px 12px rgba(26,86,255,0.25);">
             <span data-lang="login_now" style="font-weight: 800;">Login Now</span>
         </div>
@@ -3634,4 +3584,4 @@ window.addEventListener('scroll', () => {
     </div>
 </body>
 
-</html>
+</html
