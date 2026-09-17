@@ -734,125 +734,123 @@
                 border-radius: 0 !important;
             }
 
-            /* কন্টেইনার চওড়া করে দুই পাশের ফাঁকা কমানো হলো */
-            .overlap-container, .exclusive-deals-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section, .custom-app-banner, .corporate-hero, .corporate-services, .corp-banner {
-                max-width: 1300px !important;
+            /* স্ক্রিন জুড়ে কন্টেন্ট ছড়ানোর জন্য Max Width বাড়ানো হলো (1500px বা 95%) */
+            .overlap-container, .exclusive-deals-section, .our-impact-section, .our-service-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section, .custom-app-banner, .corporate-hero, .corporate-services, .corp-banner {
+                max-width: 1500px !important;
+                width: 95% !important;
                 margin-left: auto !important;
                 margin-right: auto !important;
             }
 
-            /* ================= ডেস্কটপ ফর্ম ডিজাইন (পাশাপাশি) ================= */
-            .desktop-form-layout {
-                display: flex !important;
-                flex-direction: column;
-                gap: 16px;
-                background: #ffffff;
-                padding: 24px 30px;
-                border-radius: 20px;
-                box-shadow: 0 10px 35px rgba(0,0,0,0.06);
-                margin: 0 18px 24px !important;
-                border: 1px solid #f0f3f8;
+            /* ================= ডেস্কটপ ওভারল্যাপ গ্রিড (ফর্ম এবং গাড়ি পাশাপাশি) ================= */
+            .overlap-container {
+                display: grid !important;
+                grid-template-columns: 2.2fr 1fr; /* বামে ফর্ম বড়, ডানে গাড়ি ছোট */
+                grid-template-rows: auto auto auto;
+                gap: 24px;
+                margin-top: -80px !important;
             }
 
-            /* প্রথম সারি: Pickup, Dropoff এবং Add Stops */
-            .desktop-form-layout > .left-col {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 20px;
-                width: 100%;
-            }
-
-            /* দ্বিতীয় সারি: Date, Time এবং Note */
-            .desktop-form-layout > .right-col {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 16px;
-                width: 100%;
-            }
-
-            /* Pickup & Dropoff কার্ড পাশাপাশি */
-            .locations-card {
-                flex: 1;
+            /* One Way / Round Way বাটনগুলো সবার ওপরে পুরোটা জুড়ে থাকবে */
+            .trip-type-pill-row {
+                grid-column: 1 / -1;
                 margin: 0 !important;
-                padding: 12px 24px !important;
-                box-shadow: none !important;
-                border: 1px solid #e1e8f5 !important;
+                height: 60px;
                 border-radius: 16px !important;
             }
+            .trip-pill { font-size: 16px !important; }
 
-            .loc-pins-col { display: none !important; } /* ডেস্কটপে ডট/লাইন হাইড */
+            /* ফর্মটি বাম পাশে বসবে */
+            .desktop-form-layout {
+                grid-column: 1; 
+                margin: 0 !important;
+                display: flex !important;
+                flex-direction: column;
+                gap: 20px;
+                background: #ffffff;
+                padding: 35px 40px;
+                border-radius: 20px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+                border: 1px solid #f0f3f8;
+            }
+
+            /* গাড়ির লিস্ট ডান পাশে বসবে */
+            .car-list-container {
+                grid-column: 2; 
+                display: grid !important;
+                grid-template-columns: 1fr !important; /* একটা একটা করে নিচে নিচে */
+                gap: 16px;
+                margin: 0 !important;
+            }
+
+            /* গাড়িগুলোর সাইজ কিছুটা বড় করা হলো */
+            .car-list-item {
+                margin: 0 !important;
+                padding: 16px 20px !important;
+                height: 100%;
+            }
+            .car-list-item img { width: 100px !important; height: 60px !important; }
+            .car-list-item h4 { font-size: 18px !important; }
+
+            /* Confirm Details বাটন নিচে পুরোটা জুড়ে বসবে */
+            .overlap-container > div:last-child {
+                grid-column: 1 / -1;
+                margin: 10px 0 30px !important;
+            }
+            .overlap-container > div:last-child button {
+                height: 65px !important;
+                font-size: 20px !important;
+                border-radius: 20px !important;
+            }
+
+            /* ================= ফর্মের ভেতরের ডিজাইন (বড় ও ছড়ানো) ================= */
+            .desktop-form-layout > .left-col {
+                display: flex; flex-direction: row; align-items: center; gap: 20px; width: 100%;
+            }
+            .desktop-form-layout > .right-col {
+                display: flex; flex-direction: row; align-items: center; gap: 20px; width: 100%; margin-top: 10px;
+            }
+
+            .locations-card {
+                flex: 1; margin: 0 !important; padding: 16px 24px !important;
+                box-shadow: none !important; border: 1px solid #e1e8f5 !important; border-radius: 16px !important;
+            }
+
+            .loc-pins-col { display: none !important; } /* ডট লাইন হাইড */
 
             .loc-inputs-col {
-                display: flex !important;
-                flex-direction: row;
-                width: 100%;
-                align-items: center;
-                gap: 20px;
+                display: flex !important; flex-direction: row; width: 100%; align-items: center; gap: 24px;
             }
-            
             .loc-field-block { flex: 1; }
+            .loc-field-block label { font-size: 15px !important; margin-bottom: 6px !important; }
+            .loc-field-block input { font-size: 17px !important; } /* ফন্টের সাইজ বড় করা হলো */
 
-            /* Add Stops অপশন পাশাপাশি বসানোর জন্য */
-            #dash-dynamic-stops {
-                display: flex;
-                flex-direction: row;
-                gap: 20px;
-            }
+            #dash-dynamic-stops { display: flex; flex-direction: row; gap: 20px; }
+            #dash-dropoff-group { display: flex; flex: 1; align-items: center; }
 
-            #dash-dropoff-group {
-                display: flex;
-                flex: 1;
-                align-items: center;
-            }
+            .loc-divider { width: 1px !important; height: 50px !important; background: #dbe3f0 !important; margin: 0 24px 0 0 !important; }
 
-            /* ডিভাইডার (দাগ) অনুভূমিক থেকে উলম্ব (Vertical) করা হলো */
-            .loc-divider {
-                width: 1px !important;
-                height: 40px !important;
-                background: #dbe3f0 !important;
-                margin: 0 20px 0 0 !important;
-            }
+            .datetime-row { margin: 0 !important; flex: 2; gap: 20px !important; }
+            .return-datetime-wrap { margin: 0 !important; flex: 2; gap: 20px !important; }
+            .datetime-box { padding: 18px 20px !important; border-radius: 16px !important; }
+            .datetime-box input { font-size: 16px !important; }
 
-            .add-stops-btn-wrap { margin: 0 !important; flex-shrink: 0; }
-            
-            /* ডেট, টাইম, নোট পাশাপাশি */
-            .datetime-row { margin: 0 !important; flex: 2; gap: 16px !important; }
-            .return-datetime-wrap { margin: 0 !important; flex: 2; }
-            .note-box { margin: 0 !important; flex: 1; box-shadow: none !important; border: 1px solid #e1e8f5 !important; }
-            /* ============================================================== */
+            .note-box { margin: 0 !important; flex: 1.5; padding: 18px 20px !important; box-shadow: none !important; border: 1px solid #e1e8f5 !important; border-radius: 16px !important; }
+            .note-box textarea { font-size: 16px !important; }
 
-            .car-list-container { grid-template-columns: repeat(4, 1fr); margin-top: 10px; }
-            .hwy-grid { grid-template-columns: repeat(5, 1fr); }
-            .hwy-item-top, .hwy-item-mid, .hwy-item-bottom { grid-column: span 1; aspect-ratio: 4/3; }
-            .blog-grid { grid-template-columns: repeat(3, 1fr); }
-            .news-featured-section a { display: block; max-width: 600px; margin: 0 auto; }
+            /* ================= অন্যান্য সেকশন বড় করা হলো ================= */
+            .hwy-grid { grid-template-columns: repeat(5, 1fr); gap: 20px; }
+            .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+            .safety-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
             
             /* টপবার এবং মেনু ফিক্স */
-            .topbar, .back-header, .header {
-                padding-left: 40px !important;
-                padding-right: 40px !important;
-            }
-            
-            .header-dropdown {
-                width: 350px !important;
-                max-width: 350px !important;
-                left: auto !important;
-                right: 40px !important;
-                transform: none !important;
-                border-radius: 0 0 16px 16px;
-                border: 1px solid #f0f3f8;
-                border-top: none;
-                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            }
+            .topbar, .back-header, .header { padding-left: 5% !important; padding-right: 5% !important; }
+            .header-dropdown { width: 350px !important; max-width: 350px !important; left: auto !important; right: 5% !important; transform: none !important; border-radius: 0 0 16px 16px; border: 1px solid #f0f3f8; border-top: none; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 
             .login-screen { background: #f4f7fc; justify-content: center; align-items: center; }
             .login-center-block { max-width: 450px !important; width: 100%; background: #fff; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); }
             
-            #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll, #screen-corporate .scroll {
-                max-width: 1300px; margin: 0 auto; width: 100%; background: #fff;
-            }
+            #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll, #screen-corporate .scroll { max-width: 1500px; width: 95%; margin: 0 auto; background: #fff; }
         }
 
 
