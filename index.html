@@ -726,7 +726,7 @@
             .hero-banner { height: 320px; }
         }
         @media (min-width: 1024px) {
-            /* Hero Banner কে ফুল-স্ক্রিন (Edge-to-Edge) করা হলো */
+            /* Hero Banner Edge-to-Edge */
             .hero-banner {
                 height: 450px !important; 
                 max-width: 100% !important;
@@ -734,94 +734,124 @@
                 border-radius: 0 !important;
             }
 
-            /* Desktop Form Grid Fix - "পাশা পাশী আসে" */
-            .desktop-form-layout {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-                padding: 0;
-            }
-            .desktop-form-layout > .left-col > .locations-card,
-            .desktop-form-layout > .left-col > .add-stops-btn-wrap,
-            .desktop-form-layout > .right-col > .datetime-row,
-            .desktop-form-layout > .right-col > .return-datetime-wrap,
-            .desktop-form-layout > .right-col > .note-box {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-            }
-            .desktop-form-layout > .right-col {
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-            }
-            .desktop-form-layout > .right-col > .datetime-row,
-            .desktop-form-layout > .right-col > .note-box {
-                margin-bottom: 0 !important;
-            }
-
-            .car-list-container { grid-template-columns: repeat(4, 1fr); }
-            .hwy-grid { grid-template-columns: repeat(5, 1fr); }
-            .hwy-item-top { grid-column: span 1; aspect-ratio: 4/3; }
-            .hwy-item-mid { grid-column: span 1; aspect-ratio: 4/3; }
-            .hwy-item-bottom { grid-column: span 1; aspect-ratio: 4/3; }
-            
-            /* Enhanced 3-column Blog Grid on Desktop */
-            .blog-grid { grid-template-columns: repeat(3, 1fr); }
-            .news-featured-section a { display: block; max-width: 600px; margin: 0 auto; }
-            
-            /* ওয়েবসাইটের কনটেন্ট চওড়া (Full Screen Feel) করার জন্য Max-Width বাড়ানো হলো */
+            /* কন্টেইনার চওড়া করে দুই পাশের ফাঁকা কমানো হলো */
             .overlap-container, .exclusive-deals-section, .here-with-you-section, .safety-features-section, .news-featured-section, .blog-section, #dashboard-blog-section, .custom-app-banner, .corporate-hero, .corporate-services, .corp-banner {
-                max-width: 1440px !important;
+                max-width: 1300px !important;
                 margin-left: auto !important;
                 margin-right: auto !important;
             }
+
+            /* ================= ডেস্কটপ ফর্ম ডিজাইন (পাশাপাশি) ================= */
+            .desktop-form-layout {
+                display: flex !important;
+                flex-direction: column;
+                gap: 16px;
+                background: #ffffff;
+                padding: 24px 30px;
+                border-radius: 20px;
+                box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+                margin: 0 18px 24px !important;
+                border: 1px solid #f0f3f8;
+            }
+
+            /* প্রথম সারি: Pickup, Dropoff এবং Add Stops */
+            .desktop-form-layout > .left-col {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+            }
+
+            /* দ্বিতীয় সারি: Date, Time এবং Note */
+            .desktop-form-layout > .right-col {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 16px;
+                width: 100%;
+            }
+
+            /* Pickup & Dropoff কার্ড পাশাপাশি */
+            .locations-card {
+                flex: 1;
+                margin: 0 !important;
+                padding: 12px 24px !important;
+                box-shadow: none !important;
+                border: 1px solid #e1e8f5 !important;
+                border-radius: 16px !important;
+            }
+
+            .loc-pins-col { display: none !important; } /* ডেস্কটপে ডট/লাইন হাইড */
+
+            .loc-inputs-col {
+                display: flex !important;
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                gap: 20px;
+            }
             
-            /* Topbar কে ফুল স্ক্রিন করা হলো */
+            .loc-field-block { flex: 1; }
+
+            /* Add Stops অপশন পাশাপাশি বসানোর জন্য */
+            #dash-dynamic-stops {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            #dash-dropoff-group {
+                display: flex;
+                flex: 1;
+                align-items: center;
+            }
+
+            /* ডিভাইডার (দাগ) অনুভূমিক থেকে উলম্ব (Vertical) করা হলো */
+            .loc-divider {
+                width: 1px !important;
+                height: 40px !important;
+                background: #dbe3f0 !important;
+                margin: 0 20px 0 0 !important;
+            }
+
+            .add-stops-btn-wrap { margin: 0 !important; flex-shrink: 0; }
+            
+            /* ডেট, টাইম, নোট পাশাপাশি */
+            .datetime-row { margin: 0 !important; flex: 2; gap: 16px !important; }
+            .return-datetime-wrap { margin: 0 !important; flex: 2; }
+            .note-box { margin: 0 !important; flex: 1; box-shadow: none !important; border: 1px solid #e1e8f5 !important; }
+            /* ============================================================== */
+
+            .car-list-container { grid-template-columns: repeat(4, 1fr); margin-top: 10px; }
+            .hwy-grid { grid-template-columns: repeat(5, 1fr); }
+            .hwy-item-top, .hwy-item-mid, .hwy-item-bottom { grid-column: span 1; aspect-ratio: 4/3; }
+            .blog-grid { grid-template-columns: repeat(3, 1fr); }
+            .news-featured-section a { display: block; max-width: 600px; margin: 0 auto; }
+            
+            /* টপবার এবং মেনু ফিক্স */
             .topbar, .back-header, .header {
                 padding-left: 40px !important;
                 padding-right: 40px !important;
             }
             
-            /* FIX: ড্রপডাউন মেনু এখন আর মাঝে আসবে না, বরং ডানদিকে সুন্দরভাবে ওপেন হবে */
             .header-dropdown {
                 width: 350px !important;
                 max-width: 350px !important;
                 left: auto !important;
-                right: 40px !important; /* মেনু আইকনের ঠিক নিচে ডানদিকে থাকবে */
+                right: 40px !important;
                 transform: none !important;
                 border-radius: 0 0 16px 16px;
-                border-left: 1px solid #f0f3f8;
-                border-right: 1px solid #f0f3f8;
-                border-bottom: 1px solid #f0f3f8;
+                border: 1px solid #f0f3f8;
+                border-top: none;
                 box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             }
 
-            .login-screen {
-                background: #f4f7fc;
-                justify-content: center;
-                align-items: center;
-            }
+            .login-screen { background: #f4f7fc; justify-content: center; align-items: center; }
+            .login-center-block { max-width: 450px !important; width: 100%; background: #fff; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--border); }
             
-            .login-center-block {
-                max-width: 450px !important;
-                width: 100%;
-                background: #fff;
-                padding: 40px;
-                border-radius: 24px;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-                border: 1px solid var(--border);
-            }
-            
-            .scroll {
-                background: #fcfcfc;
-            }
-
-            /* অন্যান্য স্ক্রিনগুলোর রিডেবিলিটি ঠিক রাখতে */
             #screen-about .scroll, #screen-services .scroll, #screen-blog .scroll, #screen-blog-details .scroll, #screen-info-details .scroll, #screen-legal .scroll, #screen-deal-details .scroll, #screen-all-deals .scroll, #screen-corporate .scroll {
-                max-width: 1440px;
-                margin: 0 auto;
-                width: 100%;
-                background: #fff;
+                max-width: 1300px; margin: 0 auto; width: 100%; background: #fff;
             }
         }
 
