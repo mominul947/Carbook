@@ -2096,50 +2096,97 @@
     </script>
 </div>
 <!-- ======= END FEATURED NEWS SECTION ======= -->
-<!-- ======= PROMO BANNER SECTION (Pathao Style) ======= -->
-<style>
-    .promo-banner-section { 
-        margin: 0 18px 40px; 
-        padding: 30px 24px; 
-        background: #fff; 
-        border: 1px solid var(--border); 
-        border-radius: 16px; 
-        box-shadow: 0 4px 12px rgba(0,0,0,0.03); 
-        display: flex; 
-        flex-direction: column; 
-        gap: 20px; 
-        text-align: left;
-    }
-    @media (min-width: 768px) {
+<!-- ======= START CREAM BACKGROUND WRAPPER ======= -->
+<!-- এখানে #f5ebe1 ব্যবহার করা হয়েছে যা আগের চেয়ে একটু গাঢ় ক্রিম কালার -->
+<div style="background-color: #f5ebe1; padding: 40px 0 20px 0; margin-top: 10px;">
+
+    <!-- ১. আপনার বর্তমান FEATURED NEWS SECTION-এর পুরো কোডটি এখানে থাকবে -->
+    <div class="news-featured-section" style="margin: 0 18px 30px;">
+
+    </div>
+    <!-- ======= END FEATURED NEWS SECTION ======= -->
+
+
+    <!-- ২. PROMO BANNER SECTION (বক্স ছাড়া) -->
+    <style>
         .promo-banner-section { 
-            max-width: 1164px; 
-            margin-left: auto; 
-            margin-right: auto; 
+            margin: 25px 18px 45px; 
+            display: flex;
+            justify-content: center;
+        }
+        .promo-inner {
+            width: 100%;
+            max-width: 350px; 
+            text-align: left;
+        }
+        .promo-small-text {
+            font-size: 14px; 
+            color: #64748b; 
+            font-weight: 600; 
+            margin-bottom: 12px; 
+            line-height: 1.5;
+            max-width: 260px; 
+        }
+        .promo-body {
+            display: flex;
             flex-direction: row; 
             align-items: center; 
             justify-content: space-between; 
+            gap: 12px; 
         }
-        .promo-content { max-width: 65%; }
-    }
-</style>
+        .promo-big-text {
+            font-size: 20px; 
+            font-weight: 900; 
+            color: #1b1f2a; 
+            line-height: 1.35;
+            margin: 0;
+            max-width: 175px; 
+        }
+        .promo-action button {
+            border-radius: 8px; 
+            padding: 12px 14px; 
+            font-size: 13.5px;
+            white-space: nowrap;
+            box-shadow: none; 
+        }
+        
+        @media (min-width: 768px) {
+            .promo-banner-section { max-width: 1164px; margin-left: auto; margin-right: auto; }
+            .promo-inner { max-width: 100%; }
+            .promo-small-text { max-width: 100%; font-size: 15px; }
+            .promo-big-text { max-width: 400px; font-size: 28px; }
+            .promo-action button { padding: 14px 24px; font-size: 15px; }
+        }
+    </style>
 
-<div class="promo-banner-section">
-    <div class="promo-content">
-        <p data-lang="promo_small_text" style="font-size: 15px; color: #64748b; font-weight: 600; margin-bottom: 12px; line-height: 1.5;">
-            Easily book a trip in Carbook Tailored to your needs
-        </p>
-        <h2 data-lang="promo_big_text" style="font-size: 26px; font-weight: 900; color: #1b1f2a; line-height: 1.3;">
-            Carbook Your trusted companion to make your everyday life easier
-        </h2>
+    <div class="promo-banner-section">
+        <div class="promo-inner">
+            <p data-lang="promo_small_text" class="promo-small-text">
+                Easily book a trip in Carbook Tailored to your needs
+            </p>
+            <div class="promo-body">
+                <h2 data-lang="promo_big_text" class="promo-big-text">
+                    Carbook Your trusted companion to make your everyday life easier
+                </h2>
+                <div class="promo-action">
+                    <button class="btn-primary ripple" onclick="showScreen('screen-about')" style="width: auto;">
+                        <span data-lang="learn_about_carbook">Learn about Carbook</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="promo-action">
-        <button class="btn-primary ripple" onclick="showScreen('screen-about')" style="border-radius: 8px; padding: 14px 24px; width: auto; font-size: 15px;">
-            <span data-lang="learn_about_carbook">Learn about Carbook</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
-        </button>
+    <!-- ======= END PROMO BANNER SECTION ======= -->
+
+
+    <!-- ৩. আপনার বর্তমান BLOG SECTION-এর পুরো কোডটি এখানে থাকবে -->
+
+
     </div>
+
+
 </div>
-<!-- ======= END PROMO BANNER SECTION ======= -->
-
+<!-- ======= END CREAM BACKGROUND WRAPPER ======= -->
 
                     <!-- ======= BLOG SECTION ======= -->
                     <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
@@ -2207,7 +2254,7 @@
                                     </div>
                                 </div>
                             </div>
-
+    <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
                         </div>
                     </div>
                     <!-- ======= END BLOG SECTION ======= -->
@@ -3231,6 +3278,100 @@ const translations = {
                 list.innerHTML = html;
             });
         }
+// Blog Details Open Function
+// Blog Details Open Function
+// Blog Details Open Function
+function openBlogDetails(id) {
+    const titleEl = document.getElementById('blog-detail-title');
+    const imgEl = document.getElementById('blog-detail-img');
+    const contentEl = document.getElementById('blog-detail-content');
+
+    if (id === 1) {
+        titleEl.textContent = "কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী";
+        imgEl.src = "https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg";
+        contentEl.innerHTML = `
+            <p style="margin-bottom: 15px;">বাংলাদেশে নিরাপদ, আরামদায়ক ও সহজে গাড়ি ভাড়া করার জন্য Carbook হতে পারে আপনার নির্ভরযোগ্য সঙ্গী। পরিবার নিয়ে ভ্রমণ, অফিসের কাজে যাতায়াত, বিমানবন্দর ট্রান্সফার কিংবা দেশের এক শহর থেকে অন্য শহরে যাওয়া—প্রতিটি যাত্রার জন্য Carbook-এর মাধ্যমে পছন্দের গাড়ি বেছে নেওয়া যায়।</p>
+            
+            <h4 style="font-weight: 800; color: #1b1f2a; margin: 25px 0 10px; font-size: 18px;">কেন Carbook?</h4>
+            <p style="margin-bottom: 15px;">Carbook-এর লক্ষ্য হলো গাড়ি ভাড়ার অভিজ্ঞতাকে আরও সহজ ও ঝামেলামুক্ত করা। বিভিন্ন ধরনের গাড়ির পাশাপাশি গ্রাহকের প্রয়োজন অনুযায়ী উপযুক্ত গাড়ি বেছে নেওয়ার সুযোগ রয়েছে।</p>
+            
+            <h4 style="font-weight: 800; color: #1b1f2a; margin: 25px 0 10px; font-size: 18px;">Carbook-এর সুবিধা</h4>
+            <ul style="padding-left: 20px; margin-bottom: 25px; line-height: 1.8; color: #4b5563;">
+                <li style="margin-bottom: 8px;">বিভিন্ন মডেলের গাড়ি ভাড়ার সুবিধা</li>
+                <li style="margin-bottom: 8px;">ঢাকা ও দেশের বিভিন্ন রুটে সার্ভিস</li>
+                <li style="margin-bottom: 8px;">পরিবার ও কর্পোরেট ভ্রমণের জন্য গাড়ি</li>
+                <li style="margin-bottom: 8px;">অভিজ্ঞ ড্রাইভারসহ গাড়ি ভাড়ার সুবিধা</li>
+                <li style="margin-bottom: 8px;">সহজ বুকিং প্রক্রিয়া</li>
+                <li style="margin-bottom: 8px;">ভ্রমণ অনুযায়ী গাড়ি বেছে নেওয়ার সুযোগ</li>
+            </ul>
+            
+            <div style="background: #f0f5ff; padding: 18px; border-radius: 12px; border-left: 4px solid var(--blue); margin-top: 10px;">
+                <h4 style="font-weight: 800; color: var(--blue); margin-bottom: 10px; font-size: 16px;">আপনার পরবর্তী যাত্রা হোক আরও সহজ</h4>
+                <p style="margin: 0; color: #1b1f2a; font-size: 14.5px; line-height: 1.6;">ভ্রমণের আগে সঠিক গাড়ি নির্বাচন আপনার পুরো যাত্রাকে আরও আরামদায়ক করে তুলতে পারে। তাই আপনার প্রয়োজন অনুযায়ী গাড়ি বেছে নিয়ে Carbook-এর সঙ্গে শুরু করুন নিরাপদ ও স্বাচ্ছন্দ্যময় যাত্রা।</p>
+            </div>
+        `;
+    } else if (id === 2) {
+        titleEl.textContent = "Carbook – Your Trusted Car Rental Partner in Bangladesh";
+        imgEl.src = "https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg";
+        contentEl.innerHTML = `
+            <p style="margin-bottom: 15px;">Finding a reliable and comfortable car rental service in Bangladesh should be simple. Carbook is here to make your journey easier, safer, and more convenient.</p>
+            <p style="margin-bottom: 25px;">Whether you are planning a business trip, a family tour, an airport transfer, or an intercity journey, Carbook provides convenient car rental solutions to meet your travel needs.</p>
+            
+            <h4 style="font-weight: 800; color: #1b1f2a; margin: 20px 0 10px; font-size: 18px;">Comfortable Cars for Every Journey</h4>
+            <p style="margin-bottom: 25px;">At Carbook, customers can choose from a variety of vehicles suitable for different types of travel. From comfortable sedans for individuals and small families to spacious vehicles for groups, we aim to provide the right car for every journey.</p>
+            
+            <h4 style="font-weight: 800; color: #1b1f2a; margin: 20px 0 10px; font-size: 18px;">Travel Across Bangladesh</h4>
+            <p style="margin-bottom: 25px;">Planning to travel from Dhaka to Chattogram, Sylhet, Cox’s Bazar, Rajshahi, Khulna, or another destination? Carbook makes intercity travel more convenient by connecting customers with suitable rental cars for their journeys.</p>
+            
+            <h4 style="font-weight: 800; color: #1b1f2a; margin: 20px 0 10px; font-size: 18px;">Simple and Convenient Booking</h4>
+            <p style="margin-bottom: 25px;">Car rental should not be complicated. Carbook focuses on making the booking process easy and convenient, allowing customers to arrange their transportation without unnecessary hassle.</p>
+            
+            <h4 style="font-weight: 800; color: #1b1f2a; margin: 20px 0 10px; font-size: 18px;">Why Choose Carbook?</h4>
+            <ul style="padding-left: 20px; margin-bottom: 25px; line-height: 1.8; color: #4b5563;">
+                <li style="margin-bottom: 6px;">Reliable car rental service</li>
+                <li style="margin-bottom: 6px;">Comfortable and well-maintained vehicles</li>
+                <li style="margin-bottom: 6px;">Intercity travel solutions</li>
+                <li style="margin-bottom: 6px;">Convenient booking process</li>
+                <li style="margin-bottom: 6px;">Suitable options for families, businesses, and individuals</li>
+                <li style="margin-bottom: 6px;">Travel solutions across Bangladesh</li>
+            </ul>
+            
+            <div style="background: #f0f5ff; padding: 18px; border-radius: 12px; border-left: 4px solid var(--blue); margin-top: 10px;">
+                <h4 style="font-weight: 800; color: var(--blue); margin-bottom: 10px; font-size: 16px;">Your Journey, Our Responsibility</h4>
+                <p style="margin: 0; color: #1b1f2a; font-size: 14.5px; line-height: 1.6;">Every journey is different, and Carbook understands that. Our goal is to provide a dependable transportation experience so you can focus on your destination rather than worrying about transportation.</p>
+            </div>
+        `;
+    } else if (id === 3) {
+        titleEl.textContent = "কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে";
+        imgEl.src = "https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png";
+        contentEl.innerHTML = `
+            <div style="padding: 10px 0;">
+                <p style="font-size: 16.5px; font-weight: 800; color: #1b1f2a; margin-bottom: 24px; line-height: 1.5;">আপনার প্রয়োজন অনুযায়ী এখন সহজেই বুক করুন পছন্দের গাড়ি।</p>
+                
+                <ul style="list-style: none; padding: 0; margin-bottom: 28px; line-height: 2.2; font-size: 15px; color: #4b5563;">
+                    <li style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;">🏙️</span> ঢাকা থেকে দেশের যেকোনো প্রান্তে</li>
+                    <li style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;">🚘</span> Intercity Car Rental</li>
+                    <li style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;">👨‍👩‍👧‍👦</span> Family Trip | Business Trip | Tour</li>
+                    <li style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;">📞</span> দ্রুত বুকিং ও নির্ভরযোগ্য সার্ভিস</li>
+                </ul>
+                
+                <div style="background: #fffbeb; padding: 24px 20px; border-radius: 16px; border: 1px solid #fde68a; margin-bottom: 20px; text-align: center;">
+                    <p style="font-size: 17px; font-weight: 800; color: #b45309; margin-bottom: 18px; line-height: 1.4;">Carbook-এর সাথে যাত্রা হোক আরও সহজ, নিরাপদ ও স্বাচ্ছন্দ্যময়।</p>
+                    
+                    <div style="display: inline-block; background: var(--blue); color: #fff; padding: 12px 24px; border-radius: 999px; font-weight: 900; font-size: 18px; margin-bottom: 16px; box-shadow: 0 6px 15px rgba(26,86,255,0.25);">
+                        ✨ 0% Commission
+                    </div>
+                    
+                    <p style="font-weight: 800; color: #1b1f2a; font-size: 16px; margin: 0;">📲 আজই বুকিং করুন!</p>
+                </div>
+            </div>
+        `;
+    }
+
+    showScreen('screen-blog-details');
+}
+
+
 
         function closeBiddingModal() { if (currentBidsUnsub) { currentBidsUnsub(); currentBidsUnsub = null; } document.getElementById('bidding-modal').classList.remove('active'); }
 
