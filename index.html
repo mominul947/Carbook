@@ -2097,79 +2097,92 @@
         }
     </script>
     </div>
-    <!-- ======= END FEATURED NEWS SECTION ======= -->
 <!-- ======= START CREAM BACKGROUND WRAPPER ======= -->
 <div style="background-color: #fcf9f2; padding: 40px 0 20px 0; margin-top: 10px;">
 
     <!-- ১. আপনার বর্তমান FEATURED NEWS SECTION-এর পুরো কোডটি এখানে থাকবে -->
-    <div class="news-featured-section" style="margin: 0 18px 30px;">
+    <!-- (এখানে আপনার নিউজ সেকশনের কোড বসাবেন) -->
 
-    <!-- ২. PROMO BANNER SECTION (বক্স ছাড়া, ক্রিম ব্যাকগ্রাউন্ডের সাথে মানানসই) -->
+    <!-- ২. PROMO BANNER SECTION (Pathao Style with Cream Background) -->
     <style>
         .promo-banner-section { 
-            margin: 25px 18px 45px; 
-            display: flex;
-            justify-content: center;
+            margin: 30px 18px 45px; 
         }
         .promo-inner {
-            width: 100%;
-            max-width: 350px; 
-            text-align: left;
+            display: flex;
+            flex-direction: column; /* Mobile mood e button niche nambe */
+            gap: 20px;
+        }
+        .promo-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
         .promo-small-text {
             font-size: 14px; 
             color: #64748b; 
             font-weight: 600; 
-            margin-bottom: 12px; 
             line-height: 1.5;
-            max-width: 260px; 
-        }
-        .promo-body {
-            display: flex;
-            flex-direction: row; 
-            align-items: center; 
-            justify-content: space-between; 
-            gap: 12px; 
+            margin: 0;
         }
         .promo-big-text {
-            font-size: 20px; 
+            font-size: 24px; 
             font-weight: 900; 
             color: #1b1f2a; 
             line-height: 1.35;
             margin: 0;
-            max-width: 175px; 
         }
         .promo-action button {
             border-radius: 8px; 
-            padding: 12px 14px; 
-            font-size: 13.5px;
+            padding: 14px 24px; 
+            font-size: 15px;
             white-space: nowrap;
             box-shadow: none; /* ব্যাকগ্রাউন্ডের সাথে মিশে থাকার জন্য শ্যাডো কমানো হয়েছে */
+            width: max-content; 
         }
         
+        /* Desktop Mode */
         @media (min-width: 768px) {
-            .promo-banner-section { max-width: 1164px; margin-left: auto; margin-right: auto; }
-            .promo-inner { max-width: 100%; }
-            .promo-small-text { max-width: 100%; font-size: 15px; }
-            .promo-big-text { max-width: 400px; font-size: 28px; }
-            .promo-action button { padding: 14px 24px; font-size: 15px; }
+            .promo-banner-section { 
+                max-width: 900px; /* Pathao er moto puro section majhkhan e anar jonno */
+                margin: 40px auto 60px auto; 
+                padding: 0 20px;
+            }
+            .promo-inner { 
+                flex-direction: row; /* Desktop e pashapashi thakbe */
+                align-items: center; /* Vertically majhkhan borabor thakbe */
+                justify-content: space-between;
+            }
+            .promo-text-group {
+                max-width: 60%; 
+            }
+            .promo-big-text { 
+                font-size: 32px; 
+            }
+            .promo-small-text { 
+                font-size: 15px; 
+            }
+            .promo-action button { 
+                padding: 16px 28px; 
+                font-size: 16px; 
+            }
         }
     </style>
 
     <div class="promo-banner-section">
         <div class="promo-inner">
-            <p data-lang="promo_small_text" class="promo-small-text">
-                Easily book a trip in Carbook Tailored to your needs
-            </p>
-            <div class="promo-body">
+            <div class="promo-text-group">
+                <p data-lang="promo_small_text" class="promo-small-text">
+                    Easily book a trip in Carbook Tailored to your needs
+                </p>
                 <h2 data-lang="promo_big_text" class="promo-big-text">
                     Carbook Your trusted companion to make your everyday life easier
                 </h2>
-                <div class="promo-action">
-                    <button class="btn-primary ripple" onclick="showScreen('screen-about')" style="width: auto;">
-                        <span data-lang="learn_about_carbook">Learn about Carbook</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
-                    </button>
-                </div>
+            </div>
+            <div class="promo-action">
+                <button class="btn-primary ripple" onclick="showScreen('screen-about')">
+                    <span data-lang="learn_about_carbook">Learn about Carbook</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -2177,23 +2190,13 @@
 
     <!-- ৩. আপনার বর্তমান BLOG SECTION-এর পুরো কোডটি এখানে থাকবে -->
     <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
-     
+        <!-- ব্লগের কন্টেন্ট এখানে থাকবে (আগের কোড পেস্ট করুন) -->
     </div>
     <!-- ======= END BLOG SECTION ======= -->
 
 </div>
 <!-- ======= END CREAM BACKGROUND WRAPPER ======= -->
 
-
-
-    <!-- ৩. আপনার বর্তমান BLOG SECTION-এর পুরো কোডটি এখানে থাকবে -->
-
-
-    </div>
-
-
-</div>
-<!-- ======= END CREAM BACKGROUND WRAPPER ======= -->
 
 
                     <!-- ======= BLOG SECTION ======= -->
