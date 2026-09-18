@@ -1950,9 +1950,8 @@
                         </div>
                     </div>
                     <!-- ======= END NEW SAFETY & FEATURE CARDS ======= -->
-<!-- ======= FEATURED NEWS SECTION ======= -->
 
- 
+<!-- ======= FEATURED NEWS SECTION ======= -->
 <div class="news-featured-section" style="margin: 0 18px 30px;">
     <div style="text-align: center; margin-top: 45px; margin-bottom: 24px;">
         <h3 style="font-size: 22px; font-weight: 900; color: #1b1f2a; letter-spacing: -0.3px; display: inline-block; position: relative;">
@@ -1990,7 +1989,7 @@
     <!-- স্লাইডার লেআউট -->
     <div class="news-horizontal-slider" id="news-slider-track" style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding-bottom: 15px; scrollbar-width: none; -webkit-overflow-scrolling: touch;" onscroll="updateNewsDots()">
         
-        <!-- প্রথম নিউজ: The Bangladesh Today (নতুন যুক্ত করা হলো) -->
+        <!-- প্রথম নিউজ: The Bangladesh Today -->
         <a href="https://thebangladeshtoday.com/?p=37251" target="_blank" class="news-slide-card" style="text-decoration: none; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
             <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-17-ef4f6c16-e74d-4d8c-a09f-10cd45a2a920.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
             <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
@@ -2097,12 +2096,11 @@
             }
         }
     </script>
-    </div>
+</div>
+<!-- ======= END FEATURED NEWS SECTION ======= -->
+
 <!-- ======= START CREAM BACKGROUND WRAPPER ======= -->
 <div style="background-color: #fcf9f2; padding: 40px 0 20px 0; margin-top: 10px;">
-
-    <!-- ১. আপনার বর্তমান FEATURED NEWS SECTION-এর পুরো কোডটি এখানে থাকবে -->
-    <!-- (এখানে আপনার নিউজ সেকশনের কোড বসাবেন) -->
 
     <!-- ২. PROMO BANNER SECTION (Pathao Style with Cream Background) -->
     <style>
@@ -2111,7 +2109,7 @@
         }
         .promo-inner {
             display: flex;
-            flex-direction: column; /* Mobile mood e button niche nambe */
+            flex-direction: column; 
             gap: 20px;
         }
         .promo-text-group {
@@ -2138,20 +2136,20 @@
             padding: 14px 24px; 
             font-size: 15px;
             white-space: nowrap;
-            box-shadow: none; /* ব্যাকগ্রাউন্ডের সাথে মিশে থাকার জন্য শ্যাডো কমানো হয়েছে */
+            box-shadow: none; 
             width: max-content; 
         }
         
         /* Desktop Mode */
         @media (min-width: 768px) {
             .promo-banner-section { 
-                max-width: 900px; /* Pathao er moto puro section majhkhan e anar jonno */
+                max-width: 900px; 
                 margin: 40px auto 60px auto; 
                 padding: 0 20px;
             }
             .promo-inner { 
-                flex-direction: row; /* Desktop e pashapashi thakbe */
-                align-items: center; /* Vertically majhkhan borabor thakbe */
+                flex-direction: row; 
+                align-items: center; 
                 justify-content: space-between;
             }
             .promo-text-group {
@@ -2189,9 +2187,58 @@
     </div>
     <!-- ======= END PROMO BANNER SECTION ======= -->
 
-    <!-- ৩. আপনার বর্তমান BLOG SECTION-এর পুরো কোডটি এখানে থাকবে -->
+    <!-- ৩. BLOG SECTION -->
     <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
-        <!-- ব্লগের কন্টেন্ট এখানে থাকবে (আগের কোড পেস্ট করুন) -->
+        <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a; margin-bottom: 20px; text-align: center;" data-lang="blog">Blog</h3>
+        
+        <!-- Grid wrapper for desktop side-by-side view -->
+        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: stretch;">
+            
+            <!-- Blog Card 1 -->
+            <div class="blog-card" onclick="openBlogDetails(1)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); cursor: pointer; display: flex; flex-direction: column; height: 100%;">
+                <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
+                <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী</h4>
+                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                        বাংলাদেশে নিরাপদ, আরামদায়ক ও সহজে গাড়ি ভাড়া করার জন্য Carbook হতে পারে আপনার নির্ভরযোগ্য সঙ্গী...
+                    </p>
+                    <div style="flex-grow: 1;"></div>
+                    <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #f0f3f8; color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+                        Read Now <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="blog-card" onclick="openBlogDetails(2)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); cursor: pointer; display: flex; flex-direction: column; height: 100%;">
+                <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
+                <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">Carbook – Your Trusted Car Rental Partner in Bangladesh</h4>
+                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                        Finding a reliable and comfortable car rental service in Bangladesh should be simple. Carbook is here to make your journey easier...
+                    </p>
+                    <div style="flex-grow: 1;"></div>
+                    <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #f0f3f8; color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+                        Read Now <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="blog-card" onclick="openBlogDetails(3)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); cursor: pointer; display: flex; flex-direction: column; height: 100%;">
+                <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
+                <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে</h4>
+                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                        আপনার প্রয়োজন অনুযায়ী এখন সহজেই বুক করুন পছন্দের গাড়ি। ঢাকা থেকে দেশের যেকোনো প্রান্তে...
+                    </p>
+                    <div style="flex-grow: 1;"></div>
+                    <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #f0f3f8; color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+                        Read Now <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- ======= END BLOG SECTION ======= -->
 
@@ -2199,79 +2246,7 @@
 <!-- ======= END CREAM BACKGROUND WRAPPER ======= -->
 
 
-
-                    <!-- ======= BLOG SECTION ======= -->
-                    <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
-                        <h3 style="font-size: 20px; font-weight: 800; color: #1b1f2a; margin-bottom: 20px; text-align: center;" data-lang="blog">Blog</h3>
-                        
-                        <!-- Grid wrapper for desktop side-by-side view -->
-                        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: stretch;">
-                            
-                            <!-- Blog Card 1 -->
-                            <div class="blog-card" onclick="openBlogDetails(1)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); cursor: pointer; display: flex; flex-direction: column; height: 100%;">
-                                <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-07-0520e73a-489c-4be9-b47a-ab5c3d9bd7f0.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
-                                <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
-                                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">কারবুক — আপনার ভ্রমণের নির্ভরযোগ্য সঙ্গী</h4>
-                                    
-                                    <!-- ব্লগের সংক্ষিপ্ত বিবরণ -->
-                                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                                        বাংলাদেশে নিরাপদ, আরামদায়ক ও সহজে গাড়ি ভাড়া করার জন্য Carbook হতে পারে আপনার নির্ভরযোগ্য সঙ্গী...
-                                    </p>
-                                    
-                                    <div style="flex-grow: 1;"></div>
-                                    
-                                    <!-- Read Now বাটন -->
-                                    <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #f0f3f8; color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px;">
-                                        Read Now <i class="fa-solid fa-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Blog Card 2 -->
-                            <div class="blog-card" onclick="openBlogDetails(2)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); cursor: pointer; display: flex; flex-direction: column; height: 100%;">
-                                <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-07-916a878d-6217-4756-8fb0-fb630b96bfec.jpg'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
-                                <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
-                                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">Carbook – Your Trusted Car Rental Partner in Bangladesh</h4>
-                                    
-                                    <!-- ব্লগের সংক্ষিপ্ত বিবরণ -->
-                                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                                        Finding a reliable and comfortable car rental service in Bangladesh should be simple. Carbook is here to make your journey easier...
-                                    </p>
-                                    
-                                    <div style="flex-grow: 1;"></div>
-                                    
-                                    <!-- Read Now বাটন -->
-                                    <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #f0f3f8; color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px;">
-                                        Read Now <i class="fa-solid fa-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Blog Card 3 -->
-                            <div class="blog-card" onclick="openBlogDetails(3)" style="border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.04); cursor: pointer; display: flex; flex-direction: column; height: 100%;">
-                                <div style="width: 100%; padding-bottom: 56.25%; background-image: url('https://cdn.phototourl.com/member/2026-09-07-344148e5-eb90-45f8-9953-fee76f8fe81f.png'); background-size: cover; background-position: center; flex-shrink: 0;"></div>
-                                <div style="padding: 18px; display: flex; flex-direction: column; flex-grow: 1;">
-                                    <h4 style="font-size: 16px; font-weight: 800; line-height: 1.4; color: #1b1f2a; margin: 0 0 8px 0;">কারবুক ০% কমিশন এ কা রেন্টাল সার্ভিস দিয়ে থাকে</h4>
-                                    
-                                    <!-- ব্লগের সংক্ষিপ্ত বিবরণ -->
-                                    <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                                        আপনার প্রয়োজন অনুযায়ী এখন সহজেই বুক করুন পছন্দের গাড়ি। ঢাকা থেকে দেশের যেকোনো প্রান্তে...
-                                    </p>
-                                    
-                                    <div style="flex-grow: 1;"></div>
-                                    
-                                    <!-- Read Now বাটন -->
-                                    <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #f0f3f8; color: var(--blue); font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 6px;">
-                                        Read Now <i class="fa-solid fa-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-    <div class="blog-section" id="dashboard-blog-section" style="margin: 0 18px 30px;">
-                        </div>
-                    </div>
-                    <!-- ======= END BLOG SECTION ======= -->
-
-         <!-- ================= NEW APP DOWNLOAD BANNER ================= -->
+<!-- ================= NEW APP DOWNLOAD BANNER ================= -->
 <div class="custom-app-banner">
     <div class="cab-content">
         <h1 class="cab-title">Download<br>Carbook Mobile App</h1>
@@ -2296,64 +2271,63 @@
 </div>
 <!-- ================= END NEW APP DOWNLOAD BANNER ================= -->
 
-                    <!-- ================= NEW BLACK FOOTER ================= -->
-                    <footer class="new-black-footer">
-                        <div class="nbf-top">
-                            <div class="nbf-col nbf-brand-col">
-                                <h2>Carbook</h2>
-                                <p>Your journey begins Carbook.<br>Explore Bangladesh safely and comfortably<br>with our reliable, affordable car rental services.<br>Book your ride today!</p>
-                                <div class="nbf-contact">
-                                    <p><i class="fa-regular fa-envelope"></i> carbookbd26@gmail.com</p>
-                                    <p><i class="fa-solid fa-phone"></i> +88 01929-756982</p>
-                                    <p><i class="fa-solid fa-location-dot"></i> Road-12, South Jatrabari, Dhaka-1204</p>
-                                </div>
-                            </div>
-                            
-                            <div class="nbf-links-wrap">
-                                <div class="nbf-col">
-                                    <h4>Company</h4>
-                                    <a onclick="showScreen('screen-about')">About us</a>
-                                    <a onclick="showScreen('screen-help')">Careers</a>
-                                    <a onclick="showScreen('screen-help')">Contact</a>
-                                    <a onclick="openBDMap()">Carbook map</a>
-                                </div>
-                                <div class="nbf-col">
-                                    <h4>Services</h4>
-                                    <a onclick="showScreen('screen-services')">Car rental</a>
-<a onclick="showScreen('screen-corporate')">Corporate</a>
-                                    <a onclick="downloadApp('driver')">Become a Driver</a>
-                                </div>
-                                <div class="nbf-col">
-                                    <h4>Others</h4>
-                                    <a onclick="showScreen('screen-blog')">Blogs</a>
-<a onclick="showScreen('screen-news')">News</a>
+<!-- ================= NEW BLACK FOOTER ================= -->
+<footer class="new-black-footer">
+    <div class="nbf-top">
+        <div class="nbf-col nbf-brand-col">
+            <h2>Carbook</h2>
+            <p>Your journey begins Carbook.<br>Explore Bangladesh safely and comfortably<br>with our reliable, affordable car rental services.<br>Book your ride today!</p>
+            <div class="nbf-contact">
+                <p><i class="fa-regular fa-envelope"></i> carbookbd26@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +88 01929-756982</p>
+                <p><i class="fa-solid fa-location-dot"></i> Road-12, South Jatrabari, Dhaka-1204</p>
+            </div>
+        </div>
+        
+        <div class="nbf-links-wrap">
+            <div class="nbf-col">
+                <h4 data-lang="company">Company</h4>
+                <a onclick="showScreen('screen-about')" data-lang="about_us">About us</a>
+                <a onclick="showScreen('screen-help')" data-lang="careers">Careers</a>
+                <a onclick="showScreen('screen-help')" data-lang="contacts">Contact</a>
+                <a onclick="openBDMap()" data-lang="carbook_map">Carbook map</a>
+            </div>
+            <div class="nbf-col">
+                <h4 data-lang="services">Services</h4>
+                <a onclick="showScreen('screen-services')" data-lang="car_rental">Car rental</a>
+                <a onclick="showScreen('screen-corporate')" data-lang="corporate">Corporate</a>
+                <a onclick="downloadApp('driver')" data-lang="become_driver">Become a Driver</a>
+            </div>
+            <div class="nbf-col">
+                <h4 data-lang="others">Others</h4>
+                <a onclick="showScreen('screen-blog')" data-lang="blog">Blogs</a>
+                <a onclick="showScreen('screen-news')" data-lang="news">News</a>
+                <a onclick="showScreen('screen-offers')" data-lang="offers">Offers</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="nbf-bottom-wrapper">
+        <div class="nbf-bottom-inner">
+            <div class="nbf-copyright">© carbookbd.com 2026 All rights reserved.</div>
+            <div class="nbf-legal-links">
+                <a onclick="showScreen('screen-faq')" data-lang="faq">FAQ</a>
+                <a onclick="openLegalScreen('Terms & Conditions', 'terms')" data-lang="terms_conditions">Terms & Condition</a>
+                <a onclick="openLegalScreen('Privacy Policy', 'privacy')" data-lang="privacy_policy">Privacy Policy</a>
+            </div>
+            <div class="nbf-socials">
+                <a href="https://www.facebook.com/carbookofficial" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com/@carbook26?si=oRvw_m_b4UgJKITl" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://x.com/CarBookBd" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ================= END NEW BLACK FOOTER ================= -->
+</div>
+</section>
 
-                                    <a onclick="showScreen('screen-offers')">Offers</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="nbf-bottom-wrapper">
-                            <div class="nbf-bottom-inner">
-                                <div class="nbf-copyright">© carbookbd.com 2026 All rights reserved.</div>
-                                <div class="nbf-legal-links">
-<a onclick="showScreen('screen-faq')">FAQ</a>
-
-                                    <a onclick="openLegalScreen('Terms & Conditions', 'terms')">Terms & Condition</a>
-                                    <a onclick="openLegalScreen('Privacy Policy', 'privacy')">Privacy Policy</a>
-                                </div>
-                                <div class="nbf-socials">
-                                    <a href="https://www.facebook.com/carbookofficial" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="https://youtube.com/@carbook26?si=oRvw_m_b4UgJKITl" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                                    <a href="https://x.com/CarBookBd" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- ================= END NEW BLACK FOOTER ================= -->
-                </div>
-            </section>
 <section class="screen" id="screen-corporate">
     <div class="back-header">
         <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
