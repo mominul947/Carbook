@@ -2096,6 +2096,49 @@
     </script>
 </div>
 <!-- ======= END FEATURED NEWS SECTION ======= -->
+<!-- ======= PROMO BANNER SECTION (Pathao Style) ======= -->
+<style>
+    .promo-banner-section { 
+        margin: 0 18px 40px; 
+        padding: 30px 24px; 
+        background: #fff; 
+        border: 1px solid var(--border); 
+        border-radius: 16px; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03); 
+        display: flex; 
+        flex-direction: column; 
+        gap: 20px; 
+        text-align: left;
+    }
+    @media (min-width: 768px) {
+        .promo-banner-section { 
+            max-width: 1164px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            flex-direction: row; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+        .promo-content { max-width: 65%; }
+    }
+</style>
+
+<div class="promo-banner-section">
+    <div class="promo-content">
+        <p data-lang="promo_small_text" style="font-size: 15px; color: #64748b; font-weight: 600; margin-bottom: 12px; line-height: 1.5;">
+            Easily book a trip in Carbook Tailored to your needs
+        </p>
+        <h2 data-lang="promo_big_text" style="font-size: 26px; font-weight: 900; color: #1b1f2a; line-height: 1.3;">
+            Carbook Your trusted companion to make your everyday life easier
+        </h2>
+    </div>
+    <div class="promo-action">
+        <button class="btn-primary ripple" onclick="showScreen('screen-about')" style="border-radius: 8px; padding: 14px 24px; width: auto; font-size: 15px;">
+            <span data-lang="learn_about_carbook">Learn about Carbook</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
+        </button>
+    </div>
+</div>
+<!-- ======= END PROMO BANNER SECTION ======= -->
 
 
                     <!-- ======= BLOG SECTION ======= -->
@@ -2895,54 +2938,81 @@
         const OTP_WORKER_URL = "https://carbookbd.mominulwebwork.workers.dev";
 
         /* ==================== MULTI-LANGUAGE SYSTEM ==================== */
-        const translations = {
-            en: {
-                welcome: "Welcome", home: "Home", profile: "Profile", login_now: "Login Now", login_tagline: "Your trusted Carbooking companion<br>for city and outstation travel",
-                login_label: "Log in with Mobile Number", agree_terms: "I agree to the", terms_conditions: "Terms & Conditions", continue: "Continue",
-                enter_otp: "Enter OTP", otp_sent_to: "Enter the 4-digit OTP sent to", didnt_receive: "Didn't receive the OTP?", confirm: "Confirm",
-                wrong_number: "Entered the wrong number?", change_it: "Change it", setup_profile: "Setup Profile", provide_name: "Provide your details",
-                first_name: "First Name", last_name: "Last Name", gender: "Gender", select_trip_type: "Select Trip Type", one_way: "One Way", round_way: "Round Way",
-                hourly: "Hourly", pickup: "Pickup", dropoff: "Drop Off", hourly_duration: "Hourly Duration", hours: "Hours", add_stops: "Add Stops",
-                confirm_details: "Confirm Details", confirm_location: "Confirm Location", trip_details: "Trip Details", get_fare: "Get Fare",
-                my_trip: "My Trip", active_trips: "Active Trips", trip_history: "Trip History", empty_trip_title: "Your Trip List is Empty", empty_trip_sub: "You haven't booked any trips yet.",
-                book_a_trip: "Book a Trip", edit_profile: "Edit Profile", preferences: "PREFERENCES", language: "Language", notification: "Notification",
-                legal: "LEGAL", privacy_policy: "Privacy Policy", logout: "Log out", notifications: "Notifications", no_notifications: "No notifications yet",
-                change_photo: "Change Photo", email: "Email", update_profile: "Update Profile", download_app_btn: "App Download"
-            },
-            bn: {
-                welcome: "স্বাগতম", home: "হোম", profile: "প্রোফাইল", login_now: "লগইন করুন", login_tagline: "শহর এবং দূরপাল্লার যাতায়াতের বিশ্বস্ত সঙ্গী",
-                login_label: "মোবাইল নম্বর দিয়ে লগইন করুন", agree_terms: "আমি সম্মত হচ্ছি", terms_conditions: "শর্তাবলী", continue: "এগিয়ে যান",
-                enter_otp: "ওটিপি প্রদান করুন", otp_sent_to: "৪-সংখ্যার ওটিপি পাঠানো হয়েছে", didnt_receive: "ওটিপি পাননি?", confirm: "নিশ্চিত করুন",
-                wrong_number: "ভুল নম্বর দিয়েছেন?", change_it: "পরিবর্তন করুন", setup_profile: "প্রোফাইল সাজান", provide_name: "আপনার তথ্য দিন",
-                first_name: "নামের প্রথম অংশ", last_name: "নামের শেষ অংশ", gender: "লিঙ্গ", select_trip_type: "ট্রিপ ধরণ নির্বাচন করুন", one_way: "ওয়ান ওয়ে", round_way: "রাউন্ড ট্রিপ",
-                hourly: "ঘন্টায়", pickup: "পিকআপ লোকেশন", dropoff: "ড্রপ অফ লোকেশন", hourly_duration: "সময়সীমা (ঘন্টা)", hours: "ঘন্টা", add_stops: "স্টপেজ যোগ করুন",
-                confirm_details: "তথ্য নিশ্চিত করুন", confirm_location: "লোকেশন নিশ্চিত করুন", trip_details: "ট্রিপের বিবরণ", get_fare: "ভাড়া দেখুন",
-                my_trip: "আমার ট্রিপ", active_trips: "চলমান ট্রিপ", trip_history: "ট্রিপ হিস্ট্রি", empty_trip_title: "কোন ট্রিপ নেই", empty_trip_sub: "আপনি এখনও কোনো ট্রিপ বুক করেননি।",
-                book_a_trip: "ট্রিপ বুক করুন", edit_profile: "প্রোফাইল পরিবর্তন", preferences: "পছন্দসমূহ", language: "ভাষা", notification: "নোটিফিকেশন",
-                legal: "আইনি ও পলিসি", privacy_policy: "গোপনীয়তা নীতি", logout: "লগ আউট", notifications: "নোটিফিকেশন", no_notifications: "কোন নোটিফিকেশন নেই",
-                change_photo: "ছবি পরিবর্তন", email: "ইমেইল", update_profile: "প্রোফাইল আপডেট করুন", download_app_btn: "অ্যাপ ডাউনলোড"
-            }
-        };
+        /* ==================== MULTI-LANGUAGE SYSTEM ==================== */
+const translations = {
+    en: {
+        welcome: "Welcome", home: "Home", profile: "Profile", login_now: "Login Now", login_tagline: "Your trusted Carbooking companion<br>for city and outstation travel",
+        login_label: "Log in with Mobile Number", agree_terms: "I agree to the", terms_conditions: "Terms & Conditions", continue: "Continue",
+        enter_otp: "Enter OTP", otp_sent_to: "Enter the 4-digit OTP sent to", didnt_receive: "Didn't receive the OTP?", confirm: "Confirm",
+        wrong_number: "Entered the wrong number?", change_it: "Change it", setup_profile: "Setup Profile", provide_name: "Provide your details",
+        first_name: "First Name", last_name: "Last Name", gender: "Gender", select_trip_type: "Select Trip Type", one_way: "One Way", round_way: "Round Way",
+        hourly: "Hourly", pickup: "Pickup", dropoff: "Drop Off", hourly_duration: "Hourly Duration", hours: "Hours", add_stops: "Add Stops",
+        confirm_details: "Confirm Details", confirm_location: "Confirm Location", trip_details: "Trip Details", get_fare: "Get Fare",
+        my_trip: "My Trip", active_trips: "Active Trips", trip_history: "Trip History", empty_trip_title: "Your Trip List is Empty", empty_trip_sub: "You haven't booked any trips yet.",
+        book_a_trip: "Book a Trip", edit_profile: "Edit Profile", preferences: "PREFERENCES", language: "Language", notification: "Notification",
+        legal: "LEGAL", privacy_policy: "Privacy Policy", logout: "Log out", notifications: "Notifications", no_notifications: "No notifications yet",
+        change_photo: "Change Photo", email: "Email", update_profile: "Update Profile", download_app_btn: "App Download",
+        promo_small_text: "Easily book a trip in Carbook Tailored to your needs",
+        promo_big_text: "Carbook Your trusted companion to make your everyday life easier",
+        learn_about_carbook: "Learn about Carbook",
+        
+        // নতুন যোগ করা অংশ (Menu, Download, News, Blog, Footer)
+        about_us: "About Us", services: "Services", corporate: "Corporate", blog: "Blog", contacts: "Contact Us", become_driver: "Become a Driver",
+        news: "News", featured_news: "We Featured by news Platforms", exclusive_deals: "Exclusive Deals", see_all: "See All",
+        download_app_title: "Download<br>Carbook Mobile App", download_app_subtitle: "Download our Customer, Smart Driver and Enterprise App",
+        download_now: "Download now", download_now_sub: "to earn money at your own time and convenience, without any commission.",
+        company: "Company", others: "Others", careers: "Careers", carbook_map: "Carbook map", car_rental: "Car rental", offers: "Offers", faq: "FAQ"
+    },
+    bn: {
+        welcome: "স্বাগতম", home: "হোম", profile: "প্রোফাইল", login_now: "লগইন করুন", login_tagline: "শহর এবং দূরপাল্লার যাতায়াতের বিশ্বস্ত সঙ্গী",
+        login_label: "মোবাইল নম্বর দিয়ে লগইন করুন", agree_terms: "আমি সম্মত হচ্ছি", terms_conditions: "শর্তাবলী", continue: "এগিয়ে যান",
+        enter_otp: "ওটিপি প্রদান করুন", otp_sent_to: "৪-সংখ্যার ওটিপি পাঠানো হয়েছে", didnt_receive: "ওটিপি পাননি?", confirm: "নিশ্চিত করুন",
+        wrong_number: "ভুল নম্বর দিয়েছেন?", change_it: "পরিবর্তন করুন", setup_profile: "প্রোফাইল সাজান", provide_name: "আপনার তথ্য দিন",
+        first_name: "নামের প্রথম অংশ", last_name: "নামের শেষ অংশ", gender: "লিঙ্গ", select_trip_type: "ট্রিপ ধরণ নির্বাচন করুন", one_way: "ওয়ান ওয়ে", round_way: "রাউন্ড ট্রিপ",
+        hourly: "ঘন্টায়", pickup: "পিকআপ লোকেশন", dropoff: "ড্রপ অফ লোকেশন", hourly_duration: "সময়সীমা (ঘন্টা)", hours: "ঘন্টা", add_stops: "স্টপেজ যোগ করুন",
+        confirm_details: "তথ্য নিশ্চিত করুন", confirm_location: "লোকেশন নিশ্চিত করুন", trip_details: "ট্রিপের বিবরণ", get_fare: "ভাড়া দেখুন",
+        my_trip: "আমার ট্রিপ", active_trips: "চলমান ট্রিপ", trip_history: "ট্রিপ হিস্ট্রি", empty_trip_title: "কোন ট্রিপ নেই", empty_trip_sub: "আপনি এখনও কোনো ট্রিপ বুক করেননি।",
+        book_a_trip: "ট্রিপ বুক করুন", edit_profile: "প্রোফাইল পরিবর্তন", preferences: "পছন্দসমূহ", language: "ভাষা", notification: "নোটিফিকেশন",
+        legal: "আইনি ও পলিসি", privacy_policy: "গোপনীয়তা নীতি", logout: "লগ আউট", notifications: "নোটিফিকেশন", no_notifications: "কোন নোটিফিকেশন নেই",
+        change_photo: "ছবি পরিবর্তন", email: "ইমেইল", update_profile: "প্রোফাইল আপডেট করুন", download_app_btn: "অ্যাপ ডাউনলোড",
+        promo_small_text: "কারবুকে ট্রিপ বুকিং করুন সহজে আপনার চাহিদামত",
+        promo_big_text: "আপনার প্রতিদিনকে সহজ করতে বিশ্বস্ত সঙ্গী কারবুক",
+        learn_about_carbook: "কারবুক সম্পর্কে জানুন",
+        
+        // নতুন যোগ করা অংশ (Menu, Download, News, Blog, Footer)
+        about_us: "আমাদের সম্পর্কে", services: "সার্ভিসসমূহ", corporate: "কর্পোরেট", blog: "ব্লগ", contacts: "যোগাযোগ", become_driver: "ড্রাইভার হোন",
+        news: "খবর", featured_news: "সংবাদমাধ্যমে কারবুক", exclusive_deals: "বিশেষ অফারসমূহ", see_all: "সব দেখুন",
+        download_app_title: "ডাউনলোড করুন<br>কারবুক মোবাইল অ্যাপ", download_app_subtitle: "আমাদের কাস্টমার, স্মার্ট ড্রাইভার এবং এন্টারপ্রাইজ অ্যাপ ডাউনলোড করুন",
+        download_now: "ডাউনলোড করুন", download_now_sub: "নিজের সুবিধামতো সময়ে কোনো কমিশন ছাড়াই টাকা আয় করতে।",
+        company: "কোম্পানি", others: "অন্যান্য", careers: "ক্যারিয়ার", carbook_map: "কারবুক ম্যাপ", car_rental: "কার রেন্টাল", offers: "অফারসমূহ", faq: "সাধারণ জিজ্ঞাসা"
+    }
+};
+
 
         let currentLang = localStorage.getItem('carbook_lang') || 'en';
 
         function applyLanguage(lang) {
-            currentLang = lang;
-            localStorage.setItem('carbook_lang', lang);
-            
-            const textEl = document.getElementById('current-lang-text');
-            if (textEl) textEl.textContent = lang === 'en' ? 'English' : 'বাংলা';
-            
-            const footerToggleText = document.getElementById('footer-lang-toggle-text');
-            if(footerToggleText) footerToggleText.textContent = lang === 'en' ? 'বাংলা' : 'English';
+    currentLang = lang;
+    localStorage.setItem('carbook_lang', lang);
+    
+    // Mobile ebong desktop dutor button-i eksathe update korar jonno querySelectorAll bebohar kora holo
+    const textEls = document.querySelectorAll('#current-lang-text');
+    textEls.forEach(el => {
+        // Ekhane logic change kora hoyeche: en thakle 'বাংলা' dekhabe, ar bn thakle 'English' dekhabe
+        el.textContent = lang === 'en' ? 'বাংলা' : 'English';
+    });
 
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                const key = el.getAttribute('data-lang');
-                if (translations[lang] && translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
+    const footerToggleText = document.getElementById('footer-lang-toggle-text');
+    if(footerToggleText) footerToggleText.textContent = lang === 'en' ? 'বাংলা' : 'English';
+
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
         }
+    });
+}
+
 
         function toggleLanguage() {
             applyLanguage(currentLang === 'en' ? 'bn' : 'en');
