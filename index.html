@@ -3743,6 +3743,39 @@ function toggleSupportMenu() {
         scrollTopBtn.style.display = 'flex';
     }
 }
+// Deal Details Open Function
+function openDealDetails(id) {
+    const titleEl = document.getElementById('deal-detail-title');
+    const imgEl = document.getElementById('deal-detail-img');
+
+    if (id === 1) {
+        titleEl.textContent = "আসা-যাওয়ার প্রতি ট্রিপে পেয়ে যাচ্ছেন নিশ্চিত ৩০% পর্যন্ত টাকা ছাড়";
+        imgEl.src = "https://cdn.phototourl.com/member/2026-09-05-b71ba026-2f9e-4ef9-802f-45c83dca3a3b.png";
+    } else if (id === 2) {
+        titleEl.textContent = "কারবুক-এর সাথে ট্রাভেল করুন নিরাপদ ও সাশ্রয়ী রেটে";
+        imgEl.src = "https://cdn.phototourl.com/member/2026-09-05-c7a38e3a-a55c-487f-8ecd-00d8ba18dee0.jpg";
+    }
+    
+    showScreen('screen-deal-details');
+}
+
+
+// Info Details Open Function
+function openInfoDetails(id) {
+    const titleEl = document.getElementById('info-detail-title');
+    const bodyEl = document.getElementById('info-detail-body');
+
+    if (id === 1) {
+        titleEl.textContent = "নিরাপত্তা আমাদের কাছে খুবই গুরুত্বপূর্ণ";
+        bodyEl.innerHTML = "<p>নিরাপত্তা আমাদের কাছে শুধু একটি দায়িত্ব নয়, এটি আমাদের অঙ্গীকার। সতর্কতা, শৃঙ্খলা ও পেশাদারিত্বের মাধ্যমে আপনার নিরাপত্তা নিশ্চিত করাই আমাদের প্রধান লক্ষ্য।</p>";
+    } else if (id === 2) {
+        titleEl.textContent = "০% কমিশনে আমরা রেন্টাল সার্ভিস দিয়ে থাকি";
+        bodyEl.innerHTML = "<p>আপনার যাত্রা হোক আরও সহজ, সাশ্রয়ী ও নির্ভরযোগ্য। Carbook দিচ্ছে মাত্র ০% কমিশনে রেন্টাল সার্ভিস।</p>";
+    }
+    
+    showScreen('screen-info-details');
+}
+
 
 // Scroll to Top Function
 function scrollToTop() {
