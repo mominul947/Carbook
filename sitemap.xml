@@ -3,15 +3,23 @@
   <!-- Home Page -->
   <url>
     <loc>https://carbookbd.com/</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <!-- About Us -->
+  <!-- Car Rental (New Page) -->
   <url>
-    <loc>https://carbookbd.com/about</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://carbookbd.com/car-rental</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Corporate -->
+  <url>
+    <loc>https://carbookbd.com/corporate</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -19,7 +27,15 @@
   <!-- Services -->
   <url>
     <loc>https://carbookbd.com/services</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://carbookbd.com/about</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -27,7 +43,15 @@
   <!-- Blog -->
   <url>
     <loc>https://carbookbd.com/blog</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- News -->
+  <url>
+    <loc>https://carbookbd.com/news</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -35,13 +59,23 @@
   <!-- All Deals -->
   <url>
     <loc>https://carbookbd.com/all-deals</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://carbookbd.com/faq</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Help / Contact -->
   <url>
     <loc>https://carbookbd.com/help</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -49,6 +83,7 @@
   <!-- Legal / Terms / Privacy -->
   <url>
     <loc>https://carbookbd.com/legal</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
