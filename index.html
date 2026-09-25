@@ -2501,71 +2501,118 @@
                 </div>
             </section>
 
-           <section class="screen" id="screen-services">
+<section class="screen" id="screen-services">
                 <div class="back-header">
                     <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
                     <h1 data-lang="services">Services</h1>
                 </div>
                 <div class="scroll" style="padding: 20px; background: #f4f7fc;">
                     
-                    <!-- 1. Car Rental -->
-                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
-                        <i class="fa-solid fa-car" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Car Rental</h3>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Premium car rental services across Bangladesh for your safe and comfortable journeys.</p>
-                    </div>
+                    <style>
+                        .services-grid-layout {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            gap: 16px;
+                        }
+                        .service-card-new {
+                            background: #ffffff;
+                            border-radius: 16px;
+                            padding: 24px;
+                            border: 1px solid #f0f3f8;
+                            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
+                        .service-card-new img {
+                            height: 75px;
+                            object-fit: contain;
+                            margin-bottom: 20px;
+                            display: block;
+                        }
+                        .service-card-new h3 {
+                            font-size: 20px;
+                            font-weight: 800;
+                            color: #1b1f2a;
+                            margin-bottom: 10px;
+                            line-height: 1.3;
+                        }
+                        .service-card-new p {
+                            font-size: 15px;
+                            color: #8a93a6;
+                            line-height: 1.6;
+                            margin: 0;
+                            font-weight: 500;
+                        }
+                        @media (min-width: 768px) {
+                            .services-grid-layout { grid-template-columns: repeat(2, 1fr); }
+                        }
+                        @media (min-width: 1024px) {
+                            .services-grid-layout { grid-template-columns: repeat(3, 1fr); }
+                        }
+                    </style>
 
-                    <!-- 2. One Way Car Rental -->
-                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
-                        <i class="fa-solid fa-arrow-right-long" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">One Way Car Rental</h3>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Book a reliable ride for a direct drop to your destination without paying for a return trip.</p>
-                    </div>
+                    <div class="services-grid-layout">
+                        <!-- 1. Car Rental -->
+                        <div class="service-card-new">
+                            <img src="https://i.ibb.co/dsxkpz8F/1.png" alt="Car Rental">
+                            <h3>Car Rental</h3>
+                            <p>Premium car rental services across Bangladesh for your safe and comfortable journeys.</p>
+                        </div>
 
-                    <!-- 3. Round Trip Car Rental -->
-                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
-                        <i class="fa-solid fa-arrows-rotate" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Round Trip Car Rental</h3>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Planning a day out or an intercity tour? Book a return trip and travel stress-free.</p>
-                    </div>
+                        <!-- 2. One Way Car Rental -->
+                        <div class="service-card-new">
+                            <img src="https://i.ibb.co/39CWjkbP/2.png" alt="One Way Car Rental">
+                            <h3>One Way Car Rental</h3>
+                            <p>Book a reliable ride for a direct drop to your destination without paying for a return trip.</p>
+                        </div>
 
-                    <!-- 4. Hourly Car Rental -->
-                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
-                        <i class="fa-solid fa-clock" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Hourly Car Rental</h3>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Hire a car and driver by the hour for business meetings, shopping, or multiple stops.</p>
-                    </div>
+                        <!-- 3. Round Trip Car Rental -->
+                        <div class="service-card-new">
+                            <img src="https://i.ibb.co/1fxyGtCY/3.png" alt="Round Trip Car Rental">
+                            <h3>Round Trip Car Rental</h3>
+                            <p>Planning a day out or an intercity tour? Book a return trip and travel stress-free.</p>
+                        </div>
 
-                    <!-- 5. Airport Pickup Drop -->
-                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
-                        <i class="fa-solid fa-plane-arrival" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Airport Pickup Drop</h3>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Punctual and hassle-free airport transfer services to ensure you never miss a flight.</p>
-                    </div>
+                        <!-- 4. Hourly Car Rental -->
+                        <div class="service-card-new">
+                            <img src="https://i.ibb.co/nNZ8QsWQ/4.png" alt="Hourly Car Rental">
+                            <h3>Hourly Car Rental</h3>
+                            <p>Hire a car and driver by the hour for business meetings, shopping, or multiple stops.</p>
+                        </div>
 
-                    <!-- 6. Corporate Car Rental -->
-                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
-                        <i class="fa-solid fa-building" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Corporate Car Rental</h3>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Professional transportation solutions tailored for your business and executive travel needs.</p>
-                    </div>
+                        <!-- 5. Airport Pickup Drop -->
+                        <div class="service-card-new">
+                            <img src="https://i.ibb.co/Z64V3vwG/5.png" alt="Airport Pickup Drop">
+                            <h3>Airport Pickup Drop</h3>
+                            <p>Punctual and hassle-free airport transfer services to ensure you never miss a flight.</p>
+                        </div>
 
-                    <!-- 7. Monthly Car Rental -->
-                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
-                        <i class="fa-regular fa-calendar-days" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Monthly Car Rental</h3>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Cost-effective long-term car rental packages for regular office commutes or personal use.</p>
-                    </div>
+                        <!-- 6. Corporate Car Rental -->
+                        <div class="service-card-new">
+                            <img src="https://i.ibb.co/TM9NQRGn/6.png" alt="Corporate Car Rental">
+                            <h3>Corporate Car Rental</h3>
+                            <p>Professional transportation solutions tailored for your business and executive travel needs.</p>
+                        </div>
 
-                    <!-- 8. Car Rental With Driver -->
-                    <div style="background: #fff; padding: 22px; border-radius: 18px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 16px;">
-                        <i class="fa-solid fa-user-tie" style="font-size: 28px; color: var(--blue); margin-bottom: 12px; display: block;"></i>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Car Rental With Driver</h3>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.6;">Sit back and relax with our experienced, verified, and professional drivers.</p>
+                        <!-- 7. Monthly Car Rental -->
+                        <div class="service-card-new">
+                            <img src="https://i.ibb.co/2YnS3gGz/7.png" alt="Monthly Car Rental">
+                            <h3>Monthly Car Rental</h3>
+                            <p>Cost-effective long-term car rental packages for regular office commutes or personal use.</p>
+                        </div>
+
+                        <!-- 8. Car Rental With Driver -->
+                        <div class="service-card-new">
+                            <img src="https://i.ibb.co/5hn9BpGz/8.png" alt="Car Rental With Driver">
+                            <h3>Car Rental With Driver</h3>
+                            <p>Sit back and relax with our experienced, verified, and professional drivers.</p>
+                        </div>
                     </div>
 
                 </div>
             </section>
+            
             <section class="screen" id="screen-blog">
                 <div class="back-header">
                     <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
