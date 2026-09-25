@@ -3415,6 +3415,7 @@ const translations = {
     canonicalTag.setAttribute('href', 'https://carbookbd.com/' + pathValue);
     
     // ৪. Title এবং Description আপডেট
+  
     if (id === 'screen-about') {
         document.title = "About Carbook | Trusted Car Rental Service in Bangladesh";
         if(metaDesc) metaDesc.content = "Learn about Carbook - your trusted platform for simple, convenient, and reliable car rental services in Bangladesh.";
@@ -3433,16 +3434,14 @@ const translations = {
     } else if (id === 'screen-careers') {
         document.title = "Careers | Carbook";
         if(metaDesc) metaDesc.content = "Join the Carbook team. Explore our latest job opportunities and career openings in Bangladesh.";
+    } else if (id === 'screen-driver') {
+        document.title = "Become a Driver | Start Making Money | Carbook";
+        if(metaDesc) metaDesc.content = "Drive as it suits your aspirations. Join Carbook as a driver, enjoy zero commission, and get instant payouts.";
     } else {
         document.title = "Car Rental Bangladesh | Car Booking & Rental Service | Carbook";
         if(metaDesc) metaDesc.content = "Car Booking & Car Rental Service in Bangladesh. Book reliable cars for travel, business trips, airport transfers, and family tours at affordable rates.";
     }
-        } else if (id === 'screen-driver') {
-        document.title = "Become a Driver | Start Making Money | Carbook";
-        if(metaDesc) metaDesc.content = "Drive as it suits your aspirations. Join Carbook as a driver, enjoy zero commission, and get instant payouts.";
-    }
-    // =======================================
-    
+   
     closeDropdown();
     window.scrollTo(0,0);
 
