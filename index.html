@@ -2295,7 +2295,7 @@
             <div class="nbf-col">
                 <h4 data-lang="company">Company</h4>
                 <a onclick="showScreen('screen-about')" data-lang="about_us">About us</a>
-                <a onclick="showScreen('screen-help')" data-lang="careers">Careers</a>
+                <a onclick="showScreen('screen-careers')" data-lang="careers">Careers</a>
                 <a onclick="showScreen('screen-help')" data-lang="contacts">Contact</a>
                 <a onclick="openBDMap()" data-lang="carbook_map">Carbook map</a>
             </div>
@@ -2440,7 +2440,7 @@
                     <div class="nbf-col">
                         <h4>Company</h4>
                         <a onclick="showScreen('screen-about')">About us</a>
-                        <a onclick="showScreen('screen-help')">Careers</a>
+                      <a onclick="showScreen('screen-careers')">Careers</a>
                         <a onclick="showScreen('screen-help')">Contact</a>
                         <a onclick="openBDMap()">Carbook map</a>
                     </div>
@@ -3270,7 +3270,7 @@ const translations = {
             return p;
         }
 
-     function showScreen(id, pushToHistory = true) {
+    function showScreen(id, pushToHistory = true) {
     if ((id === 'screen-mytrip' || id === 'screen-profile') && !state.phone) {
         toast(currentLang === 'bn' ? 'অনুগ্রহ করে লগইন করুন' : 'Please login first');
         showScreen('screen-login');
@@ -3284,7 +3284,6 @@ const translations = {
     // ======== SEO Title, Description & Canonical Update ========
     let metaDesc = document.querySelector('meta[name="description"]');
     
-    // ১. Canonical Tag খোঁজা বা তৈরি করা
     let canonicalTag = document.querySelector('link[rel="canonical"]');
     if (!canonicalTag) {
         canonicalTag = document.createElement('link');
@@ -3292,11 +3291,9 @@ const translations = {
         document.head.appendChild(canonicalTag);
     }
 
-    // ২. URL Path নির্ধারণ
     let pathValue = id.replace('screen-', '');
     if (pathValue === 'home') pathValue = '';
     
-    // ৩. Canonical Link সেট করা
     canonicalTag.setAttribute('href', 'https://carbookbd.com/' + pathValue);
     
     // ৪. Title এবং Description আপডেট
@@ -3315,6 +3312,9 @@ const translations = {
     } else if (id === 'screen-corporate') {
         document.title = "Corporate Car Rental Service | Carbook";
         if(metaDesc) metaDesc.content = "Simplify your corporate and business travel with Carbook. Reliable daily office pick & drop and monthly car rental services.";
+    } else if (id === 'screen-careers') {
+        document.title = "Careers | Carbook";
+        if(metaDesc) metaDesc.content = "Join the Carbook team. Explore our latest job opportunities and career openings in Bangladesh.";
     } else {
         document.title = "Car Rental Bangladesh | Car Booking & Rental Service | Carbook";
         if(metaDesc) metaDesc.content = "Car Booking & Car Rental Service in Bangladesh. Book reliable cars for travel, business trips, airport transfers, and family tours at affordable rates.";
