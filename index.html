@@ -2431,7 +2431,7 @@
                     </div>
                     <div class="nbf-col">
                         <h4>Services</h4>
-                        <a onclick="showScreen('screen-services')">Car rental</a>
+                     <a onclick="showScreen('screen-online-booking')" data-lang="car_rental">Car rental</a>
                         <a onclick="showScreen('screen-corporate')">Corporate</a>
                         <a onclick="downloadApp('driver')">Become a Driver</a>
                     </div>
@@ -2500,7 +2500,136 @@
                     <p style="font-weight: 800; color: var(--blue); font-size: 16px;">Carbook — Making Your Car Journey Easier.</p>
                 </div>
             </section>
+<!-- ======= ONLINE CAR RENTAL BOOKING SCREEN ======= -->
+<section class="screen" id="screen-online-booking">
+    <div class="back-header">
+        <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h1 data-lang="car_rental">Car Rental</h1>
+    </div>
+    <div class="scroll" style="background: #f4f7fc; padding-bottom: 40px;">
+        <!-- Top Image -->
+        <img src="https://i.ibb.co/cm39J5g/Whats-App-Image-2026-09-26-at-2-03-40-AM.jpg" alt="Online Car Rental" style="width: 100%; height: auto; display: block; margin-bottom: 20px;">
+        
+        <div style="padding: 0 18px;">
+            <!-- Title and Intro -->
+            <h2 style="font-size: 22px; font-weight: 900; color: #1b1f2a; margin-bottom: 12px; line-height: 1.3;">🚗 Online Car Rental Booking in Bangladesh</h2>
+            <p style="font-size: 14.5px; color: #64748b; line-height: 1.6; margin-bottom: 24px;">Find a car and driver for your journey through Carbook. Carbook is an online platform that connects customers with drivers and car owners. Customers can post their travel or car rental requirements, and registered drivers can submit their own fare bids for the booking.</p>
 
+            <!-- How It Works -->
+            <div style="background: #fff; border-radius: 16px; padding: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 24px;">
+                <h3 style="font-size: 18px; font-weight: 800; color: #1b1f2a; margin-bottom: 16px;">🔄 How It Works</h3>
+                
+                <div style="margin-bottom: 16px;">
+                    <h4 style="font-size: 15px; font-weight: 800; color: var(--blue);">01. Create a Booking</h4>
+                    <p style="font-size: 13.5px; color: #4b5563; margin-top: 4px; line-height: 1.5;">Pickup location, destination, date, time এবং প্রয়োজনীয় trip details দিন।</p>
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <h4 style="font-size: 15px; font-weight: 800; color: var(--blue);">02. Drivers Submit Bids</h4>
+                    <p style="font-size: 13.5px; color: #4b5563; margin-top: 4px; line-height: 1.5;">আপনার booking request দেখে drivers/car owners তাদের fare offer করবেন।</p>
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <h4 style="font-size: 15px; font-weight: 800; color: var(--blue);">03. Compare Offers</h4>
+                    <p style="font-size: 13.5px; color: #4b5563; margin-top: 4px; line-height: 1.5;">আপনি বিভিন্ন driver's:</p>
+                    <ul style="font-size: 13.5px; color: #4b5563; padding-left: 20px; margin-top: 4px; line-height: 1.6;">
+                        <li>Bid amount</li>
+                        <li>Vehicle information</li>
+                        <li>Driver profile</li>
+                        <li>Rating/reviews</li>
+                        <li>অন্যান্য available information</li>
+                    </ul>
+                    <p style="font-size: 13.5px; color: #4b5563; margin-top: 4px;">দেখে compare করতে পারবেন।</p>
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <h4 style="font-size: 15px; font-weight: 800; color: var(--blue);">04. Choose Your Driver</h4>
+                    <p style="font-size: 13.5px; color: #4b5563; margin-top: 4px; line-height: 1.5;">আপনার পছন্দের offer নির্বাচন করে booking confirm করুন।</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 15px; font-weight: 800; color: var(--blue);">05. Complete Your Journey</h4>
+                    <p style="font-size: 13.5px; color: #4b5563; margin-top: 4px; line-height: 1.5;">নির্ধারিত সময় ও location অনুযায়ী driver-এর সঙ্গে trip সম্পন্ন করুন।</p>
+                </div>
+            </div>
+
+            <!-- Create Booking Form -->
+            <div style="background: #fff; border-radius: 16px; padding: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 24px;">
+                <h3 style="font-size: 18px; font-weight: 800; color: #1b1f2a; margin-bottom: 16px;">📋 Create Booking</h3>
+                
+                <div style="margin-bottom: 12px;">
+                    <label style="font-size: 13px; font-weight: 700; color: var(--dark-text); display: block; margin-bottom: 6px;">Pickup Location</label>
+                    <input type="text" placeholder="Enter Pickup Location" style="width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14.5px; outline: none; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label style="font-size: 13px; font-weight: 700; color: var(--dark-text); display: block; margin-bottom: 6px;">Destination</label>
+                    <input type="text" placeholder="Enter Destination" style="width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14.5px; outline: none; font-family: inherit;">
+                </div>
+                <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+                    <div style="flex: 1;">
+                        <label style="font-size: 13px; font-weight: 700; color: var(--dark-text); display: block; margin-bottom: 6px;">Travel Date</label>
+                        <input type="date" style="width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14.5px; outline: none; font-family: inherit; color: #1b1f2a;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="font-size: 13px; font-weight: 700; color: var(--dark-text); display: block; margin-bottom: 6px;">Pickup Time</label>
+                        <input type="time" style="width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14.5px; outline: none; font-family: inherit; color: #1b1f2a;">
+                    </div>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label style="font-size: 13px; font-weight: 700; color: var(--dark-text); display: block; margin-bottom: 6px;">Additional Requirements</label>
+                    <input type="text" placeholder="Any specific needs?" style="width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14.5px; outline: none; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="font-size: 13px; font-weight: 700; color: var(--dark-text); display: block; margin-bottom: 6px;">Vehicle Type</label>
+                    <select style="width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 14.5px; outline: none; font-family: inherit; color: #1b1f2a; background: transparent;">
+                        <option value="">Select Vehicle ▼</option>
+                        <option value="sedan_premium">Sedan Premium</option>
+                        <option value="sedan_economy">Sedan Economy</option>
+                        <option value="noah">Noah / Hiace</option>
+                    </select>
+                </div>
+                
+                <button class="btn-primary ripple" style="border-radius: 12px; height: 50px;" onclick="showScreen('screen-home')">Booking</button>
+            </div>
+
+            <!-- Driver Bidding -->
+            <div style="background: #fff; border-radius: 16px; padding: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 24px;">
+                <h3 style="font-size: 18px; font-weight: 800; color: #1b1f2a; margin-bottom: 10px;">💰 Driver Bidding</h3>
+                <p style="font-size: 14.5px; font-weight: 800; color: #1b1f2a; margin-bottom: 8px;">Let drivers compete for your booking.</p>
+                <p style="font-size: 13.5px; color: #64748b; line-height: 1.6;">Booking post করার পর drivers আপনার request-এর জন্য নিজেদের bid amount দিতে পারবেন। আপনি received bids দেখতে এবং নিজের প্রয়োজন অনুযায়ী একটি offer নির্বাচন করতে পারবেন।</p>
+            </div>
+
+            <!-- Car Rental Services -->
+            <div style="background: #fff; border-radius: 16px; padding: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 24px;">
+                <h3 style="font-size: 18px; font-weight: 800; color: #1b1f2a; margin-bottom: 12px;">📍 Car Rental Services</h3>
+                <p style="font-size: 13.5px; color: #64748b; margin-bottom: 12px;">Customers can create booking requests for different types of journeys, including:</p>
+                <ul style="font-size: 13.5px; color: #4b5563; padding-left: 20px; line-height: 1.8;">
+                    <li>Car rental for local travel</li>
+                    <li>Long-distance car rental</li>
+                    <li>Airport transfer</li>
+                    <li>Business and corporate travel</li>
+                    <li>Family trips</li>
+                    <li>Tour and travel</li>
+                    <li>Event transportation</li>
+                    <li>Daily or multiple-day travel</li>
+                    <li>Intercity transportation</li>
+                </ul>
+            </div>
+
+            <!-- For Drivers -->
+            <div style="background: var(--blue-pale); border-radius: 16px; padding: 20px; border: 1px solid var(--border); margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: 800; color: #1b1f2a; margin-bottom: 10px;">👤 For Drivers</h3>
+                <p style="font-size: 14.5px; font-weight: 800; color: var(--blue); margin-bottom: 8px;">Have a car? Get more customers through Carbook.</p>
+                <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6; margin-bottom: 12px;">আপনি driver/car owner হলে customer-এর posted booking দেখতে পারবেন এবং আপনার পছন্দের trip-এ bid করতে পারবেন।</p>
+                
+                <h4 style="font-size: 15px; font-weight: 800; color: #1b1f2a; margin-bottom: 6px; margin-top:16px;">Can drivers join Carbook?</h4>
+                <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6; margin-bottom: 20px;">Drivers and eligible car owners can register on CarBook and participate in available booking requests, subject to CarBook's applicable requirements and policies.</p>
+                
+                <button class="btn-primary ripple" style="background: #1b1f2a; color: #fff; border-radius: 12px; height: 50px;" onclick="downloadApp('driver')">Become a Driver</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ======= END ONLINE CAR RENTAL BOOKING SCREEN ======= -->
+
+            
 <section class="screen" id="screen-services">
                 <div class="back-header">
                     <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
