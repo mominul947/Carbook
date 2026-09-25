@@ -2303,7 +2303,7 @@
                 <h4 data-lang="services">Services</h4>
                 <a onclick="showScreen('screen-car-rental')" data-lang="car_rental">Car rental</a>
                 <a onclick="showScreen('screen-corporate')" data-lang="corporate">Corporate</a>
-                <a onclick="downloadApp('driver')" data-lang="become_driver">Become a Driver</a>
+                <a onclick="showScreen('screen-driver')" data-lang="become_driver">Become a Driver</a>
             </div>
             <div class="nbf-col">
                 <h4 data-lang="others">Others</h4>
@@ -2397,6 +2397,76 @@
         </div>
     </div>
 </section>
+
+            <!-- ======= BECOME A DRIVER SCREEN ======= -->
+<section class="screen" id="screen-driver">
+    <div class="back-header">
+        <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h1 data-lang="become_driver">Become a Driver</h1>
+    </div>
+    <div class="scroll" style="background: #ffffff; padding-bottom: 20px;">
+
+        <!-- Hero Section -->
+        <div style="padding: 30px 20px 20px; max-width: 1000px; margin: 0 auto;">
+            <h2 style="font-size: 36px; font-weight: 900; color: #1b1f2a; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.5px;">Start Making Money with Carbook</h2>
+            <p style="font-size: 16.5px; color: #64748b; line-height: 1.6; margin-bottom: 28px; font-weight: 500;">With Carbook, Every Journey Matters: Drive as it suits your aspirations, each trip a chance to grow, earn, and explore.</p>
+
+            <button class="ripple" style="background: #ffc107; color: #000; border: none; border-radius: 12px; width: 100%; max-width: 400px; padding: 18px 24px; font-size: 18px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; cursor: pointer; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);" onclick="downloadApp('driver')">
+                Join Us <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <img src="https://i.ibb.co/yn7MWrYT/Whats-App-Image-2026-09-26-at-3-17-15-AM.jpg" alt="Join Carbook Driver" style="width: 100%; height: auto; border-radius: 20px; object-fit: cover; display: block;">
+        </div>
+
+        <!-- Features Section -->
+        <div style="padding: 20px; margin-top: 10px; max-width: 1000px; margin: 0 auto;">
+            <h2 style="font-size: 28px; font-weight: 900; color: #1b1f2a; line-height: 1.2; margin-bottom: 24px;">Why Become a<br>Carbook Driver ?</h2>
+
+            <!-- Card 1: Light Background -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 24px; padding: 30px 24px; margin-bottom: 16px;">
+                <div style="width: 56px; height: 56px; background: var(--blue); border-radius: 16px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px; color: #fff; font-size: 28px; box-shadow: 0 4px 12px rgba(26, 86, 255, 0.2);">
+                    <i class="fa-solid fa-percent"></i>
+                </div>
+                <h3 style="font-size: 22px; font-weight: 800; color: #1b1f2a; margin-bottom: 12px;">No Commission</h3>
+                <p style="font-size: 16px; color: #64748b; line-height: 1.6; margin: 0; font-weight: 500;">You get all the money from your rides. We don't take any, and there are no hidden fees.</p>
+            </div>
+
+            <!-- Card 2: Solid Blue Background -->
+            <div style="background: var(--blue); border-radius: 24px; padding: 30px 24px; margin-bottom: 40px; box-shadow: 0 8px 24px rgba(26, 86, 255, 0.25);">
+                <div style="width: 56px; height: 56px; background: rgba(255, 255, 255, 0.2); border-radius: 16px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px; color: #fff; font-size: 28px;">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <h3 style="font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 12px;">Instant payouts</h3>
+                <p style="font-size: 16px; color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin: 0; font-weight: 500;">Earn after every trip with no commission, just a small monthly subscription fee.</p>
+            </div>
+        </div>
+
+        <!-- App Download Banner (Same as Corporate) -->
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="custom-app-banner">
+                <div class="cab-content">
+                    <h1 class="cab-title">Download<br>Carbook Mobile App</h1>
+                    <p class="cab-subtitle">Download our Customer, Smart Driver and Enterprise App</p>
+
+                    <button class="cab-download-btn ripple" onclick="handleDownloadAppClick()">
+                        <span>Download App</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="cab-badges">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" onclick="handleDownloadAppClick()">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" onclick="handleDownloadAppClick()">
+                    </div>
+                </div>
+                <div class="cab-image">
+                    <img src="https://cdn.phototourl.com/member/2026-09-10-1468923b-3960-404c-903b-fc9c2e09dbbc.png" alt="Carbook App Mockup">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- ======= END BECOME A DRIVER SCREEN ======= -->
 <!-- ======= END CAREERS SCREEN ======= -->
 <section class="screen" id="screen-corporate">
     <div class="back-header">
@@ -2496,7 +2566,7 @@
                         <h4>Services</h4>
                      <a onclick="showScreen('screen-car-rental')" data-lang="car_rental">Car rental</a>
                         <a onclick="showScreen('screen-corporate')">Corporate</a>
-                        <a onclick="downloadApp('driver')">Become a Driver</a>
+                        <a onclick="showScreen('screen-driver')">Become a Driver</a>
                     </div>
                     <div class="nbf-col">
                         <h4>Others</h4>
@@ -3366,6 +3436,10 @@ const translations = {
     } else {
         document.title = "Car Rental Bangladesh | Car Booking & Rental Service | Carbook";
         if(metaDesc) metaDesc.content = "Car Booking & Car Rental Service in Bangladesh. Book reliable cars for travel, business trips, airport transfers, and family tours at affordable rates.";
+    }
+        } else if (id === 'screen-driver') {
+        document.title = "Become a Driver | Start Making Money | Carbook";
+        if(metaDesc) metaDesc.content = "Drive as it suits your aspirations. Join Carbook as a driver, enjoy zero commission, and get instant payouts.";
     }
     // =======================================
     
