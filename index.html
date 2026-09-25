@@ -3255,7 +3255,7 @@ const translations = {
             return p;
         }
 
-       function showScreen(id, pushToHistory = true) {
+     function showScreen(id, pushToHistory = true) {
     if ((id === 'screen-mytrip' || id === 'screen-profile') && !state.phone) {
         toast(currentLang === 'bn' ? 'অনুগ্রহ করে লগইন করুন' : 'Please login first');
         showScreen('screen-login');
@@ -3266,9 +3266,25 @@ const translations = {
     const target = document.getElementById(id);
     if (target) target.classList.add('active');
     
-    // ======== SEO Title & Description Update ========
+    // ======== SEO Title, Description & Canonical Update ========
     let metaDesc = document.querySelector('meta[name="description"]');
     
+    // ১. Canonical Tag খোঁজা বা তৈরি করা
+    let canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (!canonicalTag) {
+        canonicalTag = document.createElement('link');
+        canonicalTag.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalTag);
+    }
+
+    // ২. URL Path নির্ধারণ
+    let pathValue = id.replace('screen-', '');
+    if (pathValue === 'home') pathValue = '';
+    
+    // ৩. Canonical Link সেট করা
+    canonicalTag.setAttribute('href', 'https://carbookbd.com/' + pathValue);
+    
+    // ৪. Title এবং Description আপডেট
     if (id === 'screen-about') {
         document.title = "About Carbook | Trusted Car Rental Service in Bangladesh";
         if(metaDesc) metaDesc.content = "Learn about Carbook - your trusted platform for simple, convenient, and reliable car rental services in Bangladesh.";
@@ -3279,9 +3295,11 @@ const translations = {
         document.title = "Carbook | Blog";
         if(metaDesc) metaDesc.content = "Read the latest updates, tips, and news about car rental and travel in Bangladesh from Carbook.";
     } else if (id === 'screen-car-rental') {
-        // Apnar deya Car Rental page er Title & Description
         document.title = "Car Rental in Bangladesh | Carbook";
         if(metaDesc) metaDesc.content = "Carbook offers reliable and affordable car rental services across Bangladesh. Choose from a wide range of cars for personal, business, and travel needs.";
+    } else if (id === 'screen-corporate') {
+        document.title = "Corporate Car Rental Service | Carbook";
+        if(metaDesc) metaDesc.content = "Simplify your corporate and business travel with Carbook. Reliable daily office pick & drop and monthly car rental services.";
     } else {
         document.title = "Car Rental Bangladesh | Car Booking & Rental Service | Carbook";
         if(metaDesc) metaDesc.content = "Car Booking & Car Rental Service in Bangladesh. Book reliable cars for travel, business trips, airport transfers, and family tours at affordable rates.";
@@ -3292,9 +3310,6 @@ const translations = {
     window.scrollTo(0,0);
 
     if (pushToHistory) {
-        let pathValue = id.replace('screen-', '');
-        if (pathValue === 'home') pathValue = '';
-        
         const newUrl = '/' + pathValue;
         if(window.location.pathname !== newUrl) {
             history.pushState({ screen: id }, '', newUrl);
