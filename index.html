@@ -3255,7 +3255,7 @@ const translations = {
             return p;
         }
 
-        function showScreen(id, pushToHistory = true) {
+       function showScreen(id, pushToHistory = true) {
     if ((id === 'screen-mytrip' || id === 'screen-profile') && !state.phone) {
         toast(currentLang === 'bn' ? 'অনুগ্রহ করে লগইন করুন' : 'Please login first');
         showScreen('screen-login');
@@ -3266,15 +3266,25 @@ const translations = {
     const target = document.getElementById(id);
     if (target) target.classList.add('active');
     
-    // ======== SEO Title Update Code ========
+    // ======== SEO Title & Description Update ========
+    let metaDesc = document.querySelector('meta[name="description"]');
+    
     if (id === 'screen-about') {
         document.title = "About Carbook | Trusted Car Rental Service in Bangladesh";
+        if(metaDesc) metaDesc.content = "Learn about Carbook - your trusted platform for simple, convenient, and reliable car rental services in Bangladesh.";
     } else if (id === 'screen-services') {
         document.title = "Car Rental Services in Bangladesh";
+        if(metaDesc) metaDesc.content = "Explore Carbook's premium car rental services across Bangladesh including one-way, round trip, hourly, and airport transfers.";
     } else if (id === 'screen-blog') {
         document.title = "Carbook | Blog";
+        if(metaDesc) metaDesc.content = "Read the latest updates, tips, and news about car rental and travel in Bangladesh from Carbook.";
+    } else if (id === 'screen-car-rental') {
+        // Apnar deya Car Rental page er Title & Description
+        document.title = "Car Rental in Bangladesh | Carbook";
+        if(metaDesc) metaDesc.content = "Carbook offers reliable and affordable car rental services across Bangladesh. Choose from a wide range of cars for personal, business, and travel needs.";
     } else {
-        document.title = "Carbook- Best Intercity Car Rental Service";
+        document.title = "Car Rental Bangladesh | Car Booking & Rental Service | Carbook";
+        if(metaDesc) metaDesc.content = "Car Booking & Car Rental Service in Bangladesh. Book reliable cars for travel, business trips, airport transfers, and family tours at affordable rates.";
     }
     // =======================================
     
@@ -3291,8 +3301,6 @@ const translations = {
         }
     }
 }
-
-
         function goBackRouter() {
             if (history.length > 1) {
                 history.back();
