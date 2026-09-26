@@ -1557,24 +1557,21 @@
                 <div class="scroll">
 
                 <!-- ================= UPDATED TOPBAR ================= -->
+
 <!-- ================= UPDATED TOPBAR ================= -->
 <div class="topbar">
     
-<!-- Logo Area -->
+    <!-- Logo Area (Left Side) -->
     <div style="display: flex; align-items: center; gap: 14px;">
-        <!-- gap: 2px দেওয়া হয়েছে যাতে লোগো (C) এবং arbook লেখাটি একসাথে মিলে যায় -->
-        <div class="brand" style="display: flex; align-items: center; gap: 2px; cursor: pointer;" onclick="showScreen('screen-home')">
-            
-            <!-- Image Logo with Rounded/Cropped Corners -->
+        <div class="brand" style="display: flex; align-items: center; gap: 4px; cursor: pointer;" onclick="showScreen('screen-home')">
             <img src="https://i.ibb.co/7JFX3TSR/Whats-App-Image-2026-09-27-at-12-38-42-AM.jpg" alt="C" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            
-            <!-- Minimalist Typography (arbook) -->
-            <span style="font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 500; color: #000; letter-spacing: -0.5px;">Carbook</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 600; color: #1b1f2a; letter-spacing: -0.5px;">arbook</span>
         </div>
     </div>
-    <!-- NEW DESKTOP NAV -->
+    
+    <!-- NEW DESKTOP NAV (Hidden on Mobile) -->
     <nav class="desktop-nav">
-        <!-- ভাষার সুইচিং বাটন -->
+        <!-- Bhasha poriborton button -->
         <button onclick="toggleLanguage()" class="lang-switch-btn" title="Change Language">
             <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
         </button>
@@ -1587,30 +1584,30 @@
     </nav>
 
     <!-- Right Side Buttons -->
-    <div class="topbar-right">
+    <div class="topbar-right" style="display: flex; align-items: center; gap: 12px;">
+        <!-- Login korar por Profile o Notification icon ekhane asbe -->
         <div id="topbar-auth-container" style="display: flex; align-items: center; gap: 10px;"></div>
         
-        <!-- Desktop Login Button -->
-        <button class="desktop-login-btn ripple" id="desktop-login-btn" onclick="showScreen('screen-login')" data-lang="login_now">Login</button>
-        
-        <!-- Pathao Style Download App Button -->
+        <!-- Header Download App Button -->
         <div class="header-dl-btn" onclick="showScreen('screen-app-download')">
             <span data-lang="download_app_btn">Download App</span>
         </div>
         
-        <button class="menu-btn" style="color: #1b1f2a;" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
+        <!-- Hamburger Menu Button -->
+        <button class="menu-btn" style="color: #1b1f2a; padding: 0; margin-left: 2px;" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
     </div>
     
     <!-- MOBILE DROPDOWN MENU -->
     <div class="header-dropdown" id="header-dropdown">
-        <!-- ভাষার সুইচিং বাটন -->
         <button onclick="toggleLanguage()" class="lang-switch-btn" title="Change Language" style="margin: 16px 22px 0px;">
             <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
         </button>
 
+        <!-- Login Now Button (Dropdown e thakbe) -->
         <div class="dropdown-item" id="dropdown-login-btn" onclick="showScreen('screen-login')" style="background: var(--blue); color: #fff; border-radius: 12px; margin: 12px 22px; justify-content: center; box-shadow: 0 4px 12px rgba(26,86,255,0.25);">
             <span data-lang="login_now" style="font-weight: 800;">Login Now</span>
         </div>
+        
         <div class="dropdown-item" onclick="showScreen('screen-about')">
             <span data-lang="about_us">About Us</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
         </div>
@@ -1620,20 +1617,18 @@
         <div class="dropdown-item" onclick="showScreen('screen-corporate')">
             <span data-lang="corporate">Corporate</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
         </div>
-
         <div class="dropdown-item" onclick="showScreen('screen-blog')">
             <span data-lang="blog">Blog</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
         </div>
-      <div class="dropdown-item" onclick="showScreen('screen-driver')">
-    <span data-lang="become_driver">Become a Driver</span> <i class="fa-solid fa-car" style="font-size: 12px; color: #8a93a6;"></i>
-</div>
+        <div class="dropdown-item" onclick="showScreen('screen-driver')">
+            <span data-lang="become_driver">Become a Driver</span> <i class="fa-solid fa-car" style="font-size: 12px; color: #8a93a6;"></i>
+        </div>
         <div class="dropdown-item" onclick="showScreen('screen-help')">
             <span data-lang="contacts">Contact Us</span> <i class="fa-solid fa-chevron-right" style="font-size: 12px; color: #8a93a6;"></i>
         </div>
     </div>
 </div>
 <!-- ================= END TOPBAR ================= -->
-
 
                     <!-- Hero Banner -->
                     <div class="hero-banner"></div>
@@ -3688,21 +3683,21 @@ const translations = {
             toast._timer = setTimeout(() => t.classList.remove('show'), 2500);
         }
 
-        function updateHeaderAuth(isLoggedIn) {
-            const container = document.getElementById('topbar-auth-container');
-            const dpLoginBtn = document.getElementById('dropdown-login-btn');
-            
-            if (isLoggedIn) {
-                if(container) {
-                    let avatarHtml = state.photoURL ? `<img src="${state.photoURL}">` : `<i class="fa-solid fa-user"></i>`;
-                    container.innerHTML = `<div class="bell-btn" onclick="openNotificationsModal()" style="width: 42px; height: 42px; font-size: 18px;"><i class="fa-regular fa-bell"></i></div><div class="header-profile-avatar" onclick="showScreen('screen-profile')" style="width: 42px; height: 42px; font-size: 18px;">${avatarHtml}</div>`;
-                }
-                if(dpLoginBtn) dpLoginBtn.style.display = 'none';
-            } else {
-                if(container) { container.innerHTML = ``; }
-                if(dpLoginBtn) dpLoginBtn.style.display = 'flex';
-            }
+       function updateHeaderAuth(isLoggedIn) {
+    const container = document.getElementById('topbar-auth-container');
+    const dpLoginBtn = document.getElementById('dropdown-login-btn');
+    
+    if (isLoggedIn) {
+        if(container) {
+            let avatarHtml = state.photoURL ? `<img src="${state.photoURL}">` : `<i class="fa-solid fa-user"></i>`;
+            container.innerHTML = `<div class="bell-btn" onclick="openNotificationsModal()" style="width: 42px; height: 42px; font-size: 18px;"><i class="fa-regular fa-bell"></i></div><div class="header-profile-avatar" onclick="showScreen('screen-profile')" style="width: 42px; height: 42px; font-size: 18px;">${avatarHtml}</div>`;
         }
+        if(dpLoginBtn) dpLoginBtn.style.display = 'none';
+    } else {
+        if(container) { container.innerHTML = ``; }
+        if(dpLoginBtn) dpLoginBtn.style.display = 'flex';
+    }
+}
 
         function toggleDropdown() { document.getElementById('header-dropdown').classList.toggle('active'); }
         function closeDropdown() { const dp = document.getElementById('header-dropdown'); if(dp) dp.classList.remove('active'); }
