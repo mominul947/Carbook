@@ -1556,16 +1556,14 @@
             <section class="screen active" id="screen-home">
                 <div class="scroll">
 
-                <!-- ================= UPDATED TOPBAR ================= -->
-
 <!-- ================= UPDATED TOPBAR ================= -->
-<div class="topbar">
+<div class="topbar" style="padding: 15px 16px;">
     
-    <!-- Logo Area (Left Side) -->
-    <div style="display: flex; align-items: center; gap: 14px;">
+    <!-- Logo Area (Left Side) - Choto kora hoyeche -->
+    <div style="display: flex; align-items: center;">
         <div class="brand" style="display: flex; align-items: center; gap: 4px; cursor: pointer;" onclick="showScreen('screen-home')">
-            <img src="https://i.ibb.co/7JFX3TSR/Whats-App-Image-2026-09-27-at-12-38-42-AM.jpg" alt="C" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <span style="font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 600; color: #1b1f2a; letter-spacing: -0.5px;">Carbook</span>
+            <img src="https://i.ibb.co/7JFX3TSR/Whats-App-Image-2026-09-27-at-12-38-42-AM.jpg" alt="C" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <span style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 600; color: #1b1f2a; letter-spacing: -0.5px;">arbook</span>
         </div>
     </div>
     
@@ -1583,18 +1581,18 @@
         <a onclick="showScreen('screen-help')" data-lang="contacts">Contact Us</a>
     </nav>
 
-    <!-- Right Side Buttons -->
-    <div class="topbar-right" style="display: flex; align-items: center; gap: 12px;">
+    <!-- Right Side Buttons - Choto kora hoyeche -->
+    <div class="topbar-right" style="display: flex; align-items: center; gap: 8px;">
         <!-- Login korar por Profile o Notification icon ekhane asbe -->
-        <div id="topbar-auth-container" style="display: flex; align-items: center; gap: 10px;"></div>
+        <div id="topbar-auth-container" style="display: flex; align-items: center; gap: 8px;"></div>
         
-        <!-- Header Download App Button -->
-        <div class="header-dl-btn" onclick="showScreen('screen-app-download')">
+        <!-- Header Download App Button (Size Reduced) -->
+        <div class="header-dl-btn" onclick="showScreen('screen-app-download')" style="font-size: 12.5px; padding: 6px 10px; border-radius: 4px;">
             <span data-lang="download_app_btn">Download App</span>
         </div>
         
-        <!-- Hamburger Menu Button -->
-        <button class="menu-btn" style="color: #1b1f2a; padding: 0; margin-left: 2px;" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
+        <!-- Hamburger Menu Button (Size Reduced) -->
+        <button class="menu-btn" style="color: #1b1f2a; padding: 0; font-size: 24px; margin-left: 4px;" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
     </div>
     
     <!-- MOBILE DROPDOWN MENU -->
@@ -1603,7 +1601,7 @@
             <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
         </button>
 
-        <!-- Login Now Button (Dropdown e thakbe) -->
+        <!-- Login Now Button -->
         <div class="dropdown-item" id="dropdown-login-btn" onclick="showScreen('screen-login')" style="background: var(--blue); color: #fff; border-radius: 12px; margin: 12px 22px; justify-content: center; box-shadow: 0 4px 12px rgba(26,86,255,0.25);">
             <span data-lang="login_now" style="font-weight: 800;">Login Now</span>
         </div>
@@ -1629,7 +1627,6 @@
     </div>
 </div>
 <!-- ================= END TOPBAR ================= -->
-
                     <!-- Hero Banner -->
                     <div class="hero-banner"></div>
 
