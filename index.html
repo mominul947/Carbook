@@ -1502,18 +1502,22 @@
                 <div class="scroll">
 
                 <!-- ================= UPDATED TOPBAR ================= -->
-<div class="header-dl-btn" onclick="showScreen('screen-app-download')">
-    <span data-lang="download_app_btn">Download App</span>
-</div>
-
+<!-- ================= UPDATED TOPBAR ================= -->
+<div class="topbar">
+    
+    <!-- Logo Area -->
+    <div style="display: flex; align-items: center; gap: 14px;">
+        <div class="brand" style="flex-direction: column; align-items: flex-start; gap: 0; cursor: pointer;" onclick="showScreen('screen-home')">
+            <img src="https://cdn.phototourl.com/member/2026-09-08-de30d250-4b80-4ad1-b6c1-1a8ee7d24060.png" alt="Carbook" id="home-username-header" style="height: 48px; object-fit: contain;">
+        </div>
     </div>
     
     <!-- NEW DESKTOP NAV -->
     <nav class="desktop-nav">
-<!-- ভাষার সুইচিং বাটন -->
-<button onclick="toggleLanguage()" class="lang-switch-btn" title="Change Language">
-    <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
-</button>
+        <!-- ভাষার সুইচিং বাটন -->
+        <button onclick="toggleLanguage()" class="lang-switch-btn" title="Change Language">
+            <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
+        </button>
 
         <a onclick="showScreen('screen-about')" data-lang="about_us">About Us</a>
         <a onclick="showScreen('screen-services')" data-lang="services">Services</a>
@@ -1522,24 +1526,27 @@
         <a onclick="showScreen('screen-help')" data-lang="contacts">Contact Us</a>
     </nav>
 
+    <!-- Right Side Buttons -->
     <div class="topbar-right">
         <div id="topbar-auth-container" style="display: flex; align-items: center; gap: 10px;"></div>
         
         <!-- Desktop Login Button -->
         <button class="desktop-login-btn ripple" id="desktop-login-btn" onclick="showScreen('screen-login')" data-lang="login_now">Login</button>
         
-        <div class="header-dl-btn" onclick="handleDownloadAppClick()">
-            <i class="fa-solid fa-mobile-screen"></i> <span data-lang="download_app_btn">App Download</span>
+        <!-- Pathao Style Download App Button -->
+        <div class="header-dl-btn" onclick="showScreen('screen-app-download')">
+            <span data-lang="download_app_btn">Download App</span>
         </div>
+        
         <button class="menu-btn" style="color: #1b1f2a;" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
     </div>
     
     <!-- MOBILE DROPDOWN MENU -->
     <div class="header-dropdown" id="header-dropdown">
-<!-- ভাষার সুইচিং বাটন -->
-<button onclick="toggleLanguage()" class="lang-switch-btn" title="Change Language">
-    <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
-</button>
+        <!-- ভাষার সুইচিং বাটন -->
+        <button onclick="toggleLanguage()" class="lang-switch-btn" title="Change Language" style="margin: 16px 22px 0px;">
+            <i class="fa-solid fa-globe"></i> <span id="current-lang-text">English</span>
+        </button>
 
         <div class="dropdown-item" id="dropdown-login-btn" onclick="showScreen('screen-login')" style="background: var(--blue); color: #fff; border-radius: 12px; margin: 12px 22px; justify-content: center; box-shadow: 0 4px 12px rgba(26,86,255,0.25);">
             <span data-lang="login_now" style="font-weight: 800;">Login Now</span>
@@ -1565,6 +1572,7 @@
         </div>
     </div>
 </div>
+<!-- ================= END TOPBAR ================= -->
 
 
                     <!-- Hero Banner -->
