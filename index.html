@@ -180,22 +180,82 @@
 
         .topbar-right { display: flex; align-items: center; gap: 12px; }
 
-        .header-dl-btn {
-            background: #f4f7fc;
-            color: var(--blue);
-            font-weight: 800;
-            font-size: 14px; 
-            padding: 10px 18px; 
-            border-radius: 10px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #e1e8f5;
-            transition: all 0.2s ease;
-        }
-        .header-dl-btn:active { transform: scale(0.95); }
+   /* ================= Updated Header Download Button (Pathao Style) ================= */
+.header-dl-btn {
+    background: #ffffff;
+    color: #1b1f2a;
+    font-weight: 500;
+    font-size: 14.5px; 
+    padding: 8px 16px; 
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1e8f5;
+    transition: all 0.2s ease;
+}
+.header-dl-btn:hover { background: #f9fafb; }
+.header-dl-btn:active { transform: scale(0.97); }
 
+/* ================= New App Download Screen CSS ================= */
+.app-dl-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: #000;
+    margin: 40px 0 30px;
+}
+.app-dl-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 20px 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .app-dl-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .app-dl-title { 
+        font-size: 36px; 
+        margin: 50px 0 40px; 
+    }
+}
+.app-dl-card {
+    border: 1px solid #eef0f5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+.app-dl-card img.hero {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+}
+.app-dl-card-body {
+    padding: 24px;
+}
+.app-dl-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1b1f2a;
+    margin-bottom: 16px;
+}
+.app-dl-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.app-dl-badges img {
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.app-dl-badges img:active {
+    transform: scale(0.95);
+}
         .bell-btn {
             width: 44px; height: 44px; 
             border-radius: 50%;
@@ -1121,6 +1181,46 @@
                 </div>
             </section>
 
+<!-- ======= APP DOWNLOAD SCREEN ======= -->
+<section class="screen" id="screen-app-download">
+    <div class="back-header">
+        <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
+        <h1>App Download</h1>
+    </div>
+    <div class="scroll" style="background: #ffffff;">
+        <h2 class="app-dl-title">Download The Carbook App</h2>
+        
+        <div class="app-dl-grid">
+            <!-- User App Card -->
+            <div class="app-dl-card">
+                <!-- User App এর জন্য একটি প্রাসঙ্গিক ডেমো ইমেজ -->
+                <img src="https://cdn.phototourl.com/member/2026-09-06-a1fa25a7-8485-4ae2-be15-474ba23b22eb.png" alt="User Using App" class="hero" style="object-position: top;">
+                <div class="app-dl-card-body">
+                    <h3>User App</h3>
+                    <div class="app-dl-badges">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" onclick="window.open('https://play.google.com/store/apps/details?id=com.appuser.carbook&pcampaignid=web_share', '_blank')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" onclick="window.open('https://play.google.com/store', '_blank')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drive App Card -->
+            <div class="app-dl-card">
+                <!-- Drive App এর জন্য একটি প্রাসঙ্গিক ডেমো ইমেজ -->
+                <img src="https://i.ibb.co/yn7MWrYT/Whats-App-Image-2026-09-26-at-3-17-15-AM.jpg" alt="Driver on Bike" class="hero">
+                <div class="app-dl-card-body">
+                    <h3>Drive App</h3>
+                    <div class="app-dl-badges">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" onclick="window.open('https://play.google.com/store/apps/details?id=driver', '_blank')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======= END APP DOWNLOAD SCREEN ======= -->
+
+            
             <section class="screen" id="screen-otp">
                 <div class="back-header" style="padding-bottom: 0;">
                     <button class="back-btn" data-back="screen-login" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
@@ -1400,10 +1500,8 @@
                 <div class="scroll">
 
                 <!-- ================= UPDATED TOPBAR ================= -->
-<div class="topbar">
-    <div style="display: flex; align-items: center; gap: 14px;">
-<div class="brand" style="flex-direction: column; align-items: flex-start; gap: 0; cursor: pointer;" onclick="showScreen('screen-home')">
-    <img src="https://cdn.phototourl.com/member/2026-09-08-de30d250-4b80-4ad1-b6c1-1a8ee7d24060.png" alt="Carbook" id="home-username-header" style="height: 48px; object-fit: contain;">
+<div class="header-dl-btn" onclick="showScreen('screen-app-download')">
+    <span data-lang="download_app_btn">Download App</span>
 </div>
 
     </div>
@@ -3245,20 +3343,7 @@
                 </div>
             </div>
 
-            <div id="app-download-modal" class="modal-overlay">
-                <div class="modal-content" style="max-height: 40vh; border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
-                    <div class="modal-header">
-                        <h2>Download App</h2>
-                        <button onclick="closeAppDownloadModal()" class="modal-close-btn"><i class="fa-solid fa-times"></i></button>
-                    </div>
-                    <div class="modal-body" style="padding: 20px;">
-                        <div style="display: flex; flex-direction: column; gap: 15px;">
-                            <button class="btn-primary ripple" style="border-radius: 12px; font-size: 18px; padding: 18px;" onclick="downloadApp('user')"><i class="fa-solid fa-user"></i> 1. User App</button>
-                            <button class="btn-outline ripple" style="border-radius: 12px; font-size: 18px; padding: 18px; border-width: 2px;" onclick="downloadApp('driver')"><i class="fa-solid fa-car"></i> 2. Driver App</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         
 
             <div id="bidding-modal" class="modal-overlay">
                 <div class="modal-content" style="height: 80vh;">
@@ -3465,7 +3550,7 @@ const translations = {
     
     // ৪. Title এবং Description আপডেট
   
-    if (id === 'screen-about') {
+  if (id === 'screen-about') {
         document.title = "About Carbook | Trusted Car Rental Service in Bangladesh";
         if(metaDesc) metaDesc.content = "Learn about Carbook - your trusted platform for simple, convenient, and reliable car rental services in Bangladesh.";
     } else if (id === 'screen-services') {
@@ -3486,11 +3571,13 @@ const translations = {
     } else if (id === 'screen-driver') {
         document.title = "Become a Driver | Start Making Money | Carbook";
         if(metaDesc) metaDesc.content = "Drive as it suits your aspirations. Join Carbook as a driver, enjoy zero commission, and get instant payouts.";
+    } else if (id === 'screen-app-download') {
+        document.title = "Download App | Carbook";
+        if(metaDesc) metaDesc.content = "Download the Carbook User and Driver App today to enjoy commission-free rides and easy booking.";
     } else {
         document.title = "Car Rental Bangladesh | Car Booking & Rental Service | Carbook";
         if(metaDesc) metaDesc.content = "Car Booking & Car Rental Service in Bangladesh. Book reliable cars for travel, business trips, airport transfers, and family tours at affordable rates.";
     }
-   
     closeDropdown();
     window.scrollTo(0,0);
 
@@ -3560,19 +3647,7 @@ const translations = {
             }
         });
 
-        function handleDownloadAppClick() {
-            closeDropdown();
-            document.getElementById('app-download-modal').classList.add('active');
-        }
-        function closeAppDownloadModal() { document.getElementById('app-download-modal').classList.remove('active'); }
-      function downloadApp(type) {
-    closeAppDownloadModal();
-    toast(currentLang === 'bn' ? 'অ্যাপ ডাউনলোড করতে রিডাইরেক্ট করা হচ্ছে...' : 'Redirecting to download app...');
-    setTimeout(() => {
-        if(type === 'driver') { window.open('https://play.google.com/store/apps/details?id=driver', '_blank'); }
-        else { window.open('https://play.google.com/store/apps/details?id=com.appuser.carbook&pcampaignid=web_share', '_blank'); }
-    }, 800);
-}
+       
         /* ==================== NOTIFICATIONS & MODALS ==================== */
         function openNotificationsModal() { document.getElementById('notifications-modal').classList.add('active'); listenToNotifications(); }
         function closeNotificationsModal() { document.getElementById('notifications-modal').classList.remove('active'); }
