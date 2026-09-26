@@ -3565,15 +3565,14 @@ const translations = {
             document.getElementById('app-download-modal').classList.add('active');
         }
         function closeAppDownloadModal() { document.getElementById('app-download-modal').classList.remove('active'); }
-        function downloadApp(type) {
-            closeAppDownloadModal();
-            toast(currentLang === 'bn' ? 'অ্যাপ ডাউনলোড করতে রিডাইরেক্ট করা হচ্ছে...' : 'Redirecting to download app...');
-            setTimeout(() => {
-                if(type === 'driver') { window.open('https://play.google.com/store/apps/details?id=driver', '_blank'); }
-                else { window.open('https://play.google.com/store', '_blank'); }
-            }, 800);
-        }
-
+      function downloadApp(type) {
+    closeAppDownloadModal();
+    toast(currentLang === 'bn' ? 'অ্যাপ ডাউনলোড করতে রিডাইরেক্ট করা হচ্ছে...' : 'Redirecting to download app...');
+    setTimeout(() => {
+        if(type === 'driver') { window.open('https://play.google.com/store/apps/details?id=driver', '_blank'); }
+        else { window.open('https://play.google.com/store/apps/details?id=com.appuser.carbook&pcampaignid=web_share', '_blank'); }
+    }, 800);
+}
         /* ==================== NOTIFICATIONS & MODALS ==================== */
         function openNotificationsModal() { document.getElementById('notifications-modal').classList.add('active'); listenToNotifications(); }
         function closeNotificationsModal() { document.getElementById('notifications-modal').classList.remove('active'); }
