@@ -181,10 +181,11 @@
         .topbar-right { display: flex; align-items: center; gap: 12px; }
 
    /* ================= Updated Header Download Button (Pathao Style) ================= */
+/* ================= Updated Header Download Button (Pathao Style) ================= */
 .header-dl-btn {
     background: #ffffff;
     color: #1b1f2a;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14.5px; 
     padding: 8px 16px; 
     border-radius: 6px;
@@ -256,72 +257,73 @@
 .app-dl-badges img:active {
     transform: scale(0.95);
 }
-        .bell-btn {
-            width: 44px; height: 44px; 
-            border-radius: 50%;
-            background: var(--blue-pale); display: flex; align-items: center; justify-content: center;
-            color: var(--blue); font-size: 20px; 
-            cursor: pointer; transition: all 0.2s ease;
-        }
-        
-        .header-profile-avatar {
-            width: 44px; height: 44px; 
-            border-radius: 50%; background: #dbe3f0;
-            border: 2px solid #fff; display: flex; align-items: center; justify-content: center;
-            font-size: 20px; 
-            color: #9aa6bd; overflow: hidden; cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .header-profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-        .menu-btn {
-            background: transparent; border: none; color: inherit;
-            font-size: 28px; 
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-            transition: opacity 0.2s; padding: 4px; margin-left: 2px;
-        }
-        .menu-btn:active { opacity: 0.7; }
+/* ---------- Header Icons & Profile ---------- */
+.bell-btn {
+    width: 44px; height: 44px; 
+    border-radius: 50%;
+    background: var(--blue-pale); display: flex; align-items: center; justify-content: center;
+    color: var(--blue); font-size: 20px; 
+    cursor: pointer; transition: all 0.2s ease;
+}
 
-        /* ---------- Header Dropdown Menu ---------- */
-        .header-dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: #ffffff;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
-            opacity: 0;
-            z-index: 1000;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            border-bottom-left-radius: 16px;
-            border-bottom-right-radius: 16px;
-        }
-        .header-dropdown.active {
-            max-height: 600px;
-            opacity: 1;
-            border-top: 1px solid #f0f3f8;
-        }
-        .dropdown-item {
-            padding: 16px 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 15px;
-            font-weight: 600;
-            color: #1b1f2a;
-            border-bottom: 1px solid #f4f6fa;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .dropdown-item:last-child {
-            border-bottom: none;
-        }
-        .dropdown-item:active {
-            background: #f4f7fc;
-        }
+.header-profile-avatar {
+    width: 44px; height: 44px; 
+    border-radius: 50%; background: #dbe3f0;
+    border: 2px solid #fff; display: flex; align-items: center; justify-content: center;
+    font-size: 20px; 
+    color: #9aa6bd; overflow: hidden; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header-profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
+.menu-btn {
+    background: transparent; border: none; color: inherit;
+    font-size: 28px; 
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.2s; padding: 4px; margin-left: 2px;
+}
+.menu-btn:active { opacity: 0.7; }
+
+/* ---------- Header Dropdown Menu ---------- */
+.header-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1000;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+.header-dropdown.active {
+    max-height: 600px;
+    opacity: 1;
+    border-top: 1px solid #f0f3f8;
+}
+.dropdown-item {
+    padding: 16px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1b1f2a;
+    border-bottom: 1px solid #f4f6fa;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+.dropdown-item:active {
+    background: #f4f7fc;
+}
         /* ---------- Back header ---------- */
         .back-header {
             display: flex; align-items: center; gap: 14px;
