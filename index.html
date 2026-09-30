@@ -1188,61 +1188,62 @@
         <button class="back-btn" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
         <h1>App Download</h1>
     </div>
-    <div class="scroll" style="background: #f8fafc; padding-bottom: 50px;">
+    <div class="scroll" style="background: #f8fafc; padding-bottom: 0; display: flex; flex-direction: column; min-height: calc(100vh - 60px);">
         
-        <!-- প্রিমিয়াম ও প্রফেশনাল হেডার সেকশন -->
-        <div style="text-align: center; max-width: 850px; margin: 45px auto 35px; padding: 0 20px;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: #eef4ff; color: #1a56ff; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(26,86,255,0.08);">
-                <i class="fa-solid fa-mobile-screen-button"></i> Carbook Official Apps
+        <!-- কন্টেন্ট র‍্যাপার যাতে ফুটার নিচে ধাক্কা খায় -->
+        <div style="flex: 1;">
+            <!-- প্রিমিয়াম ও প্রফেশনাল হেডার সেকশন -->
+            <div style="text-align: center; max-width: 850px; margin: 45px auto 35px; padding: 0 20px;">
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: #eef4ff; color: #1a56ff; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(26,86,255,0.08);">
+                    <i class="fa-solid fa-mobile-screen-button"></i> Carbook Official Apps
+                </div>
+                <h2 class="app-dl-title" style="margin: 0 0 15px 0; font-size: 34px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">Download The Carbook App</h2>
+                <p style="font-size: 16px; color: #64748b; line-height: 1.7; font-weight: 500; max-width: 700px; margin: 0 auto;">
+                    Carbook is a convenient car rental platform in Bangladesh. Book a car easily through the Carbook mobile app for your travel, business trips, airport transfers and other transportation needs.
+                </p>
             </div>
-            <h2 class="app-dl-title" style="margin: 0 0 15px 0; font-size: 34px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px;">Download The Carbook App</h2>
-            <p style="font-size: 16px; color: #64748b; line-height: 1.7; font-weight: 500; max-width: 700px; margin: 0 auto;">
-                Carbook is a convenient car rental platform in Bangladesh. Book a car easily through the Carbook mobile app for your travel, business trips, airport transfers and other transportation needs.
-            </p>
-        </div>
-        
-        <!-- গ্রিড কন্টেইনার -->
-        <div class="app-dl-grid" style="max-width: 1000px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
             
-            <!-- User App Card (Preminum Look) -->
-            <div class="app-dl-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                <div style="overflow: hidden; background: #f1f5f9;">
-                    <img src="https://i.ibb.co/0y5C9jhk/Gemini-Generated-Image-6yfqy66yfqy66yfq-jpg.jpg" alt="User App" class="hero" style="cursor: pointer; width: 100%; height: 240px; object-fit: cover; transition: transform 0.5s ease;" onclick="window.open('https://play.google.com/store/apps/details?id=com.appuser.carbook&pcampaignid=web_share', '_blank')" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                </div>
-                <div class="app-dl-card-body" style="padding: 24px;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-                        <h3 style="font-size: 20px; font-weight: 800; color: #1e293b; margin: 0;">User App</h3>
-                        <span style="background: #dcfce7; color: #166534; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px;">For Passengers</span>
+            <!-- গ্রিড কন্টেইনার -->
+            <div class="app-dl-grid" style="max-width: 1000px; margin: 0 auto; padding: 0 20px 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                
+                <!-- User App Card -->
+                <div class="app-dl-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
+                    <div style="overflow: hidden; background: #f1f5f9;">
+                        <img src="https://i.ibb.co/0y5C9jhk/Gemini-Generated-Image-6yfqy66yfqy66yfq-jpg.jpg" alt="User App" class="hero" style="cursor: pointer; width: 100%; height: 240px; object-fit: cover;" onclick="window.open('https://play.google.com/store/apps/details?id=com.appuser.carbook&pcampaignid=web_share', '_blank')">
                     </div>
-                    <div class="app-dl-badges" style="display: flex; gap: 12px; align-items: center;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 42px; cursor: pointer; transition: opacity 0.2s;" onclick="window.open('https://play.google.com/store/apps/details?id=com.appuser.carbook&pcampaignid=web_share', '_blank')" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" style="height: 42px; cursor: pointer; transition: opacity 0.2s;" onclick="window.open('https://play.google.com/store', '_blank')" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                    <div class="app-dl-card-body" style="padding: 24px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                            <h3 style="font-size: 20px; font-weight: 800; color: #1e293b; margin: 0;">User App</h3>
+                            <span style="background: #dcfce7; color: #166534; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px;">For Passengers</span>
+                        </div>
+                        <div class="app-dl-badges" style="display: flex; gap: 12px; align-items: center;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 42px; cursor: pointer;" onclick="window.open('https://play.google.com/store/apps/details?id=com.appuser.carbook&pcampaignid=web_share', '_blank')">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" style="height: 42px; cursor: pointer;" onclick="window.open('https://play.google.com/store', '_blank')">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Drive App Card (Preminum Look) -->
-            <div class="app-dl-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-                <div style="overflow: hidden; background: #f1f5f9;">
-                    <img src="https://i.ibb.co/V0H5hRKr/Gemini-Generated-Image-h6wqqdh6wqqdh6wq-jpg.jpg" alt="Drive App" class="hero" style="cursor: pointer; width: 100%; height: 240px; object-fit: cover; transition: transform 0.5s ease;" onclick="window.open('https://play.google.com/store/apps/details?id=com.appdriver.carbook&pcampaignid=web_share', '_blank')" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                </div>
-                <div class="app-dl-card-body" style="padding: 24px;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-                        <h3 style="font-size: 20px; font-weight: 800; color: #1e293b; margin: 0;">Drive App</h3>
-                        <span style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px;">For Drivers</span>
+                <!-- Drive App Card -->
+                <div class="app-dl-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
+                    <div style="overflow: hidden; background: #f1f5f9;">
+                        <img src="https://i.ibb.co/V0H5hRKr/Gemini-Generated-Image-h6wqqdh6wqqdh6wq-jpg.jpg" alt="Drive App" class="hero" style="cursor: pointer; width: 100%; height: 240px; object-fit: cover;" onclick="window.open('https://play.google.com/store/apps/details?id=com.appdriver.carbook&pcampaignid=web_share', '_blank')">
                     </div>
-                    <div class="app-dl-badges" style="display: flex; gap: 12px; align-items: center;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 42px; cursor: pointer; transition: opacity 0.2s;" onclick="window.open('https://play.google.com/store/apps/details?id=com.appdriver.carbook&pcampaignid=web_share', '_blank')" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                    <div class="app-dl-card-body" style="padding: 24px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                            <h3 style="font-size: 20px; font-weight: 800; color: #1e293b; margin: 0;">Drive App</h3>
+                            <span style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px;">For Drivers</span>
+                        </div>
+                        <div class="app-dl-badges" style="display: flex; gap: 12px; align-items: center;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 42px; cursor: pointer;" onclick="window.open('https://play.google.com/store/apps/details?id=com.appdriver.carbook&pcampaignid=web_share', '_blank')">
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
 
         <!-- ================= FULL BLACK FOOTER ================= -->
-        <footer class="new-black-footer" style="margin-top: 20px;">
+        <footer class="new-black-footer" style="margin-top: auto;">
             <div class="nbf-top">
                 <div class="nbf-col nbf-brand-col">
                     <h2>Carbook</h2>
@@ -1299,7 +1300,6 @@
     </div>
 </section>
 <!-- ======= END APP DOWNLOAD SCREEN ======= -->
-            
             <section class="screen" id="screen-otp">
                 <div class="back-header" style="padding-bottom: 0;">
                     <button class="back-btn" data-back="screen-login" onclick="goBackRouter()"><i class="fa-solid fa-arrow-left"></i></button>
