@@ -4299,6 +4299,18 @@ function openInfoDetails(id) {
     showScreen('screen-info-details');
 }
 
+        function handleDownloadAppClick() {
+    window.open('https://play.google.com/store/apps/details?id=com.appdriver.carbook&pcampaignid=web_share', '_blank');
+}
+
+function downloadApp(type) {
+    if(type === 'driver') {
+        window.open('https://play.google.com/store/apps/details?id=com.appdriver.carbook&pcampaignid=web_share', '_blank');
+    } else {
+        window.open('https://play.google.com/store/apps/details?id=com.appuser.carbook&pcampaignid=web_share', '_blank');
+    }
+}
+
 
 // Scroll to Top Function
 function scrollToTop() {
